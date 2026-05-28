@@ -1,8 +1,8 @@
 # hl7-parser
 
-A Python tool that parses HL7 v2 specification files and generates Python classes from them.
+A little Python tool that parses HL7 v2 specification files and generates Python classes from them.
 
-This project is inspired by [Nazrul Islam](https://github.com/nazrulworld)'s excellent work on `fhir-parser` and `fhir.resources`. His approach to bringing modern Python tooling and Pydantic support to healthcare data standards showed the way forward. This tool applies that same philosophy to HL7 v2.
+This project is heavily inspired by [Nazrul Islam](https://github.com/nazrulworld)'s excellent work on `fhir-parser` and `fhir.resources`. His approach to bringing modern Python tooling and Pydantic support to healthcare data standards showed the way forward. This tool applies that same philosophy to HL7 v2.
 
 ## Overview
 
@@ -12,7 +12,7 @@ The generated classes are used by the companion library [hl7types](https://githu
 
 ## Installation
 
-Requires Python 3.9+. Install dependencies with:
+Requires Python 3.9+ and `uv` to be installed. Install dependencies with:
 
 ```bash
 uv sync
@@ -38,6 +38,7 @@ The parser reads HL7 v2 XSD files (datatypes, fields, segments, and message defi
 - **Messages** - Complete message structures like ADT_A01, ACK, etc.
 
 Each generated class includes:
+
 - Type hints for IDE support and static analysis
 - Pydantic validation
 - Field metadata (HL7 item numbers, reference tables, long names)
@@ -47,7 +48,7 @@ Note: The parser handles most HL7 v2 patterns, but there may be edge cases that 
 
 ## Output
 
-Generated classes are organized by version under the output directory:
+Generated classes are organised by version under the output directory:
 
 ```
 hl7types/
