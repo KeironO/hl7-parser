@@ -63,4 +63,6 @@ hl7types/
 
 ## License
 
-This work is licensed under the APACHE license. HL7 is the registered trademark of HL7 International and is used with permission.
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+HL7 is the registered trademark of HL7 International.
