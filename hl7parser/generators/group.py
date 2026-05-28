@@ -58,7 +58,7 @@ def generate_group(grp: GroupDef, known_segments: set[str]) -> str:
         lines.append("")
 
     class_name = group_class_name(grp.name)
-    out: list[str] = ["from _future__ import annotations", ""]
+    out: list[str] = ["from __future__ import annotations", ""]
     typing_parts = ["Optional"]
     if need_list:
         typing_parts.append("List")

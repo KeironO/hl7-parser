@@ -61,7 +61,7 @@ def generate_message(msg: MessageDef, known_segments: set[str], known_groups: se
             )
         lines.append("")
 
-    out: list[str] = ["from _future__ import annotations", ""]
+    out: list[str] = ["from __future__ import annotations", ""]
     typing_parts = ["Optional"]
     if need_list:
         typing_parts.append("List")
