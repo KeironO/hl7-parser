@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from hl7parser.ir import ComponentDef
+from hl7parser.ir.component_def import ComponentDef
 
 
 @dataclass
