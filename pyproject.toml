@@ -1,0 +1,40 @@
+[project]
+name = "hl7-parser"
+version = "0.1.0"
+description = "A Python HL7v2 specification parser and class generator"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "lxml>=6.1.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.0",
+    "pre-commit>=4.0.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = [
+    "F",     # Pyflakes - undefined names, unused imports
+    "E",     # pycodestyle - errors
+    "W",     # pycodestyle - warnings
+    "I",     # isort - import sorting
+    "N",     # pep8-naming
+    "UP",    # pyupgrade
+    "B",     # flake8-bugbear
+    "A",     # flake8-builtins
+    "C4",    # flake8-comprehensions
+    "PIE",   # flake8-pie
+    "SIM",   # flake8-simplify
+]
+ignore = [
+    "E501",  # line too long (handled by line-length above)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["hl7parser"]
