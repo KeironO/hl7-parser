@@ -41,3 +41,18 @@ def docstring(headline: str, section: str, entries: list[str]) -> list[str]:
     out.extend(entries)
     out.append(f'{FIELD_INDENT}"""')
     return out
+
+
+def module_docstring(headline: str, entries: list[tuple[str, str, str]]) -> list[str]:
+    """Return module-level docstring lines listing attributes with types.
+
+    entries: list of (field_name, annotation, 'required'|'optional')
+    """
+    if not entries:
+        return [f'"""{headline}"""', ""]
+    out = [f'"""{headline}', "", "Attributes:"]
+    for fname, ann, req in entries:
+        out.append(f"    {fname} ({ann}): {req}.")
+    out.append('"""')
+    out.append("")
+    return out

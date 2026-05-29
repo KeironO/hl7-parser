@@ -1,7 +1,7 @@
 from hl7parser.consts import FIELD_INDENT, WILDCARD_SEGMENTS
 from hl7parser.generators.multi_field import make_member_field
 from hl7parser.helpers.name import cardinality, group_class_name, group_field_name
-from hl7parser.helpers.string import docstring
+from hl7parser.helpers.string import docstring, module_docstring
 from hl7parser.ir import GroupDef
 
 
@@ -10,6 +10,7 @@ def generate_group(grp: GroupDef, known_segments: set[str]) -> str:
     group_imports: set[str] = set()
     lines: list[str] = []
     doc_entries: list[str] = []
+    mod_entries: list[tuple[str, str, str]] = []
     need_list = False
     need_any = False
     # Map from original type name to alias used in annotations to deal with Python 3.14 fuckery
@@ -39,6 +40,7 @@ def generate_group(grp: GroupDef, known_segments: set[str]) -> str:
 
         req = "required" if default == "..." else "optional"
         doc_entries.append(f"        {fname} ({ann}): {req}")
+        mod_entries.append((fname, ann, req))
 
         if py_type == "Any":
             if default == "...":
@@ -58,7 +60,8 @@ def generate_group(grp: GroupDef, known_segments: set[str]) -> str:
         lines.append("")
 
     class_name = group_class_name(grp.name)
-    out: list[str] = ["from __future__ import annotations", ""]
+    out: list[str] = module_docstring(f"HL7 v2 {grp.name} group.", mod_entries)
+    out += ["from __future__ import annotations", ""]
     typing_parts = ["Optional"]
     if need_list:
         typing_parts.append("List")
