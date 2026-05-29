@@ -1,12 +1,14 @@
 from hl7parser.consts import FIELD_INDENT, PRIMITIVE_PYTHON_TYPE
 from hl7parser.generators.multi_field import make_field
 from hl7parser.helpers.name import cardinality, field_name, xml_to_field_name
+from hl7parser.helpers.string import numpy_docstring
 from hl7parser.ir import DataTypeDef
 
 
 def generate_datatype(dt: DataTypeDef, all_datatype_names: set[str]) -> str:
     imports: list[str] = []
     fields: list[list[str]] = []
+    doc_entries: list[tuple[str, str, str]] = []
     need_list = False
 
     for comp in dt.components:
@@ -22,6 +24,11 @@ def generate_datatype(dt: DataTypeDef, all_datatype_names: set[str]) -> str:
 
         fname = xml_to_field_name(comp.xml_name)
         long_alias = field_name(comp.long_name, comp.xml_name)
+        flags = ["opt" if comp.min_occurs == 0 else "req"]
+        if comp.max_occurs is None or comp.max_occurs > 1:
+            flags.append("rep")
+        desc = f"{comp.xml_name} ({', '.join(flags)}) - {comp.long_name} ({comp.base_type})"
+        doc_entries.append((fname, ann, desc))
         fields.append(
             make_field(
                 fname,
@@ -47,7 +54,7 @@ def generate_datatype(dt: DataTypeDef, all_datatype_names: set[str]) -> str:
     out.append("")
     out.append("")
     out.append(f"class {dt.name}(BaseModel):")
-    out.append(f'{FIELD_INDENT}"""HL7 v2 {dt.name} data type."""')
+    out.extend(numpy_docstring(f"HL7 v2 {dt.name} data type.", doc_entries))
     out.append("")
     if fields:
         for i, field_lines in enumerate(fields):

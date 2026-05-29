@@ -41,3 +41,35 @@ def docstring(headline: str, section: str, entries: list[str]) -> list[str]:
     out.extend(entries)
     out.append(f'{FIELD_INDENT}"""')
     return out
+
+
+def _ann_to_union(ann: str) -> str:
+    if ann.startswith("Optional[List[") and ann.endswith("]]"):
+        return f"list[{ann[14:-2]}] | None"
+    if ann.startswith("Optional[") and ann.endswith("]"):
+        return f"{ann[9:-1]} | None"
+    if ann.startswith("List[") and ann.endswith("]"):
+        return f"list[{ann[5:-1]}]"
+    return ann
+
+
+def numpy_docstring(headline: str, entries: list[tuple[str, str, str]]) -> list[str]:
+    """Return indented NumPy-style docstring lines.
+
+    entries: list of (field_name, annotation, description)
+    """
+    if not entries:
+        return [f'{FIELD_INDENT}"""{headline}"""']
+    out = [
+        f'{FIELD_INDENT}"""{headline}',
+        "",
+        f"{FIELD_INDENT}Attributes",
+        f"{FIELD_INDENT}----------",
+    ]
+    for i, (fname, ann, desc) in enumerate(entries):
+        out.append(f"{FIELD_INDENT}{fname} : {_ann_to_union(ann)}")
+        out.append(f"{INNER_INDENT}{desc}")
+        if i < len(entries) - 1:
+            out.append("")
+    out.append(f'{FIELD_INDENT}"""')
+    return out

@@ -1,12 +1,14 @@
 from hl7parser.consts import DELIM_DEF_SEGMENTS, DELIM_DEFAULTS, FIELD_INDENT, PRIMITIVE_PYTHON_TYPE
 from hl7parser.generators.multi_field import make_field
 from hl7parser.helpers.name import cardinality, field_name, xml_to_field_name
+from hl7parser.helpers.string import numpy_docstring
 from hl7parser.ir import SegmentDef
 
 
 def generate_segment(seg: SegmentDef, all_datatype_names: set[str]) -> str:
     imports: list[str] = []
     fields: list[list[str]] = []
+    doc_entries: list[tuple[str, str, str]] = []
     need_list = False
     seen_field_names: dict[str, int] = {}
 
@@ -28,6 +30,12 @@ def generate_segment(seg: SegmentDef, all_datatype_names: set[str]) -> str:
             fname = f"{fname}_{seen_field_names[fname]}"
         else:
             seen_field_names[fname] = 1
+
+        flags = ["opt" if field.min_occurs == 0 else "req"]
+        if field.max_occurs is None or field.max_occurs > 1:
+            flags.append("rep")
+        desc = f"{field.xml_name} ({', '.join(flags)}) - {field.long_name} ({field.field_type})"
+        doc_entries.append((fname, ann, desc))
 
         pos_suffix = field.xml_name.rsplit(".", 1)[-1]
         if seg.name in DELIM_DEF_SEGMENTS and pos_suffix in DELIM_DEFAULTS:
@@ -66,7 +74,7 @@ def generate_segment(seg: SegmentDef, all_datatype_names: set[str]) -> str:
     out.append("")
     out.append("")
     out.append(f"class {seg.name}(BaseModel):")
-    out.append(f'{FIELD_INDENT}"""HL7 v2 {seg.name} segment."""')
+    out.extend(numpy_docstring(f"HL7 v2 {seg.name} segment.", doc_entries))
     out.append("")
     if fields:
         for i, field_lines in enumerate(fields):
