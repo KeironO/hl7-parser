@@ -26,7 +26,38 @@ Generate classes for all HL7 v2 specifications:
 uv run python -m hl7parser --xsd-dir /path/to/hl7v2xsd --output-dir /tmp/ --all
 ```
 
+Or for a single version:
+
+```bash
+uv run python -m hl7parser --xsd-dir /path/to/hl7v2xsd --output-dir /tmp/ --version 2.5.1
+```
+
 Replace `/path/to/hl7v2xsd` with the directory containing your HL7 v2 XSD files.
+
+### `--for-hl7types`
+
+Pass this flag when generating code for the [hl7types](https://github.com/KeironO/hl7types) library:
+
+```bash
+uv run python -m hl7parser --xsd-dir /path/to/hl7v2xsd --output-dir /tmp/ --all --for-hl7types
+```
+
+Without this flag every generated class inherits from `pydantic.BaseModel` directly. With it, the base class is swapped to `HL7Model` from `hl7types.hl7`:
+
+```python
+# default
+from pydantic import AliasChoices, BaseModel, Field
+
+class MSH(BaseModel): ...
+
+# --for-hl7types
+from pydantic import AliasChoices, Field
+from hl7types.hl7 import HL7Model
+
+class MSH(HL7Model): ...
+```
+
+`HL7Model` is itself a `BaseModel` subclass, so `isinstance(obj, BaseModel)` still holds. The benefit is that `model_dump_er7()`, `model_validate_er7()`, and `model_dump_xml()` are declared as real methods on the base class, making them visible to static type checkers like Pyright.
 
 ## How It Works
 

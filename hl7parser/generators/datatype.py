@@ -5,7 +5,9 @@ from hl7parser.helpers.string import numpy_docstring
 from hl7parser.ir import DataTypeDef
 
 
-def generate_datatype(dt: DataTypeDef, all_datatype_names: set[str]) -> str:
+def generate_datatype(
+    dt: DataTypeDef, all_datatype_names: set[str], *, for_hl7types: bool = False
+) -> str:
     imports: list[str] = []
     fields: list[list[str]] = []
     doc_entries: list[tuple[str, str, str]] = []
@@ -47,13 +49,18 @@ def generate_datatype(dt: DataTypeDef, all_datatype_names: set[str]) -> str:
     if need_list:
         typing_parts.append("List")
     out.append(f"from typing import {', '.join(typing_parts)}")
-    out.append("from pydantic import AliasChoices, BaseModel, Field")
+    if for_hl7types:
+        out.append("from pydantic import AliasChoices, Field")
+        out.append("from hl7types.hl7 import HL7Model")
+    else:
+        out.append("from pydantic import AliasChoices, BaseModel, Field")
     if unique_imports:
         out.append("")
         out.extend(unique_imports)
     out.append("")
     out.append("")
-    out.append(f"class {dt.name}(BaseModel):")
+    base = "HL7Model" if for_hl7types else "BaseModel"
+    out.append(f"class {dt.name}({base}):")
     out.extend(numpy_docstring(f"HL7 v2 {dt.name} data type.", doc_entries))
     out.append("")
     if fields:

@@ -37,6 +37,12 @@ def main() -> None:
         action="store_true",
         help="Generate all versions found under --xsd-dir.",
     )
+    parser.add_argument(
+        "--for-hl7types",
+        action="store_true",
+        default=False,
+        help="Use HL7Model from hl7types.hl7 as the base class instead of pydantic.BaseModel.",
+    )
 
     args = parser.parse_args()
 
@@ -65,7 +71,7 @@ def main() -> None:
         print(f"Generating v{version}...")
         irp = HL7XSDParser(version_dir)
         ir = irp.parse_version()
-        write_version(ir, output_dir)
+        write_version(ir, output_dir, for_hl7types=args.for_hl7types)
 
     print("Yay!")
 

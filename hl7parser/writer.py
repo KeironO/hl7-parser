@@ -35,7 +35,7 @@ def _write(path: Path, class_name: str, class_type: str, version: str, source: s
     path.write_text(_file_header(class_name, class_type, version) + source)
 
 
-def write_version(ir: VersionIR, output_dir: Path) -> None:
+def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False) -> None:
     mod_name = _normalise_version(ir.version)
     version_dir = output_dir / mod_name
     version_dir.mkdir(parents=True, exist_ok=True)
@@ -53,7 +53,7 @@ def write_version(ir: VersionIR, output_dir: Path) -> None:
             dt.name,
             "Datatype",
             ir.version,
-            generate_datatype(dt, all_dt_names),
+            generate_datatype(dt, all_dt_names, for_hl7types=for_hl7types),
         )
     (dt_dir / "__init__.py").write_text(generate_init([dt.name for dt in ir.datatypes]))
 
@@ -66,7 +66,7 @@ def write_version(ir: VersionIR, output_dir: Path) -> None:
             seg.name,
             "Segment",
             ir.version,
-            generate_segment(seg, all_dt_names),
+            generate_segment(seg, all_dt_names, for_hl7types=for_hl7types),
         )
     (seg_dir / "__init__.py").write_text(generate_init([seg.name for seg in ir.segments]))
 
@@ -80,7 +80,7 @@ def write_version(ir: VersionIR, output_dir: Path) -> None:
             grp.name,
             "Group",
             ir.version,
-            generate_group(grp, all_seg_names),
+            generate_group(grp, all_seg_names, for_hl7types=for_hl7types),
         )
     (grp_dir / "__init__.py").write_text(generate_init(sorted(all_group_names)))
 
@@ -93,7 +93,7 @@ def write_version(ir: VersionIR, output_dir: Path) -> None:
             msg.name,
             "Message",
             ir.version,
-            generate_message(msg, all_seg_names, all_group_names),
+            generate_message(msg, all_seg_names, all_group_names, for_hl7types=for_hl7types),
         )
     (msg_dir / "__init__.py").write_text(generate_init([msg.name for msg in ir.messages]))
 

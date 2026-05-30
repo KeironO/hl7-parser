@@ -5,7 +5,9 @@ from hl7parser.helpers.string import docstring
 from hl7parser.ir import MessageDef
 
 
-def generate_message(msg: MessageDef, known_segments: set[str], known_groups: set[str]) -> str:
+def generate_message(
+    msg: MessageDef, known_segments: set[str], known_groups: set[str], *, for_hl7types: bool = False
+) -> str:
     segment_imports: set[str] = set()
     group_imports: set[str] = set()
     lines: list[str] = []
@@ -68,7 +70,11 @@ def generate_message(msg: MessageDef, known_segments: set[str], known_groups: se
     if need_any:
         typing_parts.append("Any")
     out.append(f"from typing import {', '.join(typing_parts)}")
-    out.append("from pydantic import BaseModel, Field")
+    if for_hl7types:
+        out.append("from pydantic import Field")
+        out.append("from hl7types.hl7 import HL7Model")
+    else:
+        out.append("from pydantic import BaseModel, Field")
     if segment_imports:
         out.append("")
         out.extend(sorted(segment_imports))
@@ -81,7 +87,8 @@ def generate_message(msg: MessageDef, known_segments: set[str], known_groups: se
             out.append(f"{alias} = {orig}")
     out.append("")
     out.append("")
-    out.append(f"class {msg.name}(BaseModel):")
+    base = "HL7Model" if for_hl7types else "BaseModel"
+    out.append(f"class {msg.name}({base}):")
     out.extend(docstring(f"HL7 v2 {msg.name} message.", "Attributes", doc_entries))
     out.append("")
     if lines:
