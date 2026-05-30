@@ -7,9 +7,11 @@ from hl7parser.generators import (
     generate_datatype,
     generate_group,
     generate_init,
+    generate_init_stub,
     generate_message,
     generate_segment,
     generate_version_init,
+    generate_version_init_stub,
 )
 from hl7parser.helpers.name import group_class_name
 from hl7parser.ir import VersionIR
@@ -55,7 +57,9 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
             ir.version,
             generate_datatype(dt, all_dt_names, for_hl7types=for_hl7types),
         )
-    (dt_dir / "__init__.py").write_text(generate_init([dt.name for dt in ir.datatypes]))
+    dt_names = [dt.name for dt in ir.datatypes]
+    (dt_dir / "__init__.py").write_text(generate_init(dt_names))
+    (dt_dir / "__init__.pyi").write_text(generate_init_stub(dt_names))
 
     # segments
     seg_dir = version_dir / "segments"
@@ -68,7 +72,9 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
             ir.version,
             generate_segment(seg, all_dt_names, for_hl7types=for_hl7types),
         )
-    (seg_dir / "__init__.py").write_text(generate_init([seg.name for seg in ir.segments]))
+    seg_names = [seg.name for seg in ir.segments]
+    (seg_dir / "__init__.py").write_text(generate_init(seg_names))
+    (seg_dir / "__init__.pyi").write_text(generate_init_stub(seg_names))
 
     # groups
     grp_dir = version_dir / "groups"
@@ -82,7 +88,9 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
             ir.version,
             generate_group(grp, all_seg_names, for_hl7types=for_hl7types),
         )
-    (grp_dir / "__init__.py").write_text(generate_init(sorted(all_group_names)))
+    grp_names = sorted(all_group_names)
+    (grp_dir / "__init__.py").write_text(generate_init(grp_names))
+    (grp_dir / "__init__.pyi").write_text(generate_init_stub(grp_names))
 
     # messages
     msg_dir = version_dir / "messages"
@@ -95,10 +103,13 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
             ir.version,
             generate_message(msg, all_seg_names, all_group_names, for_hl7types=for_hl7types),
         )
-    (msg_dir / "__init__.py").write_text(generate_init([msg.name for msg in ir.messages]))
+    msg_names = [msg.name for msg in ir.messages]
+    (msg_dir / "__init__.py").write_text(generate_init(msg_names))
+    (msg_dir / "__init__.pyi").write_text(generate_init_stub(msg_names))
 
     # version __init__
     (version_dir / "__init__.py").write_text(generate_version_init(mod_name))
+    (version_dir / "__init__.pyi").write_text(generate_version_init_stub())
 
     print(
         f"  [{ir.version}] "
