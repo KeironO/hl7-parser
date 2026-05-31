@@ -317,28 +317,26 @@ class HL7XSDParser:
         def _build_members(elem) -> list[MemberRef]:
             members: list[MemberRef] = []
             seen: dict[str, int] = {}
-            for child in elem:
-                if child.tag != _tag("sequence"):
-                    continue
-                for seq_child in child:
-                    if seq_child.tag != _tag("element"):
-                        continue
-                    ref = seq_child.get("ref")
-                    if not ref:
-                        continue
-                    min_o, max_o = self._parse_occurs(seq_child)
-                    is_group = "." in ref  # group refs contain a dot (e.g. ADT_A01.PROCEDURE)
 
-                    if ref in seen:
-                        idx = seen[ref]
-                        members[idx] = self._merge_member(members[idx], min_o, max_o)
-                    else:
-                        seen[ref] = len(members)
-                        members.append(
-                            MemberRef(
-                                xml_name=ref, is_group=is_group, min_occurs=min_o, max_occurs=max_o
-                            )
-                        )
+            def _walk(node, force_optional: bool = False) -> None:
+                for child in node:
+                    if child.tag == _tag("element"):
+                        ref = child.get("ref")
+                        if not ref:
+                            continue
+                        min_o, max_o = self._parse_occurs(child)
+                        if force_optional:
+                            min_o = 0
+                        is_group = "." in ref
+                        if ref in seen:
+                            members[seen[ref]] = self._merge_member(members[seen[ref]], min_o, max_o)
+                        else:
+                            seen[ref] = len(members)
+                            members.append(MemberRef(xml_name=ref, is_group=is_group, min_occurs=min_o, max_occurs=max_o))
+                    elif child.tag in (_tag("sequence"), _tag("choice")):
+                        _walk(child, force_optional or child.tag == _tag("choice"))
+
+            _walk(elem)
             return members
 
         for elem in root:
