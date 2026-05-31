@@ -11,7 +11,7 @@ def _fmt_names(names: list[str]) -> str:
             current = (current + " " + item) if current != indent else indent + item
     if current != indent:
         rows.append(current)
-    return "_NAMES = {\n" + "\n".join(rows) + "\n}"
+    return "_all_ = {\n" + "\n".join(rows) + "\n}"
 
 
 def generate_init(names: list[str], import_from: str = ".") -> str:
@@ -22,7 +22,7 @@ def generate_init(names: list[str], import_from: str = ".") -> str:
         "",
         "",
         "def __getattr__(name: str):  # type: ignore[misc]",
-        "    if name not in _NAMES:",
+        "    if name not in _all_:",
         "        raise AttributeError(f'module {__name__!r} has no attribute {name!r}')",
         "    mod = importlib.import_module(f'.{name}', __name__)",
         "    return getattr(mod, name)",
@@ -39,11 +39,11 @@ def generate_version_init(module_name: str) -> str:
     lines = [
         "import importlib",
         "",
-        "_NAMES = {'datatypes', 'groups', 'messages', 'segments'}",
+        "_all_ = {'datatypes', 'groups', 'messages', 'segments'}",
         "",
         "",
         "def __getattr__(name: str):  # type: ignore[misc]",
-        "    if name not in _NAMES:",
+        "    if name not in _all:",
         "        raise AttributeError(f'module {__name__!r} has no attribute {name!r}')",
         "    mod = importlib.import_module(f'.{name}', __name__)",
         "    return mod",
