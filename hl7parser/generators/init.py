@@ -11,7 +11,7 @@ def _fmt_names(names: list[str]) -> str:
             current = (current + " " + item) if current != indent else indent + item
     if current != indent:
         rows.append(current)
-    return "_all_ = {\n" + "\n".join(rows) + "\n}"
+    return "_all_ = {\n" + "\n".join(rows) + "\n}  # type: ignore"
 
 
 def generate_init(names: list[str], import_from: str = ".") -> str:
