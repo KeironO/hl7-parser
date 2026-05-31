@@ -25,7 +25,9 @@ def generate_init(names: list[str], import_from: str = ".") -> str:
         "    if name not in _all_:",
         "        raise AttributeError(f'module {__name__!r} has no attribute {name!r}')",
         "    mod = importlib.import_module(f'.{name}', __name__)",
-        "    return getattr(mod, name)",
+        "    cls = getattr(mod, name)",
+        "    globals()[name] = cls",
+        "    return cls",
     ]
     return "\n".join(lines) + "\n"
 
