@@ -40,6 +40,7 @@ def generate_datatype(
                 long_alias,
                 comp.xml_name,
                 title=comp.long_name,
+                max_length=comp.max_length if comp.is_primitive else None,
             )
         )
 

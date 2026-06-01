@@ -11,3 +11,4 @@ class ComponentDef:
     is_primitive: bool
     min_occurs: int = 0
     max_occurs: int | None = 1  # None = unbounded
+    max_length: int | None = None

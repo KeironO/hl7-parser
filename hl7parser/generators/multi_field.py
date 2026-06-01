@@ -11,10 +11,13 @@ def make_field(
     ser_alias: str,
     title: str,
     description: str = "",
+    max_length: int | None = None,
 ) -> list[str]:
     """Return indented lines for one Field() declaration."""
     out = [f"{FIELD_INDENT}{fname}: {ann} = Field("]
     out.append(f"{INNER_INDENT}default={default},")
+    if max_length is not None:
+        out.append(f"{INNER_INDENT}max_length={max_length},")
     out.append(f"{INNER_INDENT}validation_alias=AliasChoices(")
     out.append(f'{ALIAS_INDENT}"{short_name}",')
     out.append(f'{ALIAS_INDENT}"{long_alias}",')

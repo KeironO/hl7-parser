@@ -140,6 +140,7 @@ class HL7XSDParser:
                     attrs = attribute_groups.get(ref, {})
                     long_name = attrs.get("LongName") or ref
                     type_from_attrs = attrs.get("Type")
+                    max_length = int(attrs["maxLength"]) if "maxLength" in attrs else None
 
                     if type_from_attrs:
                         base_type = type_from_attrs
@@ -160,6 +161,7 @@ class HL7XSDParser:
                             is_primitive=is_prim,
                             min_occurs=min_o,
                             max_occurs=max_o,
+                            max_length=max_length,
                         )
                     )
             composite_types.append(DataTypeDef(name=name, components=components))
@@ -193,6 +195,7 @@ class HL7XSDParser:
             type_from_attrs = attrs.get("Type")
             item_num = attrs.get("Item") or None
             table = attrs.get("Table") or None
+            max_length = int(attrs["maxLength"]) if "maxLength" in attrs else None
 
             if type_from_attrs:
                 field_type = type_from_attrs
@@ -209,6 +212,7 @@ class HL7XSDParser:
                 is_primitive=is_prim,
                 item_num=item_num,
                 table=table,
+                max_length=max_length,
             )
 
         return field_map

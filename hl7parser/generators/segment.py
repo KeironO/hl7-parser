@@ -60,6 +60,7 @@ def generate_segment(
                 field.xml_name,
                 title=field.long_name,
                 description=" | ".join(meta_parts),
+                max_length=field.max_length if field.is_primitive else None,
             )
         )
 
