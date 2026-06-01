@@ -3,19 +3,41 @@ from hl7parser.generators.multi_field import make_field
 from hl7parser.helpers.name import cardinality, field_name, xml_to_field_name
 from hl7parser.helpers.string import numpy_docstring
 from hl7parser.ir import DataTypeDef
+from hl7parser.primitive_validators import (
+    _TS_PRE25_KEY,
+    FIELD_VALIDATORS,
+    TS_PRE25_XML_NAME,
+    _is_v25_or_later,
+    make_field_validators,
+)
 
 
 def generate_datatype(
-    dt: DataTypeDef, all_datatype_names: set[str], *, for_hl7types: bool = False
+    dt: DataTypeDef,
+    all_datatype_names: set[str],
+    *,
+    version: str = "2.5.1",
+    for_hl7types: bool = False,
 ) -> str:
     imports: list[str] = []
     fields: list[list[str]] = []
     doc_entries: list[tuple[str, str, str]] = []
     need_list = False
+    # {validator_key: [field_name, ...]} — groups fields that share a validator
+    validator_fields: dict[str, list[str]] = {}
+    pre_v25 = not _is_v25_or_later(version)
 
     for comp in dt.components:
+        vkey = None
         if comp.is_primitive or comp.base_type not in all_datatype_names:
             py_type = PRIMITIVE_PYTHON_TYPE
+            if comp.is_primitive:
+                if pre_v25 and comp.xml_name == TS_PRE25_XML_NAME and comp.base_type == "ST":
+                    vkey = _TS_PRE25_KEY
+                elif comp.base_type in FIELD_VALIDATORS:
+                    vkey = comp.base_type
+                if vkey:
+                    validator_fields.setdefault(vkey, [])
         else:
             py_type = comp.base_type
             imports.append(f"from .{py_type} import {py_type}")
@@ -44,6 +66,9 @@ def generate_datatype(
             )
         )
 
+        if vkey and comp.is_primitive:
+            validator_fields[vkey].append(fname)
+
     unique_imports = sorted(set(imports))
     out: list[str] = ["from __future__ import annotations", ""]
     typing_parts = ["Optional"]
@@ -55,6 +80,11 @@ def generate_datatype(
         out.append("from hl7types.hl7 import HL7Model")
     else:
         out.append("from pydantic import AliasChoices, BaseModel, Field")
+    if validator_fields:
+        if for_hl7types:
+            out.append("from pydantic import field_validator")
+        else:
+            out[-1] = "from pydantic import AliasChoices, BaseModel, Field, field_validator"
     if unique_imports:
         out.append("")
         out.extend(unique_imports)
@@ -72,6 +102,8 @@ def generate_datatype(
     else:
         out.append(f"{FIELD_INDENT}pass")
     out.append("")
+    if validator_fields:
+        out.extend(make_field_validators(validator_fields))
     out.append(f'{FIELD_INDENT}model_config = {{"populate_by_name": True}}')
     out.append("")
     return "\n".join(out)
