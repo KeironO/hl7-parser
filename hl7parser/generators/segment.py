@@ -2,11 +2,19 @@ from hl7parser.consts import DELIM_DEF_SEGMENTS, DELIM_DEFAULTS, FIELD_INDENT, P
 from hl7parser.generators.multi_field import make_field
 from hl7parser.helpers.name import cardinality, field_name, xml_to_field_name
 from hl7parser.helpers.string import numpy_docstring
-from hl7parser.ir import SegmentDef
+from hl7parser.ir import DataTypeDef, SegmentDef
+
+
+def _has_required_components(dt: DataTypeDef) -> bool:
+    return any(c.min_occurs >= 1 for c in dt.components)
 
 
 def generate_segment(
-    seg: SegmentDef, all_datatype_names: set[str], *, for_hl7types: bool = False
+    seg: SegmentDef,
+    all_datatype_names: set[str],
+    *,
+    datatype_map: dict[str, DataTypeDef] | None = None,
+    for_hl7types: bool = False,
 ) -> str:
     imports: list[str] = []
     fields: list[list[str]] = []
@@ -21,7 +29,19 @@ def generate_segment(
             py_type = field.field_type
             imports.append(f"from ..datatypes.{py_type} import {py_type}")
 
-        ann, default = cardinality(field.min_occurs, field.max_occurs, py_type)
+        is_rep = field.max_occurs is None or field.max_occurs > 1
+        effective_min = field.min_occurs
+        if (
+            is_rep
+            and field.min_occurs >= 1
+            and not field.is_primitive
+            and datatype_map is not None
+            and field.field_type in datatype_map
+            and not _has_required_components(datatype_map[field.field_type])
+        ):
+            effective_min = 0
+
+        ann, default = cardinality(effective_min, field.max_occurs, py_type)
         if "List[" in ann:
             need_list = True
 
@@ -37,6 +57,8 @@ def generate_segment(
         if field.max_occurs is None or field.max_occurs > 1:
             flags.append("rep")
         desc = f"{field.xml_name} ({', '.join(flags)}) - {field.long_name} ({field.field_type})"
+        if effective_min != field.min_occurs:
+            desc += f" [optional: {field.field_type} has no required components]"
         doc_entries.append((fname, ann, desc))
 
         pos_suffix = field.xml_name.rsplit(".", 1)[-1]

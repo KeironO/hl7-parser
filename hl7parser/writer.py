@@ -43,6 +43,7 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
     version_dir.mkdir(parents=True, exist_ok=True)
 
     all_dt_names = {dt.name for dt in ir.datatypes}
+    dt_map = {dt.name: dt for dt in ir.datatypes}
     all_seg_names = {seg.name for seg in ir.segments}
     all_group_names = {group_class_name(grp.name) for grp in ir.groups}
 
@@ -70,7 +71,7 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
             seg.name,
             "Segment",
             ir.version,
-            generate_segment(seg, all_dt_names, for_hl7types=for_hl7types),
+            generate_segment(seg, all_dt_names, datatype_map=dt_map, for_hl7types=for_hl7types),
         )
     seg_names = [seg.name for seg in ir.segments]
     (seg_dir / "__init__.py").write_text(generate_init(seg_names))
