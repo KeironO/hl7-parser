@@ -63,18 +63,28 @@ def generate_message(
             )
         lines.append("")
 
+    need_optional = any("Optional[" in line for line in doc_entries)
+    need_field = bool(type_aliases)  # only non-Any typed members use Field()
+
     out: list[str] = ["from __future__ import annotations", ""]
-    typing_parts = ["Optional"]
+    typing_parts = []
+    if need_optional:
+        typing_parts.append("Optional")
     if need_list:
         typing_parts.append("List")
     if need_any:
         typing_parts.append("Any")
-    out.append(f"from typing import {', '.join(typing_parts)}")
+    if typing_parts:
+        out.append(f"from typing import {', '.join(typing_parts)}")
     if for_hl7types:
-        out.append("from pydantic import Field")
+        if need_field:
+            out.append("from pydantic import Field")
         out.append("from hl7types.hl7 import HL7Model")
     else:
-        out.append("from pydantic import BaseModel, Field")
+        if need_field:
+            out.append("from pydantic import BaseModel, Field")
+        else:
+            out.append("from pydantic import BaseModel")
     if segment_imports:
         out.append("")
         out.extend(sorted(segment_imports))

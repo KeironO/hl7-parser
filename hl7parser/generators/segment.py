@@ -1,4 +1,4 @@
-from hl7parser.consts import DELIM_DEF_SEGMENTS, DELIM_DEFAULTS, FIELD_INDENT, PRIMITIVE_PYTHON_TYPE
+from hl7parser.consts import DELIM_DEF_SEGMENTS, DELIM_DEFAULTS, FIELD_INDENT, PRIMITIVE_PYTHON_TYPE, STRING_PRIMITIVE_DATATYPES
 from hl7parser.generators.multi_field import make_field
 from hl7parser.helpers.name import cardinality, field_name, xml_to_field_name
 from hl7parser.helpers.string import numpy_docstring
@@ -34,7 +34,7 @@ def generate_segment(
 
     for field in seg.fields:
         vkey = None
-        if field.is_primitive or field.field_type not in all_datatype_names:
+        if field.is_primitive or field.field_type not in all_datatype_names or field.field_type in STRING_PRIMITIVE_DATATYPES:
             py_type = PRIMITIVE_PYTHON_TYPE
             if field.is_primitive:
                 if pre_v25 and field.xml_name == TS_PRE25_XML_NAME and field.field_type == "ST":
@@ -100,6 +100,7 @@ def generate_segment(
                 title=field.long_name,
                 description=" | ".join(meta_parts),
                 max_length=field.max_length if field.is_primitive else None,
+                min_occurs=effective_min,
             )
         )
 
@@ -107,21 +108,32 @@ def generate_segment(
             validator_fields[vkey].append(fname)
 
     unique_imports = sorted(set(imports))
+    need_optional = any("Optional[" in entry[1] for entry in doc_entries)
+    need_alias_choices = bool(fields)
+    need_field = bool(fields)
+
     out: list[str] = ["from __future__ import annotations", ""]
-    typing_parts = ["Optional"]
+    typing_parts = []
+    if need_optional:
+        typing_parts.append("Optional")
     if need_list:
         typing_parts.append("List")
-    out.append(f"from typing import {', '.join(typing_parts)}")
+    if typing_parts:
+        out.append(f"from typing import {', '.join(typing_parts)}")
+    pydantic_parts = []
+    if need_alias_choices:
+        pydantic_parts.append("AliasChoices")
+    if need_field:
+        pydantic_parts.append("Field")
+    if validator_fields:
+        pydantic_parts.append("field_validator")
     if for_hl7types:
-        out.append("from pydantic import AliasChoices, Field")
+        if pydantic_parts:
+            out.append(f"from pydantic import {', '.join(pydantic_parts)}")
         out.append("from hl7types.hl7 import HL7Model")
     else:
-        out.append("from pydantic import AliasChoices, BaseModel, Field")
-    if validator_fields:
-        if for_hl7types:
-            out.append("from pydantic import field_validator")
-        else:
-            out[-1] = "from pydantic import AliasChoices, BaseModel, Field, field_validator"
+        pydantic_parts_with_base = ["BaseModel"] + pydantic_parts
+        out.append(f"from pydantic import {', '.join(pydantic_parts_with_base)}")
     if unique_imports:
         out.append("")
         out.extend(unique_imports)

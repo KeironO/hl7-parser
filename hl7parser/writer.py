@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from hl7parser.consts import HL7_NS
+from hl7parser.consts import HL7_NS, STRING_PRIMITIVE_DATATYPES
 from hl7parser.generators import (
     generate_datatype,
     generate_group,
@@ -51,6 +51,8 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
     dt_dir = version_dir / "datatypes"
     dt_dir.mkdir(exist_ok=True)
     for dt in ir.datatypes:
+        if dt.name in STRING_PRIMITIVE_DATATYPES:
+            continue
         _write(
             dt_dir / f"{dt.name}.py",
             dt.name,
@@ -58,7 +60,7 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
             ir.version,
             generate_datatype(dt, all_dt_names, version=ir.version, for_hl7types=for_hl7types),
         )
-    dt_names = [dt.name for dt in ir.datatypes]
+    dt_names = [dt.name for dt in ir.datatypes if dt.name not in STRING_PRIMITIVE_DATATYPES]
     (dt_dir / "__init__.py").write_text(generate_init(dt_names))
     (dt_dir / "__init__.pyi").write_text(generate_init_stub(dt_names))
 
