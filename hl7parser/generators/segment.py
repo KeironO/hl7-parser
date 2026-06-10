@@ -49,15 +49,6 @@ def generate_segment(
 
         is_rep = field.max_occurs is None or field.max_occurs > 1
         effective_min = field.min_occurs
-        if (
-            is_rep
-            and field.min_occurs >= 1
-            and not field.is_primitive
-            and datatype_map is not None
-            and field.field_type in datatype_map
-            and not _has_required_components(datatype_map[field.field_type])
-        ):
-            effective_min = 0
 
         ann, default = cardinality(effective_min, field.max_occurs, py_type)
         if "List[" in ann:
