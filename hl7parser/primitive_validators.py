@@ -56,6 +56,19 @@ def _is_v25_or_later(version: str) -> bool:
         return True
 
 
+# Validator keys that support context-aware fallback parsing via _apply_dt_fallback.
+# Maps key -> context key name used to look up the user-supplied parser callable.
+_FALLBACK_VALIDATORS: dict[str, str] = {
+    "DTM": "dtm_parser",
+    "_TS_PRE25": "dt_parser",
+}
+
+
+def needs_validation_info(validator_fields: dict[str, list[str]]) -> bool:
+    """Return True if any of the validators require ValidationInfo (context-aware)."""
+    return any(k in _FALLBACK_VALIDATORS for k in validator_fields)
+
+
 def make_field_validators(validator_fields: dict[str, list[str]]) -> list[str]:
     """
     Return source lines for all @field_validator methods needed by a class.
@@ -69,15 +82,28 @@ def make_field_validators(validator_fields: dict[str, list[str]]) -> list[str]:
         field_args = ", ".join(f'"{f}"' for f in fnames)
         out.append(f"{FIELD_INDENT}@field_validator({field_args}, mode='before')")
         out.append(f"{FIELD_INDENT}@classmethod")
-        out.append(f"{FIELD_INDENT}def {fn_name}(cls, v: str) -> str:")
 
-        if key == "NULLDT":
+        if key in _FALLBACK_VALIDATORS:
+            ctx_key = _FALLBACK_VALIDATORS[key]
+            datatype = "DTM" if key == "DTM" else "DT"
+            out.append(f"{FIELD_INDENT}def {fn_name}(cls, v: str, info: ValidationInfo) -> str:")
+            out.append(f"{INNER_INDENT}import re")
+            out.append(f"{INNER_INDENT}if re.fullmatch(r'{pattern}', v or ''):")
+            out.append(f"{INNER_INDENT}    return v")
+            out.append(f"{INNER_INDENT}from hl7types.hl7._validators import _apply_dt_fallback")
+            out.append(f"{INNER_INDENT}ctx = info.context or {{}}")
+            out.append(
+                f'{INNER_INDENT}return _apply_dt_fallback(v, parser=ctx.get("{ctx_key}"), datatype="{datatype}", field_path="TS.1")'
+            )
+        elif key == "NULLDT":
+            out.append(f"{FIELD_INDENT}def {fn_name}(cls, v: str) -> str:")
             out.append(f'{INNER_INDENT}if v != "":')
             out.append(
                 f'{INNER_INDENT}    raise ValueError(f"NULLDT is a withdrawn datatype and must be empty, got {{v!r}}")'
             )
             out.append(f"{INNER_INDENT}return v")
         else:
+            out.append(f"{FIELD_INDENT}def {fn_name}(cls, v: str) -> str:")
             out.append(f"{INNER_INDENT}import re")
             out.append(f"{INNER_INDENT}if not re.fullmatch(r'{pattern}', v or ''):")
             out.append(f'{INNER_INDENT}    raise ValueError(f"{{v!r}} is not {description}")')

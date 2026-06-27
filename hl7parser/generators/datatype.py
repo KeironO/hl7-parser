@@ -9,6 +9,7 @@ from hl7parser.primitive_validators import (
     TS_PRE25_XML_NAME,
     _is_v25_or_later,
     make_field_validators,
+    needs_validation_info,
 )
 
 
@@ -90,6 +91,8 @@ def generate_datatype(
         pydantic_parts.append("Field")
     if validator_fields:
         pydantic_parts.append("field_validator")
+        if for_hl7types and needs_validation_info(validator_fields):
+            pydantic_parts.append("ValidationInfo")
     if for_hl7types:
         if pydantic_parts:
             out.append(f"from pydantic import {', '.join(pydantic_parts)}")
