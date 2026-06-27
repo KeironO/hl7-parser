@@ -69,6 +69,13 @@ def needs_validation_info(validator_fields: dict[str, list[str]]) -> bool:
     return any(k in _FALLBACK_VALIDATORS for k in validator_fields)
 
 
+def fallback_validator_imports(validator_fields: dict[str, list[str]]) -> list[str]:
+    """Return module-level import lines needed by context-aware fallback validators."""
+    if needs_validation_info(validator_fields):
+        return ["from hl7types.hl7._validators import _apply_dt_fallback"]
+    return []
+
+
 def make_field_validators(validator_fields: dict[str, list[str]]) -> list[str]:
     """
     Return source lines for all @field_validator methods needed by a class.
@@ -90,10 +97,10 @@ def make_field_validators(validator_fields: dict[str, list[str]]) -> list[str]:
             out.append(f"{INNER_INDENT}import re")
             out.append(f"{INNER_INDENT}if re.fullmatch(r'{pattern}', v or ''):")
             out.append(f"{INNER_INDENT}    return v")
-            out.append(f"{INNER_INDENT}from hl7types.hl7._validators import _apply_dt_fallback")
-            out.append(f"{INNER_INDENT}ctx = info.context or {{}}")
+            out.append(f"{INNER_INDENT}ctx: dict[str, object] = info.context or {{}}")
+            out.append(f"{INNER_INDENT}from typing import cast, Callable")
             out.append(
-                f'{INNER_INDENT}return _apply_dt_fallback(v, parser=ctx.get("{ctx_key}"), datatype="{datatype}", field_path="TS.1")'
+                f'{INNER_INDENT}return _apply_dt_fallback(v, parser=cast(Callable[[str], str] | None, ctx.get("{ctx_key}")), datatype="{datatype}", field_path="TS.1")'
             )
         elif key == "NULLDT":
             out.append(f"{FIELD_INDENT}def {fn_name}(cls, v: str) -> str:")

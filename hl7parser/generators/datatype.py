@@ -8,6 +8,7 @@ from hl7parser.primitive_validators import (
     FIELD_VALIDATORS,
     TS_PRE25_XML_NAME,
     _is_v25_or_later,
+    fallback_validator_imports,
     make_field_validators,
     needs_validation_info,
 )
@@ -97,6 +98,7 @@ def generate_datatype(
         if pydantic_parts:
             out.append(f"from pydantic import {', '.join(pydantic_parts)}")
         out.append("from hl7types.hl7 import HL7Model")
+        out.extend(fallback_validator_imports(validator_fields))
     else:
         pydantic_parts_with_base = ["BaseModel"] + pydantic_parts
         out.append(f"from pydantic import {', '.join(pydantic_parts_with_base)}")
