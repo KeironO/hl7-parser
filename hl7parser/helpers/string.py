@@ -35,6 +35,7 @@ def str_kwarg(name: str, text: str) -> list[str]:
 
 def docstring(headline: str, section: str, entries: list[str]) -> list[str]:
     """Return indented docstring lines."""
+    headline = headline.replace('"', '\\"')
     if not entries:
         return [f'{FIELD_INDENT}"""{headline}"""']
     out = [f'{FIELD_INDENT}"""{headline}', "", f"{FIELD_INDENT}{section}:"]
