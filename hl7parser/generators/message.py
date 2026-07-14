@@ -18,6 +18,8 @@ def generate_message(
     seen_field_names: dict[str, int] = {}
     type_aliases: dict[str, str] = {}
 
+    db = load_db(version)
+
     for member in msg.members:
         if member.xml_name in WILDCARD_SEGMENTS or (
             not member.is_group and member.xml_name not in known_segments
@@ -46,8 +48,15 @@ def generate_message(
         else:
             seen_field_names[fname] = 1
 
+        if not member.is_group:
+            db_info = db.segments.get(member.xml_name)
+            member_desc = db_info.description if db_info else ""
+        else:
+            member_desc = ""
+
         req = "required" if default == "..." else "optional"
-        doc_entries.append(f"        {fname} ({ann}): {req}")
+        doc_label = f"{member_desc}, {req}" if member_desc else req
+        doc_entries.append(f"        {fname} ({ann}): {doc_label}")
 
         if py_type == "Any":
             if default == "...":
@@ -60,7 +69,7 @@ def generate_message(
             alias = type_aliases[py_type]
             aliased_ann = ann.replace(py_type, alias)
             lines.extend(
-                make_member_field(fname, aliased_ann, default, member.min_occurs, member.max_occurs)
+                make_member_field(fname, aliased_ann, default, member.min_occurs, member.max_occurs, member_desc)
             )
         lines.append("")
 

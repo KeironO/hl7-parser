@@ -42,17 +42,16 @@ def make_member_field(
     default: str,
     min_occurs: int,
     max_occurs: int | None,
+    description: str = "",
 ) -> list[str]:
     """Return indented lines for a group/message member Field() declaration."""
-    repeating = max_occurs is None or max_occurs > 1
-    required = min_occurs >= 1
-    cardinality = ("Required" if required else "Optional") + (", repeating" if repeating else "")
     out = [f"{FIELD_INDENT}{fname}: {ann} = Field("]
     if default == "..." and ann.startswith("List["):
         out.append(f"{INNER_INDENT}min_length={min_occurs},")
     elif default != "...":
         out.append(f"{INNER_INDENT}default={default},")
     out.extend(str_kwarg("title", fname))
-    out.extend(str_kwarg("description", cardinality))
+    if description:
+        out.extend(str_kwarg("description", description))
     out.append(f"{FIELD_INDENT})")
     return out

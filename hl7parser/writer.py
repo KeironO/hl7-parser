@@ -101,7 +101,7 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
             grp.name,
             "Group",
             ir.version,
-            generate_group(grp, all_seg_names, for_hl7types=for_hl7types),
+            generate_group(grp, all_seg_names, for_hl7types=for_hl7types, version=ir.version),
         )
     grp_names = sorted(all_group_names)
     (grp_dir / "__init__.py").write_text(generate_init(grp_names))

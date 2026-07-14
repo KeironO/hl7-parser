@@ -1,11 +1,12 @@
 from hl7parser.consts import FIELD_INDENT, WILDCARD_SEGMENTS
+from hl7parser.db import load_db
 from hl7parser.generators.multi_field import make_member_field
 from hl7parser.helpers.name import cardinality, group_class_name, group_field_name
 from hl7parser.helpers.string import docstring
 from hl7parser.ir import GroupDef
 
 
-def generate_group(grp: GroupDef, known_segments: set[str], *, for_hl7types: bool = False) -> str:
+def generate_group(grp: GroupDef, known_segments: set[str], *, for_hl7types: bool = False, version: str = "2.5") -> str:
     segment_imports: set[str] = set()
     group_imports: set[str] = set()
     lines: list[str] = []
@@ -14,6 +15,8 @@ def generate_group(grp: GroupDef, known_segments: set[str], *, for_hl7types: boo
     need_any = False
     # Map from original type name to alias used in annotations to deal with Python 3.14 fuckery
     type_aliases: dict[str, str] = {}  # orig to alias
+
+    db = load_db(version)
 
     for member in grp.members:
         if member.xml_name in WILDCARD_SEGMENTS or (
@@ -37,8 +40,15 @@ def generate_group(grp: GroupDef, known_segments: set[str], *, for_hl7types: boo
         if "List[" in ann:
             need_list = True
 
+        if not member.is_group:
+            db_info = db.segments.get(member.xml_name)
+            member_desc = db_info.description if db_info else ""
+        else:
+            member_desc = ""
+
         req = "required" if default == "..." else "optional"
-        doc_entries.append(f"        {fname} ({ann}): {req}")
+        doc_label = f"{member_desc}, {req}" if member_desc else req
+        doc_entries.append(f"        {fname} ({ann}): {doc_label}")
 
         if py_type == "Any":
             if default == "...":
@@ -53,7 +63,7 @@ def generate_group(grp: GroupDef, known_segments: set[str], *, for_hl7types: boo
             alias = type_aliases[py_type]
             aliased_ann = ann.replace(py_type, alias)
             lines.extend(
-                make_member_field(fname, aliased_ann, default, member.min_occurs, member.max_occurs)
+                make_member_field(fname, aliased_ann, default, member.min_occurs, member.max_occurs, member_desc)
             )
         lines.append("")
 
