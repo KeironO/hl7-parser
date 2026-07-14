@@ -111,7 +111,7 @@ def generate_message(
     out.append(f"class {msg.name}({base}):")
     db_msg = load_db(version).messages.get(msg.name)
     if db_msg and db_msg.description:
-        sec = f" (§{db_msg.section})" if db_msg.section else ""
+        sec = f" (S{db_msg.section})" if db_msg.section else ""
         headline = f"{db_msg.description}{sec}."
     else:
         headline = f"HL7 v2 {msg.name} message."

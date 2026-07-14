@@ -51,7 +51,7 @@ def _write_alias(
 ) -> None:
     event_id = alias.split("_", 1)[-1]
     ev = load_db(version).events.get(event_id)
-    sec = f" (§{ev.section})" if ev and ev.section else ""
+    sec = f" (S{ev.section})" if ev and ev.section else ""
     headline = f"{ev.description}{sec}." if ev else f"Alias for {canonical}."
 
     db = load_db(version)

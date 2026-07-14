@@ -112,7 +112,7 @@ def generate_datatype(
     out.append(f"class {dt.name}({base}):")
     db_dt = load_db(version).datatypes.get(dt.name)
     if db_dt and db_dt.description:
-        sec = f" (§{db_dt.section})" if db_dt.section else ""
+        sec = f" (S{db_dt.section})" if db_dt.section else ""
         headline = f"{db_dt.description.capitalize()}{sec}."
     else:
         headline = f"HL7 v2 {dt.name} data type."
