@@ -2219,5 +2219,155 @@
       "description": "General acknowledgment message",
       "section": ""
     }
+  },
+  "events": {
+    "A01": {
+      "description": "Admit a Patient",
+      "section": "3.2.1"
+    },
+    "A02": {
+      "description": "Transfer a Patient",
+      "section": "3.2.2"
+    },
+    "A03": {
+      "description": "Discharge a Patient",
+      "section": "3.2.3"
+    },
+    "A04": {
+      "description": "Register a Patient",
+      "section": "3.2.4"
+    },
+    "A05": {
+      "description": "Pre-admit a Patient",
+      "section": "3.2.5"
+    },
+    "A06": {
+      "description": "Transfer an Outpatient to Inpatient",
+      "section": "3.2.6"
+    },
+    "A07": {
+      "description": "Transfer an Inpatient to Outpatient",
+      "section": "3.2.7"
+    },
+    "A08": {
+      "description": "Update Patient Information",
+      "section": "3.2.8"
+    },
+    "A09": {
+      "description": "Patient Departing",
+      "section": "3.2.9"
+    },
+    "A10": {
+      "description": "Patient Arriving",
+      "section": "3.2.10"
+    },
+    "A11": {
+      "description": "Cancel Admit",
+      "section": "3.2.11"
+    },
+    "A12": {
+      "description": "Cancel Transfer",
+      "section": "3.2.12"
+    },
+    "A13": {
+      "description": "Cancel Discharge",
+      "section": "3.2.13"
+    },
+    "A14": {
+      "description": "Pending Admit",
+      "section": "3.2.14"
+    },
+    "A15": {
+      "description": "Pending Transfer",
+      "section": "3.2.15"
+    },
+    "A16": {
+      "description": "Pending Discharge",
+      "section": "3.2.16"
+    },
+    "A17": {
+      "description": "Swap Patients",
+      "section": "3.2.17"
+    },
+    "A18": {
+      "description": "Merge Patient Information",
+      "section": "3.2.18"
+    },
+    "A19": {
+      "description": "Patient Query",
+      "section": "3.2.19"
+    },
+    "A20": {
+      "description": "Nursing/Census Application Updates",
+      "section": "3.2.20"
+    },
+    "A21": {
+      "description": "A Patient Goes On A \"Leave Of Absence\"\"\"",
+      "section": "3.2.21"
+    },
+    "A22": {
+      "description": "A Patient Returns From A \"Leave Of Absence\"\"\"",
+      "section": "3.2.22"
+    },
+    "A23": {
+      "description": "Delete a Patient Record",
+      "section": "3.2.23"
+    },
+    "A24": {
+      "description": "Create a Patient Link Transaction",
+      "section": "3.2.24"
+    },
+    "O01": {
+      "description": "Order Message",
+      "section": "4-2"
+    },
+    "O02": {
+      "description": "Respone Message",
+      "section": "4-3"
+    },
+    "P01": {
+      "description": "Add and Update Patient Accounts",
+      "section": "6.2.1"
+    },
+    "P02": {
+      "description": "Purge Patient Accounts",
+      "section": "6.2.2"
+    },
+    "P03": {
+      "description": "Post Detail Financial Transactions",
+      "section": "6.2.3"
+    },
+    "P04": {
+      "description": "Generate bills and A/R statements",
+      "section": "6.2.4"
+    },
+    "Q01": {
+      "description": "A Query is Made for Immediate Response",
+      "section": "5.2.1"
+    },
+    "Q02": {
+      "description": "A Query is Sent for Deferred Response",
+      "section": "5-3"
+    },
+    "Q03": {
+      "description": "Deferred Response to A Query",
+      "section": "5.2.2.2"
+    },
+    "Q05": {
+      "description": "Unsolicited Updates, ODM Message, Trigger Event Q05",
+      "section": "5.2.3"
+    },
+    "R01": {
+      "description": "Unsolicited transmission of requested Obersvation",
+      "section": "7-2"
+    },
+    "R02": {
+      "description": "Query for results of observation",
+      "section": "7-2"
+    },
+    "R03": {
+      "description": "Display oriented results, queyr/unsol. update",
+      "section": "7-2"
+    }
   }
 }

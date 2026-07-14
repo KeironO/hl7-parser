@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from hl7parser.aliases import derive_aliases
+from hl7parser.db import load_db
 from hl7parser.consts import HL7_NS, STRING_PRIMITIVE_DATATYPES
 from hl7parser.generators import (
     generate_datatype,
@@ -14,8 +15,9 @@ from hl7parser.generators import (
     generate_version_init,
     generate_version_init_stub,
 )
-from hl7parser.helpers.name import group_class_name
-from hl7parser.ir import VersionIR
+from hl7parser.helpers.name import cardinality, group_class_name, group_field_name
+from hl7parser.helpers.string import docstring as make_docstring
+from hl7parser.ir import MessageDef, VersionIR
 
 
 def _normalise_version(version: str) -> str:
@@ -38,8 +40,51 @@ def _write(path: Path, class_name: str, class_type: str, version: str, source: s
     path.write_text(_file_header(class_name, class_type, version) + source)
 
 
-def _write_alias(path: Path, alias: str, canonical: str, class_type: str, version: str) -> None:
-    source = f"from __future__ import annotations\n\nfrom .{canonical} import {canonical} as {alias}\n"
+def _write_alias(
+    path: Path,
+    alias: str,
+    canonical: str,
+    canonical_msg: MessageDef,
+    all_seg_names: set[str],
+    class_type: str,
+    version: str,
+) -> None:
+    event_id = alias.split("_", 1)[-1]
+    ev = load_db(version).events.get(event_id)
+    sec = f" (§{ev.section})" if ev and ev.section else ""
+    headline = f"{ev.description}{sec}." if ev else f"Alias for {canonical}."
+
+    db = load_db(version)
+    doc_entries: list[str] = []
+    seen: dict[str, int] = {}
+    for member in canonical_msg.members:
+        if member.is_group:
+            py_type = group_class_name(member.xml_name)
+            fname = group_field_name(member.xml_name)
+            member_desc = ""
+        else:
+            py_type = member.xml_name
+            fname = member.xml_name
+            db_info = db.segments.get(member.xml_name) if member.xml_name in all_seg_names else None
+            member_desc = db_info.description if db_info else ""
+        if fname in seen:
+            seen[fname] += 1
+            fname = f"{fname}_{seen[fname]}"
+        else:
+            seen[fname] = 1
+        ann, default = cardinality(member.min_occurs, member.max_occurs, py_type)
+        req = "required" if default == "..." else "optional"
+        doc_label = f"{member_desc}, {req}" if member_desc else req
+        doc_entries.append(f"        {fname} ({ann}): {doc_label}")
+
+    doc_lines = make_docstring(headline, "Attributes", doc_entries)
+    source = (
+        "from __future__ import annotations\n\n"
+        f"from .{canonical} import {canonical}\n\n\n"
+        f"class {alias}({canonical}):\n"
+        + "\n".join(doc_lines)
+        + "\n\n    pass\n"
+    )
     path.write_text(_file_header(alias, class_type, version) + source)
 
 
@@ -125,8 +170,17 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
         for alias, canonical in derive_aliases(ir.version).items()
         if canonical in canonical_names
     }
+    msg_map = {msg.name: msg for msg in ir.messages}
     for alias, canonical in sorted(aliases.items()):
-        _write_alias(msg_dir / f"{alias}.py", alias, canonical, "Message", ir.version)
+        _write_alias(
+            msg_dir / f"{alias}.py",
+            alias,
+            canonical,
+            msg_map[canonical],
+            all_seg_names,
+            "Message",
+            ir.version,
+        )
 
     msg_names = sorted(canonical_names | set(aliases))
     (msg_dir / "__init__.py").write_text(generate_init(msg_names))

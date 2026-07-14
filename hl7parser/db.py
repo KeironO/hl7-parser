@@ -35,10 +35,17 @@ class MessageInfo:
 
 
 @dataclass
+class EventInfo:
+    description: str
+    section: str
+
+
+@dataclass
 class VersionDB:
     segments: dict[str, SegmentInfo]
     datatypes: dict[str, DatatypeInfo]
     messages: dict[str, MessageInfo]
+    events: dict[str, EventInfo]
 
 
 @lru_cache(maxsize=None)
@@ -72,4 +79,9 @@ def load_db(version: str) -> VersionDB:
         for mid, m in raw.get("messages", {}).items()
     }
 
-    return VersionDB(segments=segments, datatypes=datatypes, messages=messages)
+    events = {
+        eid: EventInfo(description=e["description"], section=e.get("section", ""))
+        for eid, e in raw.get("events", {}).items()
+    }
+
+    return VersionDB(segments=segments, datatypes=datatypes, messages=messages, events=events)

@@ -9823,5 +9823,767 @@
       "description": "VXX - Response to vaccination query returning multiple PID matches",
       "section": ""
     }
+  },
+  "events": {
+    "A01": {
+      "description": "ADT/ACK - Admit / visit notification",
+      "section": "3.2.1"
+    },
+    "A02": {
+      "description": "ADT/ACK -  Transfer a patient",
+      "section": "3.2.2"
+    },
+    "A03": {
+      "description": "ADT/ACK -  Discharge/end visit",
+      "section": "3.2.3"
+    },
+    "A04": {
+      "description": "ADT/ACK -  Register a patient",
+      "section": "3.2.4"
+    },
+    "A05": {
+      "description": "ADT/ACK -  Pre-admit a patient",
+      "section": "3.2.5"
+    },
+    "A06": {
+      "description": "ADT/ACK -  Change an outpatient to an inpatient",
+      "section": "3.2.6"
+    },
+    "A07": {
+      "description": "ADT/ACK -  Change an inpatient to an outpatient",
+      "section": "3.2.7"
+    },
+    "A08": {
+      "description": "ADT/ACK -  Update patient information",
+      "section": "3.2.8"
+    },
+    "A09": {
+      "description": "ADT/ACK -  Patient departing - tracking",
+      "section": "3.2.9"
+    },
+    "A10": {
+      "description": "ADT/ACK -  Patient arriving - tracking",
+      "section": "3.2.10"
+    },
+    "A11": {
+      "description": "ADT/ACK -  Cancel admit/visit notification",
+      "section": "3.2.11"
+    },
+    "A12": {
+      "description": "ADT/ACK -  Cancel transfer",
+      "section": "3.2.12"
+    },
+    "A13": {
+      "description": "ADT/ACK -  Cancel discharge/end visit",
+      "section": "3.2.13"
+    },
+    "A14": {
+      "description": "ADT/ACK -  Pending admit",
+      "section": "3.2.14"
+    },
+    "A15": {
+      "description": "ADT/ACK -  Pending transfer",
+      "section": "3.2.15"
+    },
+    "A16": {
+      "description": "ADT/ACK -  Pending discharge",
+      "section": "3.2.16"
+    },
+    "A17": {
+      "description": "ADT/ACK -  Swap patients",
+      "section": "3.2.17"
+    },
+    "A18": {
+      "description": "ADT/ACK -  Merge patient information",
+      "section": "3.2.18"
+    },
+    "A19": {
+      "description": "QRY/ADR -  Patient query",
+      "section": "3.2.19"
+    },
+    "A20": {
+      "description": "ADT/ACK -  Bed status update",
+      "section": "3.2.20"
+    },
+    "A21": {
+      "description": "ADT/ACK -  Patient goes on a \u201cleave of absence\u201d",
+      "section": "3.2.21"
+    },
+    "A22": {
+      "description": "ADT/ACK -  Patient returns from a \u201cleave of absence\u201d",
+      "section": "3.2.22"
+    },
+    "A23": {
+      "description": "ADT/ACK -  Delete a patient record",
+      "section": "3.2.23"
+    },
+    "A24": {
+      "description": "ADT/ACK -  Link patient information",
+      "section": "3.2.24"
+    },
+    "A25": {
+      "description": "ADT/ACK -  Cancel pending discharge",
+      "section": "3.2.25"
+    },
+    "A26": {
+      "description": "ADT/ACK -  Cancel pending transfer",
+      "section": "3.2.26"
+    },
+    "A27": {
+      "description": "ADT/ACK -  Cancel pending admit",
+      "section": "3.2.27"
+    },
+    "A28": {
+      "description": "ADT/ACK -  Add person information",
+      "section": "3.2.28"
+    },
+    "A29": {
+      "description": "ADT/ACK -  Delete person information",
+      "section": "3.2.29"
+    },
+    "A30": {
+      "description": "ADT/ACK -  Merge person information",
+      "section": "3.2.30"
+    },
+    "A31": {
+      "description": "ADT/ACK -  Update person information",
+      "section": "3.2.31"
+    },
+    "A32": {
+      "description": "ADT/ACK -  Cancel patient arriving - tracking",
+      "section": "3.2.32"
+    },
+    "A33": {
+      "description": "ADT/ACK -  Cancel patient departing - tracking",
+      "section": "3.2.33"
+    },
+    "A34": {
+      "description": "ADT/ACK -  Merge patient information - patient ID only",
+      "section": "3.2.34"
+    },
+    "A35": {
+      "description": "ADT/ACK -  Merge patient information - account number only",
+      "section": "3.2.35"
+    },
+    "A36": {
+      "description": "ADT/ACK -  Merge patient information - patient ID and account number",
+      "section": "3.2.36"
+    },
+    "A37": {
+      "description": "ADT/ACK -  Unlink patient information",
+      "section": "3.2.37"
+    },
+    "A38": {
+      "description": "ADT/ACK - Cancel pre-admit",
+      "section": "3.2.38"
+    },
+    "A39": {
+      "description": "ADT/ACK - Merge person - external ID",
+      "section": "3.2.39"
+    },
+    "A40": {
+      "description": "ADT/ACK - Merge patient - internal ID",
+      "section": "3.2.40"
+    },
+    "A41": {
+      "description": "ADT/ACK - Merge account - patient account number",
+      "section": "3.2.41"
+    },
+    "A42": {
+      "description": "ADT/ACK - Merge visit - visit number",
+      "section": "3.2.42"
+    },
+    "A43": {
+      "description": "ADT/ACK - Move patient information - internal ID",
+      "section": "3.2.43"
+    },
+    "A44": {
+      "description": "ADT/ACK - Move account information - patient account number",
+      "section": "3.2.44"
+    },
+    "A45": {
+      "description": "ADT/ACK - Move visit information - visit number",
+      "section": "3.2.45"
+    },
+    "A46": {
+      "description": "ADT/ACK - Change external ID",
+      "section": "3.2.46"
+    },
+    "A47": {
+      "description": "ADT/ACK - Change internal ID",
+      "section": "3.2.47"
+    },
+    "A48": {
+      "description": "ADT/ACK - Change alternate patient ID",
+      "section": "3.2.48"
+    },
+    "A49": {
+      "description": "ADT/ACK - Change patient account number",
+      "section": "3.2.49"
+    },
+    "A50": {
+      "description": "ADT/ACK - Change visit number",
+      "section": "3.2.50"
+    },
+    "A51": {
+      "description": "ADT/ACK - Change alternate visit ID",
+      "section": "3.2.51"
+    },
+    "C01": {
+      "description": "CRM - Register a patient on a clinical trial",
+      "section": "7.6.1"
+    },
+    "C02": {
+      "description": "CRM - Cancel a patient registration on clinical trial (for clerical mistakes onl",
+      "section": "7.6.1"
+    },
+    "C03": {
+      "description": "CRM - Correct/update registration information",
+      "section": "7.6.1"
+    },
+    "C04": {
+      "description": "CRM - Patient has gone off a clinical trial",
+      "section": "7.6.1"
+    },
+    "C05": {
+      "description": "CRM - Patient enters phase of clinical trial",
+      "section": "7.6.1"
+    },
+    "C06": {
+      "description": "CRM - Cancel patient entering a phase (clerical mistake)",
+      "section": "7.6.1"
+    },
+    "C07": {
+      "description": "CRM - Correct/update phase information",
+      "section": "7.6.1"
+    },
+    "C08": {
+      "description": "CRM - Patient has gone off phase of clinical trial",
+      "section": "7.6.1"
+    },
+    "C09": {
+      "description": "CSU - Automated time intervals for reporting, like monthly",
+      "section": "7.6.2"
+    },
+    "C10": {
+      "description": "CSU - Patient completes the clinical trial",
+      "section": "7.6.2"
+    },
+    "C11": {
+      "description": "CSU - Patient completes a phase of the clinical trial",
+      "section": "7.6.2"
+    },
+    "C12": {
+      "description": "CSU - Update/correction of patient order/result information",
+      "section": "7.6.2"
+    },
+    "CNQ": {
+      "description": "QRY/EQQ/SPQ/VQQ/RQQ - Cancel query",
+      "section": ""
+    },
+    "I01": {
+      "description": "RQI/RPI - Request for insurance information",
+      "section": "11.2.1"
+    },
+    "I02": {
+      "description": "RQI/RPL - Request/receipt of patient selection display list",
+      "section": "11.2.2"
+    },
+    "I03": {
+      "description": "RQI/RPR - Request/receipt of patient selection list",
+      "section": "11.2.3"
+    },
+    "I04": {
+      "description": "RQD/RPI - Request for patient demographic data",
+      "section": "11.2.4"
+    },
+    "I05": {
+      "description": "RQC/RCI - Request for patient clinical information",
+      "section": "11.2.5"
+    },
+    "I06": {
+      "description": "RQC/RCL - Request/receipt of clinical data listing",
+      "section": "11.2.6"
+    },
+    "I07": {
+      "description": "PIN/ACK - Unsolicited insurance information",
+      "section": "11.2.7"
+    },
+    "I08": {
+      "description": "RQA/RPA - Request for treatment authorization information",
+      "section": "11.3.2"
+    },
+    "I09": {
+      "description": "RQA/RPA - Request for modification to an authorization",
+      "section": "11.3.3"
+    },
+    "I10": {
+      "description": "RQA/RPA - Request for resubmission of an authorization",
+      "section": "11.3.4"
+    },
+    "I11": {
+      "description": "RQA/RPA - Request for cancellation of an authorization",
+      "section": "11.3.5"
+    },
+    "I12": {
+      "description": "REF/RRI -  Patient referral",
+      "section": "11.4.2"
+    },
+    "I13": {
+      "description": "REF/RRI - Modify patient referral",
+      "section": "11.4.3"
+    },
+    "I14": {
+      "description": "REF/RRI - Cancel patient referral",
+      "section": "11.4.4"
+    },
+    "I15": {
+      "description": "REF/RRI - Request patient referral status",
+      "section": "11.4.5"
+    },
+    "M01": {
+      "description": "MFN/MFK - Master file not otherwise specified (for backward compatibility only)",
+      "section": ""
+    },
+    "M02": {
+      "description": "MFN/MFK - Master file - Staff Practitioner",
+      "section": "8"
+    },
+    "M03": {
+      "description": "MFN/MFK - Master file - Test/Observation (for backward compatibility only)",
+      "section": "8"
+    },
+    "M04": {
+      "description": "MFN/MFK - Master files charge description",
+      "section": "8"
+    },
+    "M05": {
+      "description": "MFN/MFK - Patient location master file",
+      "section": "8"
+    },
+    "M06": {
+      "description": "MFN/MFK - Clinical study with phases and schedules master file",
+      "section": "8"
+    },
+    "M07": {
+      "description": "MFN/MFK - Clinical study without phases but with schedules master file",
+      "section": "8"
+    },
+    "M08": {
+      "description": "MFN/MFK - Test/observation (Numeric) master file",
+      "section": ""
+    },
+    "M09": {
+      "description": "MFN/MFK - Test/Observation (Categorical) master file",
+      "section": "8"
+    },
+    "M10": {
+      "description": "MFN/MFK - Test /observation batteries master file",
+      "section": "8"
+    },
+    "M11": {
+      "description": "MFN/MFK - Test/calculated observations master file",
+      "section": "8"
+    },
+    "N01": {
+      "description": "NMQ/NMR - Application management query message",
+      "section": "14.3.1"
+    },
+    "N02": {
+      "description": "NMD/ACK - Application management data message (unsolicited)",
+      "section": "14.3.2"
+    },
+    "O01": {
+      "description": "ORM - Order message (also RDE, RDS, RGV, RAS)",
+      "section": "4.8.13"
+    },
+    "O02": {
+      "description": "ORR - Order response (also RRE, RRD, RRG, RRA)",
+      "section": "4.2.2"
+    },
+    "P01": {
+      "description": "BAR/ACK - Add patient accounts",
+      "section": "6.3.1"
+    },
+    "P02": {
+      "description": "BAR/ACK - Purge patient accounts",
+      "section": "6.3.2"
+    },
+    "P03": {
+      "description": "DFT/ACK - Post detail financial transaction",
+      "section": "6.3.3"
+    },
+    "P04": {
+      "description": "QRY/DSP - Generate bill and A/R statements",
+      "section": "6.3.4"
+    },
+    "P05": {
+      "description": "BAR/ACK - Update account",
+      "section": "6.3.5"
+    },
+    "P06": {
+      "description": "BAR/ACK - End account",
+      "section": "6.3.6"
+    },
+    "P07": {
+      "description": "PEX - Unsolicited initial individual product experience report",
+      "section": "7.10.1"
+    },
+    "P08": {
+      "description": "PEX - Unsolicited update individual product experience report",
+      "section": "7.10.1"
+    },
+    "P09": {
+      "description": "SUR - Summary product experience report",
+      "section": "7.10.2"
+    },
+    "PC1": {
+      "description": "PPR - PC/ Problem Add",
+      "section": "12.2.2"
+    },
+    "PC2": {
+      "description": "PPR - PC/ Problem Update",
+      "section": ""
+    },
+    "PC3": {
+      "description": "PPR - PC/ Problem Delete",
+      "section": ""
+    },
+    "PC4": {
+      "description": "PRQ - PC/ Problem Query",
+      "section": "12.2.5"
+    },
+    "PC5": {
+      "description": "PRR - PC/ Problem Response",
+      "section": "12.2.6"
+    },
+    "PC6": {
+      "description": "PGL - PC/ Goal Add",
+      "section": "12.2.1"
+    },
+    "PC7": {
+      "description": "PGL - PC/ Goal Update",
+      "section": ""
+    },
+    "PC8": {
+      "description": "PGL - PC/ Goal Delete",
+      "section": ""
+    },
+    "PC9": {
+      "description": "PGQ - PC/ Goal Query",
+      "section": "12.2.7"
+    },
+    "PCA": {
+      "description": "PGR - PC/ Goal Response",
+      "section": "12.2.8"
+    },
+    "PCB": {
+      "description": "PPP - PC/ Pathway (Problem-Oriented) Add",
+      "section": "12.2.3"
+    },
+    "PCC": {
+      "description": "PPP - PC/ Pathway (Problem-Oriented) Update",
+      "section": "12.2.3"
+    },
+    "PCD": {
+      "description": "PPP - PC/ Pathway (Problem-Oriented) Delete",
+      "section": "12.2.3"
+    },
+    "PCE": {
+      "description": "PTQ - PC/ Pathway (Problem-Oriented) Query",
+      "section": "12.2.9"
+    },
+    "PCF": {
+      "description": "PTR - PC/ Pathway (Problem-Oriented) Query Response",
+      "section": "12.2.10"
+    },
+    "PCG": {
+      "description": "PPG - PC/ Pathway (Goal-Oriented) Add",
+      "section": "12.2.4"
+    },
+    "PCH": {
+      "description": "PPG - PC/ Pathway (Goal-Oriented) Update",
+      "section": "12.2.4"
+    },
+    "PCJ": {
+      "description": "PPG - PC/ Pathway (Goal-Oriented) Delete",
+      "section": "12.2.4"
+    },
+    "PCK": {
+      "description": "PTU - PC/ Pathway (Goal-Oriented) Query",
+      "section": "12.2.11"
+    },
+    "PCL": {
+      "description": "PTV - PC/ Pathway (Goal-Oriented) Query Response",
+      "section": "12.2.12"
+    },
+    "Q01": {
+      "description": "QRY/DSR - Query sent for immediate response",
+      "section": "2.17.1"
+    },
+    "Q02": {
+      "description": "QRY/QCK - Query sent for deferred response",
+      "section": "2.18.1"
+    },
+    "Q03": {
+      "description": "DSR/ACK - Deferred response to a query",
+      "section": "2.18.2"
+    },
+    "Q04": {
+      "description": "EQQ - Embedded query language query",
+      "section": "2.19.1"
+    },
+    "Q05": {
+      "description": "UDM/ACK - Unsolicited display update message",
+      "section": "2.14.2"
+    },
+    "Q06": {
+      "description": "OSQ/OSR - Query for order status",
+      "section": "4.2.3"
+    },
+    "Q07": {
+      "description": "VQQ - Virtual table query",
+      "section": "2.19.2"
+    },
+    "Q08": {
+      "description": "SPQ - Stored procedure request",
+      "section": "2.19.3"
+    },
+    "Q09": {
+      "description": "RQQ - event replay query",
+      "section": "2.19.4"
+    },
+    "R01": {
+      "description": "ORU/ACK - Unsolicited transmission of an observation message",
+      "section": "7.2.1"
+    },
+    "R02": {
+      "description": "QRY - Query for results of observation",
+      "section": "7.2.2"
+    },
+    "R03": {
+      "description": "QRY/DSR Display-oriented results, query/unsol. update (for backward compatibilit",
+      "section": ""
+    },
+    "R04": {
+      "description": "ORF - Response to query; transmission of requested observation",
+      "section": "7.2.2"
+    },
+    "R05": {
+      "description": "QRY/DSR - query for display results",
+      "section": ""
+    },
+    "R06": {
+      "description": "UDM - unsolicited update/display results",
+      "section": ""
+    },
+    "R07": {
+      "description": "Enhanced Display Response",
+      "section": "2.20.1"
+    },
+    "R08": {
+      "description": "Tabular Data Response",
+      "section": "2.20.2"
+    },
+    "R09": {
+      "description": "Event Replay Response",
+      "section": "2.20.3"
+    },
+    "R0R": {
+      "description": "R0R - Pharmacy prescription order query response",
+      "section": "4.8.17"
+    },
+    "RAR": {
+      "description": "RAR - Pharmacy administration information query response",
+      "section": "4.8.18"
+    },
+    "RDR": {
+      "description": "RDR - Pharmacy dispense information query response",
+      "section": "4.8.19"
+    },
+    "RER": {
+      "description": "RER - Pharmacy encoded order information query response",
+      "section": "4.8.20"
+    },
+    "RGR": {
+      "description": "RGR - Pharmacy dose information query response",
+      "section": "4.8.21"
+    },
+    "S01": {
+      "description": "SRM/SRR - Request new appointment booking",
+      "section": "10.6.3"
+    },
+    "S02": {
+      "description": "SRM/SRR - Request appointment rescheduling",
+      "section": "10.2.2"
+    },
+    "S03": {
+      "description": "SRM/SRR - Request appointment modification",
+      "section": "10.2.3"
+    },
+    "S04": {
+      "description": "SRM/SRR - Request appointment cancellation",
+      "section": "10.2.4"
+    },
+    "S05": {
+      "description": "SRM/SRR - Request appointment discontinuation",
+      "section": "10.2.5"
+    },
+    "S06": {
+      "description": "SRM/SRR - Request appointment deletion",
+      "section": "10.2.6"
+    },
+    "S07": {
+      "description": "SRM/SRR - Request addition of service/resource on appointment",
+      "section": "10.2.7"
+    },
+    "S08": {
+      "description": "SRM/SRR - Request modification of service/resource on appointment",
+      "section": "10.2.8"
+    },
+    "S09": {
+      "description": "SRM/SRR - Request cancellation of service/resource on appointment",
+      "section": "10.2.9"
+    },
+    "S10": {
+      "description": "SRM/SRR - Request discontinuation of service/resource on appointment",
+      "section": "10.2.10"
+    },
+    "S11": {
+      "description": "SRM/SRR - Request deletion of service/resource on appointment",
+      "section": "10.2.11"
+    },
+    "S12": {
+      "description": "SIU/ACK - Notification of new appointment booking",
+      "section": "10.3.1"
+    },
+    "S13": {
+      "description": "SIU/ACK - Notification of appointment rescheduling",
+      "section": "10.6.2"
+    },
+    "S14": {
+      "description": "SIU/ACK - Notification of appointment modification",
+      "section": "10.3.3"
+    },
+    "S15": {
+      "description": "SIU/ACK - Notification of appointment cancellation",
+      "section": "10.3.4"
+    },
+    "S16": {
+      "description": "SIU/ACK - Notification of appointment discontinuation",
+      "section": "10.3.5"
+    },
+    "S17": {
+      "description": "SIU/ACK - Notification of appointment deletion",
+      "section": "10.3.6"
+    },
+    "S18": {
+      "description": "SIU/ACK - Notification of addition of service/resource on appointment",
+      "section": "10.3.7"
+    },
+    "S19": {
+      "description": "SIU/ACK - Notification of modification of service/resource on appointment",
+      "section": "10.3.8"
+    },
+    "S20": {
+      "description": "SIU/ACK - Notification of cancellation of service/resource on appointment",
+      "section": "10.3.9"
+    },
+    "S21": {
+      "description": "SIU/ACK - Notification of discontinuation of service/resource on appointment",
+      "section": "10.3.10"
+    },
+    "S22": {
+      "description": "SIU/ACK - Notification of deletion of service/resource on appointment",
+      "section": "10.3.11"
+    },
+    "S23": {
+      "description": "SIU/ACK - Notification of blocked schedule time slot(s)",
+      "section": "10.3.12"
+    },
+    "S24": {
+      "description": "SIU/ACK - Notification of opened (\u201cunblocked\u201d) schedule time slot(s)",
+      "section": "10.3.13"
+    },
+    "S25": {
+      "description": "SQM/SQR - Schedule query message and response",
+      "section": "10.4.3"
+    },
+    "S26": {
+      "description": "Notification that patient did not show up for schedule appointment",
+      "section": "10.3.14"
+    },
+    "T01": {
+      "description": "MDM/ACK - Original document notification",
+      "section": "9.4.1"
+    },
+    "T02": {
+      "description": "MDM/ACK - Original document notification and content",
+      "section": "9.4.2"
+    },
+    "T03": {
+      "description": "MDM/ACK - Document status change notification",
+      "section": "9.4.3"
+    },
+    "T04": {
+      "description": "MDM/ACK - Document status change notification and content",
+      "section": "9.4.4"
+    },
+    "T05": {
+      "description": "MDM/ACK - Document addendum notification",
+      "section": "9.4.5"
+    },
+    "T06": {
+      "description": "MDM/ACK - Document addendum notification and content",
+      "section": "9.4.6"
+    },
+    "T07": {
+      "description": "MDM/ACK - Document edit notification",
+      "section": "9.4.7"
+    },
+    "T08": {
+      "description": "MDM/ACK - Document edit notification and content",
+      "section": "9.4.8"
+    },
+    "T09": {
+      "description": "MDM/ACK - Document replacement notification",
+      "section": "9.4.9"
+    },
+    "T10": {
+      "description": "MDM/ACK - Document replacement notification and content",
+      "section": "9.4.10"
+    },
+    "T11": {
+      "description": "MDM/ACK - Document cancel notification",
+      "section": "9.4.11"
+    },
+    "T12": {
+      "description": "QRY/DOC - Document query",
+      "section": "9.7.1"
+    },
+    "V01": {
+      "description": "VXQ - Query for vaccination record",
+      "section": "4.12.1"
+    },
+    "V02": {
+      "description": "VXX - Response to vaccination query returning multiple PID matches",
+      "section": "4.12.2"
+    },
+    "V03": {
+      "description": "VXR - Vaccination record response",
+      "section": "4.12.3"
+    },
+    "V04": {
+      "description": "VXU - Unsolicited vaccination record update",
+      "section": "4.12.4"
+    },
+    "W01": {
+      "description": "ORU - Waveform result, unsolicited transmission of requested information",
+      "section": "7.19.1"
+    },
+    "W02": {
+      "description": "QRF - Waveform result, response to query",
+      "section": "7.19.2"
+    }
   }
 }
