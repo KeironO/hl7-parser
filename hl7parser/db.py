@@ -1,0 +1,75 @@
+"""Access for docstring generation."""
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from functools import lru_cache
+
+from hl7parser.aliases import _load
+
+
+@dataclass
+class FieldInfo:
+    position: int
+    name: str
+    section: str = ""
+    table: str = ""
+
+
+@dataclass
+class SegmentInfo:
+    description: str
+    section: str
+    fields: list[FieldInfo] = field(default_factory=list)
+
+
+@dataclass
+class DatatypeInfo:
+    description: str
+    section: str
+
+
+@dataclass
+class MessageInfo:
+    description: str
+    section: str
+
+
+@dataclass
+class VersionDB:
+    segments: dict[str, SegmentInfo]
+    datatypes: dict[str, DatatypeInfo]
+    messages: dict[str, MessageInfo]
+
+
+@lru_cache(maxsize=None)
+def load_db(version: str) -> VersionDB:
+    raw = _load(version)
+
+    segments = {
+        sid: SegmentInfo(
+            description=s["description"],
+            section=s.get("section", ""),
+            fields=[
+                FieldInfo(
+                    position=f["position"],
+                    name=f["name"],
+                    section=f.get("section", ""),
+                    table=f.get("table", ""),
+                )
+                for f in s.get("fields", [])
+            ],
+        )
+        for sid, s in raw.get("segments", {}).items()
+    }
+
+    datatypes = {
+        did: DatatypeInfo(description=d["description"], section=d.get("section", ""))
+        for did, d in raw.get("datatypes", {}).items()
+    }
+
+    messages = {
+        mid: MessageInfo(description=m["description"], section=m.get("section", ""))
+        for mid, m in raw.get("messages", {}).items()
+    }
+
+    return VersionDB(segments=segments, datatypes=datatypes, messages=messages)

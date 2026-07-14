@@ -1,4 +1,5 @@
 from hl7parser.consts import FIELD_INDENT, WILDCARD_SEGMENTS
+from hl7parser.db import load_db
 from hl7parser.generators.multi_field import make_member_field
 from hl7parser.helpers.name import cardinality, group_class_name, group_field_name
 from hl7parser.helpers.string import docstring
@@ -6,7 +7,7 @@ from hl7parser.ir import MessageDef
 
 
 def generate_message(
-    msg: MessageDef, known_segments: set[str], known_groups: set[str], *, for_hl7types: bool = False
+    msg: MessageDef, known_segments: set[str], known_groups: set[str], *, for_hl7types: bool = False, version: str = "2.5"
 ) -> str:
     segment_imports: set[str] = set()
     group_imports: set[str] = set()
@@ -99,7 +100,13 @@ def generate_message(
     out.append("")
     base = "HL7Model" if for_hl7types else "BaseModel"
     out.append(f"class {msg.name}({base}):")
-    out.extend(docstring(f"HL7 v2 {msg.name} message.", "Attributes", doc_entries))
+    db_msg = load_db(version).messages.get(msg.name)
+    if db_msg and db_msg.description:
+        sec = f" (§{db_msg.section})" if db_msg.section else ""
+        headline = f"{db_msg.description}{sec}."
+    else:
+        headline = f"HL7 v2 {msg.name} message."
+    out.extend(docstring(headline, "Attributes", doc_entries))
     out.append("")
     if lines:
         out.extend(lines)

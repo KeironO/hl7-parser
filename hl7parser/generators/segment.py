@@ -1,4 +1,5 @@
 from hl7parser.consts import DELIM_DEF_SEGMENTS, DELIM_DEFAULTS, FIELD_INDENT, PRIMITIVE_PYTHON_TYPE, STRING_PRIMITIVE_DATATYPES
+from hl7parser.db import load_db
 from hl7parser.generators.multi_field import make_field
 from hl7parser.helpers.name import cardinality, field_name, xml_to_field_name
 from hl7parser.helpers.string import numpy_docstring
@@ -31,6 +32,9 @@ def generate_segment(
     seen_field_names: dict[str, int] = {}
     validator_fields: dict[str, list[str]] = {}
     pre_v25 = not _is_v25_or_later(version)
+
+    db_seg = load_db(version).segments.get(seg.name)
+    db_fields_by_pos = {f.position: f for f in db_seg.fields} if db_seg else {}
 
     for field in seg.fields:
         vkey = None
@@ -68,6 +72,16 @@ def generate_segment(
         desc = f"{field.xml_name} ({', '.join(flags)}) - {field.long_name} ({field.field_type})"
         if effective_min != field.min_occurs:
             desc += f" [optional: {field.field_type} has no required components]"
+        try:
+            pos = int(field.xml_name.rsplit(".", 1)[-1])
+            db_field = db_fields_by_pos.get(pos)
+        except (ValueError, IndexError):
+            db_field = None
+        if db_field:
+            if db_field.section:
+                desc += f" §{db_field.section}"
+            if db_field.table:
+                desc += f" | {db_field.table}"
         doc_entries.append((fname, ann, desc))
 
         pos_suffix = field.xml_name.rsplit(".", 1)[-1]
@@ -132,7 +146,12 @@ def generate_segment(
     out.append("")
     base = "HL7Model" if for_hl7types else "BaseModel"
     out.append(f"class {seg.name}({base}):")
-    out.extend(numpy_docstring(f"HL7 v2 {seg.name} segment.", doc_entries))
+    if db_seg and db_seg.description:
+        sec = f" (§{db_seg.section})" if db_seg.section else ""
+        headline = f"{db_seg.description}{sec}."
+    else:
+        headline = f"HL7 v2 {seg.name} segment."
+    out.extend(numpy_docstring(headline, doc_entries))
     out.append("")
     if fields:
         for i, field_lines in enumerate(fields):

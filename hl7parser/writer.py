@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from hl7parser.aliases import derive_aliases
 from hl7parser.consts import HL7_NS, STRING_PRIMITIVE_DATATYPES
 from hl7parser.generators import (
     generate_datatype,
@@ -35,6 +36,11 @@ def _file_header(class_name: str, class_type: str, version: str) -> str:
 
 def _write(path: Path, class_name: str, class_type: str, version: str, source: str) -> None:
     path.write_text(_file_header(class_name, class_type, version) + source)
+
+
+def _write_alias(path: Path, alias: str, canonical: str, class_type: str, version: str) -> None:
+    source = f"from __future__ import annotations\n\nfrom .{canonical} import {canonical} as {alias}\n"
+    path.write_text(_file_header(alias, class_type, version) + source)
 
 
 def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False) -> None:
@@ -104,15 +110,25 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
     # messages
     msg_dir = version_dir / "messages"
     msg_dir.mkdir(exist_ok=True)
+    canonical_names = {msg.name for msg in ir.messages}
     for msg in ir.messages:
         _write(
             msg_dir / f"{msg.name}.py",
             msg.name,
             "Message",
             ir.version,
-            generate_message(msg, all_seg_names, all_group_names, for_hl7types=for_hl7types),
+            generate_message(msg, all_seg_names, all_group_names, for_hl7types=for_hl7types, version=ir.version),
         )
-    msg_names = [msg.name for msg in ir.messages]
+
+    aliases = {
+        alias: canonical
+        for alias, canonical in derive_aliases(ir.version).items()
+        if canonical in canonical_names
+    }
+    for alias, canonical in sorted(aliases.items()):
+        _write_alias(msg_dir / f"{alias}.py", alias, canonical, "Message", ir.version)
+
+    msg_names = sorted(canonical_names | set(aliases))
     (msg_dir / "__init__.py").write_text(generate_init(msg_names))
     (msg_dir / "__init__.pyi").write_text(generate_init_stub(msg_names))
 
@@ -125,5 +141,6 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
         f"{len(ir.datatypes)} datatypes, "
         f"{len(ir.segments)} segments, "
         f"{len(ir.groups)} groups, "
-        f"{len(ir.messages)} messages"
+        f"{len(ir.messages)} messages, "
+        f"{len(aliases)} aliases"
     )

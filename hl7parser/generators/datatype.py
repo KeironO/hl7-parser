@@ -1,4 +1,5 @@
 from hl7parser.consts import FIELD_INDENT, PRIMITIVE_PYTHON_TYPE, STRING_PRIMITIVE_DATATYPES
+from hl7parser.db import load_db
 from hl7parser.generators.multi_field import make_field
 from hl7parser.helpers.name import cardinality, field_name, xml_to_field_name
 from hl7parser.helpers.string import numpy_docstring
@@ -109,7 +110,13 @@ def generate_datatype(
     out.append("")
     base = "HL7Model" if for_hl7types else "BaseModel"
     out.append(f"class {dt.name}({base}):")
-    out.extend(numpy_docstring(f"HL7 v2 {dt.name} data type.", doc_entries))
+    db_dt = load_db(version).datatypes.get(dt.name)
+    if db_dt and db_dt.description:
+        sec = f" (§{db_dt.section})" if db_dt.section else ""
+        headline = f"{db_dt.description.capitalize()}{sec}."
+    else:
+        headline = f"HL7 v2 {dt.name} data type."
+    out.extend(numpy_docstring(headline, doc_entries))
     out.append("")
     if fields:
         for i, field_lines in enumerate(fields):

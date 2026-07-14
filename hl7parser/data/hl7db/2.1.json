@@ -1,0 +1,2223 @@
+{
+  "aliases": {},
+  "segments": {
+    "ACC": {
+      "description": "ACCIDENT",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "ACCIDENT DATE/TIME",
+          "section": "6-3"
+        },
+        {
+          "position": 2,
+          "name": "ACCIDENT CODE",
+          "table": "0050 - ACCIDENT CODE"
+        },
+        {
+          "position": 3,
+          "name": "ACCIDENT LOCATION"
+        }
+      ]
+    },
+    "ADD": {
+      "description": "ADDENDUM",
+      "section": "2.5.1",
+      "fields": [
+        {
+          "position": 1,
+          "name": "ADDENDUM CONTINUATION POINTER",
+          "section": "2-39"
+        }
+      ]
+    },
+    "BHS": {
+      "description": "BATCH HEADER",
+      "section": "2.5.2",
+      "fields": [
+        {
+          "position": 1,
+          "name": "BATCH FIELD SEPARATOR",
+          "section": "2-40"
+        },
+        {
+          "position": 2,
+          "name": "BATCH ENCODING CHARACTERS"
+        },
+        {
+          "position": 3,
+          "name": "BATCH SENDING APPLICATION"
+        },
+        {
+          "position": 4,
+          "name": "BATCH SENDING FACILITY"
+        },
+        {
+          "position": 5,
+          "name": "BATCH RECEIVING APPLICATION"
+        },
+        {
+          "position": 6,
+          "name": "BATCH RECEIVING FACILITY"
+        },
+        {
+          "position": 7,
+          "name": "BATCH CREATION DATE/TIME"
+        },
+        {
+          "position": 8,
+          "name": "BATCH SECURITY"
+        },
+        {
+          "position": 9,
+          "name": "BATCH NAME/ID/TYPE"
+        },
+        {
+          "position": 10,
+          "name": "BATCH COMMENT"
+        },
+        {
+          "position": 11,
+          "name": "BATCH CONTROL ID"
+        },
+        {
+          "position": 12,
+          "name": "REFERENCE BATCH CONTROL ID"
+        }
+      ]
+    },
+    "BLG": {
+      "description": "BILLING",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "WHEN TO CHARGE",
+          "section": "4-12",
+          "table": "0100 - WHEN TO CHARGE"
+        },
+        {
+          "position": 2,
+          "name": "CHARGE TYPE",
+          "table": "0122 - CHARGE TYPE"
+        },
+        {
+          "position": 3,
+          "name": "ACCOUNT ID"
+        }
+      ]
+    },
+    "BTS": {
+      "description": "BATCH TRAILER",
+      "section": "2.5.3",
+      "fields": [
+        {
+          "position": 1,
+          "name": "BATCH MESSAGE COUNT",
+          "section": "2-41"
+        },
+        {
+          "position": 2,
+          "name": "BATCH COMMENT"
+        },
+        {
+          "position": 3,
+          "name": "BATCH TOTALS"
+        }
+      ]
+    },
+    "DG1": {
+      "description": "DIAGNOSIS",
+      "section": "6.3.2",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - DIAGNOSIS",
+          "section": "6-3"
+        },
+        {
+          "position": 2,
+          "name": "DIAGNOSIS CODING METHOD",
+          "table": "0053 - DIAGNOSIS CODING METHOD"
+        },
+        {
+          "position": 3,
+          "name": "DIAGNOSIS CODE",
+          "table": "0051 - DIAGNOSIS CODE"
+        },
+        {
+          "position": 4,
+          "name": "DIAGNOSIS DESCRIPTION"
+        },
+        {
+          "position": 5,
+          "name": "DIAGNOSIS DATE/TIME"
+        },
+        {
+          "position": 6,
+          "name": "DIAGNOSIS/DRG TYPE",
+          "table": "0052 - DIAGNOSIS TYPE"
+        },
+        {
+          "position": 7,
+          "name": "MAJOR DIAGNOSTIC CATEGORY",
+          "table": "0118 - MAJOR DIAGNOSTIC CATEGORY"
+        },
+        {
+          "position": 8,
+          "name": "DIAGNOSTIC RELATED GROUP",
+          "table": "0055 - DRG CODE"
+        },
+        {
+          "position": 9,
+          "name": "DRG APPROVAL INDICATOR"
+        },
+        {
+          "position": 10,
+          "name": "DRG GROUPER REVIEW CODE",
+          "table": "0056 - DRG GROUPER REVIEW CODE"
+        },
+        {
+          "position": 11,
+          "name": "OUTLIER TYPE",
+          "table": "0083 - OUTLIER TYPE"
+        },
+        {
+          "position": 12,
+          "name": "OUTLIER DAYS"
+        },
+        {
+          "position": 13,
+          "name": "OUTLIER COST"
+        },
+        {
+          "position": 14,
+          "name": "GROUPER VERSION AND TYPE"
+        }
+      ]
+    },
+    "DSC": {
+      "description": "CONTINUATION POINTER",
+      "section": "5.3.1",
+      "fields": [
+        {
+          "position": 1,
+          "name": "CONTINUATION POINTER"
+        }
+      ]
+    },
+    "DSP": {
+      "description": "DISPLAY DATA",
+      "section": "5.3.2",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - DISPLAY DATA"
+        },
+        {
+          "position": 2,
+          "name": "DISPLAY LEVEL"
+        },
+        {
+          "position": 3,
+          "name": "DATA LINE"
+        },
+        {
+          "position": 4,
+          "name": "LOGICAL BREAK POINT"
+        },
+        {
+          "position": 5,
+          "name": "RESULT ID"
+        }
+      ]
+    },
+    "ERR": {
+      "description": "ERROR",
+      "section": "2.5.4",
+      "fields": [
+        {
+          "position": 1,
+          "name": "ERROR CODE AND LOCATION",
+          "section": "2-42",
+          "table": "0060 - ERROR CODE"
+        }
+      ]
+    },
+    "EVN": {
+      "description": "EVENT TYPE",
+      "section": "3.3.1",
+      "fields": [
+        {
+          "position": 1,
+          "name": "EVENT TYPE CODE",
+          "section": "3-11",
+          "table": "0003 - EVENT TYPE CODE"
+        },
+        {
+          "position": 2,
+          "name": "DATE/TIME OF EVENT"
+        },
+        {
+          "position": 3,
+          "name": "DATE/TIME PLANNED EVENT"
+        },
+        {
+          "position": 4,
+          "name": "EVENT REASON CODE",
+          "table": "0062 - EVENT REASON"
+        }
+      ]
+    },
+    "FHS": {
+      "description": "FILE HEADER",
+      "section": "2.5.5",
+      "fields": [
+        {
+          "position": 1,
+          "name": "FILE FIELD SEPARATOR",
+          "section": "2-43"
+        },
+        {
+          "position": 2,
+          "name": "FILE ENCODING CHARACTERS"
+        },
+        {
+          "position": 3,
+          "name": "FILE SENDING APPLICATION"
+        },
+        {
+          "position": 4,
+          "name": "FILE SENDING FACILITY"
+        },
+        {
+          "position": 5,
+          "name": "FILE RECEIVING APPLICATION"
+        },
+        {
+          "position": 6,
+          "name": "FILE RECEIVING FACILITY"
+        },
+        {
+          "position": 7,
+          "name": "DATE/TIME OF FILE CREATION"
+        },
+        {
+          "position": 8,
+          "name": "FILE SECURITY"
+        },
+        {
+          "position": 9,
+          "name": "FILE NAME/ID"
+        },
+        {
+          "position": 10,
+          "name": "FILE HEADER COMMENT"
+        },
+        {
+          "position": 11,
+          "name": "FILE CONTROL ID"
+        },
+        {
+          "position": 12,
+          "name": "REFERENCE FILE CONTROL ID"
+        }
+      ]
+    },
+    "FT1": {
+      "description": "FINANCIAL TRANSACTION",
+      "section": "6.3.3",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - FINANCIAL TRANSACTION",
+          "section": "6-5"
+        },
+        {
+          "position": 2,
+          "name": "TRANSACTION ID"
+        },
+        {
+          "position": 3,
+          "name": "TRANSACTION BATCH ID"
+        },
+        {
+          "position": 4,
+          "name": "TRANSACTION DATE"
+        },
+        {
+          "position": 5,
+          "name": "TRANSACTION POSTING DATE"
+        },
+        {
+          "position": 6,
+          "name": "TRANSACTION TYPE",
+          "table": "0017 - TRANSACTION TYPE"
+        },
+        {
+          "position": 7,
+          "name": "TRANSACTION CODE",
+          "table": "0096 - FINANCIAL TRANSACTION CODE"
+        },
+        {
+          "position": 8,
+          "name": "TRANSACTION DESCRIPTION"
+        },
+        {
+          "position": 9,
+          "name": "TRANSACTION DESCRIPTION - ALT"
+        },
+        {
+          "position": 10,
+          "name": "TRANSACTION AMOUNT - EXTENDED"
+        },
+        {
+          "position": 11,
+          "name": "TRANSACTION QUANTITY"
+        },
+        {
+          "position": 12,
+          "name": "TRANSACTION AMOUNT - UNIT"
+        },
+        {
+          "position": 13,
+          "name": "DEPARTMENT CODE",
+          "table": "0049 - DEPARTMENT CODE"
+        },
+        {
+          "position": 14,
+          "name": "INSURANCE PLAN ID",
+          "table": "0072 - INS. PLAN ID"
+        },
+        {
+          "position": 15,
+          "name": "INSURANCE AMOUNT"
+        },
+        {
+          "position": 16,
+          "name": "PATIENT LOCATION",
+          "table": "0079 - LOCATION"
+        },
+        {
+          "position": 17,
+          "name": "FEE SCHEDULE",
+          "table": "0024 - FEE SCHEDULE"
+        },
+        {
+          "position": 18,
+          "name": "PATIENT TYPE",
+          "table": "0018 - PATIENT TYPE"
+        },
+        {
+          "position": 19,
+          "name": "DIAGNOSIS CODE",
+          "table": "0051 - DIAGNOSIS CODE"
+        },
+        {
+          "position": 20,
+          "name": "PERFORMED BY CODE",
+          "table": "0084 - PERFORMED BY"
+        },
+        {
+          "position": 21,
+          "name": "ORDERED BY CODE"
+        },
+        {
+          "position": 22,
+          "name": "UNIT COST"
+        }
+      ]
+    },
+    "FTS": {
+      "description": "FILE TRAILER",
+      "section": "2.5.6",
+      "fields": [
+        {
+          "position": 1,
+          "name": "FILE BATCH COUNT",
+          "section": "2-44"
+        },
+        {
+          "position": 2,
+          "name": "FILE TRAILER COMMENT"
+        }
+      ]
+    },
+    "GT1": {
+      "description": "GUARANTOR",
+      "section": "6.3.4",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - GUARANTOR",
+          "section": "6-8"
+        },
+        {
+          "position": 2,
+          "name": "GUARANTOR NUMBER"
+        },
+        {
+          "position": 3,
+          "name": "GUARANTOR NAME"
+        },
+        {
+          "position": 4,
+          "name": "GUARANTOR SPOUSE NAME"
+        },
+        {
+          "position": 5,
+          "name": "GUARANTOR ADDRESS"
+        },
+        {
+          "position": 6,
+          "name": "GUARANTOR PH. NUM.- HOME"
+        },
+        {
+          "position": 7,
+          "name": "GUARANTOR PH. NUM-BUSINESS"
+        },
+        {
+          "position": 8,
+          "name": "GUARANTOR DATE OF BIRTH"
+        },
+        {
+          "position": 9,
+          "name": "GUARANTOR SEX",
+          "table": "0001 - SEX"
+        },
+        {
+          "position": 10,
+          "name": "GUARANTOR TYPE",
+          "table": "0068 - GUARANTOR TYPE"
+        },
+        {
+          "position": 11,
+          "name": "GUARANTOR RELATIONSHIP",
+          "table": "0063 - RELATIONSHIP"
+        },
+        {
+          "position": 12,
+          "name": "GUARANTOR SSN"
+        },
+        {
+          "position": 13,
+          "name": "GUARANTOR DATE - BEGIN"
+        },
+        {
+          "position": 14,
+          "name": "GUARANTOR DATE - END"
+        },
+        {
+          "position": 15,
+          "name": "GUARANTOR PRIORITY"
+        },
+        {
+          "position": 16,
+          "name": "GUARANTOR EMPLOYER NAME"
+        },
+        {
+          "position": 17,
+          "name": "GUARANTOR EMPLOYER ADDRESS"
+        },
+        {
+          "position": 18,
+          "name": "GUARANTOR EMPLOY PHONE #"
+        },
+        {
+          "position": 19,
+          "name": "GUARANTOR EMPLOYEE ID NUM"
+        },
+        {
+          "position": 20,
+          "name": "GUARANTOR EMPLOYMENT STATUS",
+          "table": "0066 - EMPLOYMENT STATUS"
+        }
+      ]
+    },
+    "IN1": {
+      "description": "INSURANCE",
+      "section": "6.3.5",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - INSURANCE",
+          "section": "6-10"
+        },
+        {
+          "position": 2,
+          "name": "INSURANCE PLAN ID",
+          "table": "0072 - INS. PLAN ID"
+        },
+        {
+          "position": 3,
+          "name": "INSURANCE COMPANY ID"
+        },
+        {
+          "position": 4,
+          "name": "INSURANCE COMPANY NAME"
+        },
+        {
+          "position": 5,
+          "name": "INSURANCE COMPANY ADDRESS"
+        },
+        {
+          "position": 6,
+          "name": "INSURANCE CO. CONTACT PERS"
+        },
+        {
+          "position": 7,
+          "name": "INSURANCE CO PHONE NUMBER"
+        },
+        {
+          "position": 8,
+          "name": "GROUP NUMBER"
+        },
+        {
+          "position": 9,
+          "name": "GROUP NAME"
+        },
+        {
+          "position": 10,
+          "name": "INSURED'S GROUP EMP. ID"
+        },
+        {
+          "position": 11,
+          "name": "INSURED'S GROUP EMP. NAME"
+        },
+        {
+          "position": 12,
+          "name": "PLAN EFFECTIVE DATE"
+        },
+        {
+          "position": 13,
+          "name": "PLAN EXPIRATION DATE"
+        },
+        {
+          "position": 14,
+          "name": "AUTHORIZATION INFORMATION"
+        },
+        {
+          "position": 15,
+          "name": "PLAN TYPE",
+          "table": "0086 - INS. PLAN TYPE"
+        },
+        {
+          "position": 16,
+          "name": "NAME OF INSURED"
+        },
+        {
+          "position": 17,
+          "name": "INSURED'S RELATIONSHIP TO PATIENT",
+          "table": "0063 - RELATIONSHIP"
+        },
+        {
+          "position": 18,
+          "name": "INSURED'S DATE OF BIRTH"
+        },
+        {
+          "position": 19,
+          "name": "INSURED'S ADDRESS"
+        },
+        {
+          "position": 20,
+          "name": "ASSIGNMENT OF BENEFITS"
+        },
+        {
+          "position": 21,
+          "name": "COORDINATION OF BENEFITS"
+        },
+        {
+          "position": 22,
+          "name": "COORD OF BEN. PRIORITY"
+        },
+        {
+          "position": 23,
+          "name": "NOTICE OF ADMISSION CODE",
+          "table": "0081 - NOTICE OF ADMISSION"
+        },
+        {
+          "position": 24,
+          "name": "NOTICE OF ADMISSION DATE"
+        },
+        {
+          "position": 25,
+          "name": "RPT OF ELIGIBILITY CODE",
+          "table": "0094 - REPORT OF ELIGIBILITY"
+        },
+        {
+          "position": 26,
+          "name": "RPT OF ELIGIBILITY DATE"
+        },
+        {
+          "position": 27,
+          "name": "RELEASE INFORMATION CODE",
+          "table": "0093 - RELEASE OF INFORMATION"
+        },
+        {
+          "position": 28,
+          "name": "PRE-ADMIT CERT. (PAC)"
+        },
+        {
+          "position": 29,
+          "name": "VERIFICATION DATE"
+        },
+        {
+          "position": 30,
+          "name": "VERIFICATION BY"
+        },
+        {
+          "position": 31,
+          "name": "TYPE OF AGREEMENT CODE",
+          "table": "0098 - TYPE OF AGREEMENT CODE"
+        },
+        {
+          "position": 32,
+          "name": "BILLING STATUS",
+          "table": "0022 - BILLING STATUS"
+        },
+        {
+          "position": 33,
+          "name": "LIFETIME RESERVE DAYS"
+        },
+        {
+          "position": 34,
+          "name": "DELAY BEFORE L. R. DAY"
+        },
+        {
+          "position": 35,
+          "name": "COMPANY PLAN CODE",
+          "table": "0042 - INS. COMPANY PLAN CODE"
+        },
+        {
+          "position": 36,
+          "name": "POLICY NUMBER"
+        },
+        {
+          "position": 37,
+          "name": "POLICY DEDUCTIBLE"
+        },
+        {
+          "position": 38,
+          "name": "POLICY LIMIT - AMOUNT"
+        },
+        {
+          "position": 39,
+          "name": "POLICY LIMIT - DAYS"
+        },
+        {
+          "position": 40,
+          "name": "ROOM RATE - SEMI-PRIVATE"
+        },
+        {
+          "position": 41,
+          "name": "ROOM RATE - PRIVATE"
+        },
+        {
+          "position": 42,
+          "name": "INSURED'S EMPLOYMENT STATUS",
+          "table": "0066 - EMPLOYMENT STATUS"
+        },
+        {
+          "position": 43,
+          "name": "INSURED'S SEX",
+          "table": "0001 - SEX"
+        },
+        {
+          "position": 44,
+          "name": "INSURED'S EMPLOYER ADDRESS"
+        }
+      ]
+    },
+    "MRG": {
+      "description": "MERGE PATIENT INFORMATION",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "PRIOR PATIENT ID - INTERNAL",
+          "section": "3-13",
+          "table": "0061 - CHECK DIGIT SCHEME"
+        },
+        {
+          "position": 2,
+          "name": "PRIOR ALTERNATE PATIENT ID",
+          "table": "0061 - CHECK DIGIT SCHEME"
+        },
+        {
+          "position": 3,
+          "name": "PRIOR PATIENT ACCOUNT NUMBER",
+          "table": "0061 - CHECK DIGIT SCHEME"
+        }
+      ]
+    },
+    "MSA": {
+      "description": "MESSAGE ACKNOWLEDGMENT",
+      "section": "2.5.7",
+      "fields": [
+        {
+          "position": 1,
+          "name": "ACKNOWLEDGMENT CODE",
+          "section": "2-45",
+          "table": "0008 - ACKNOWLEDGMENT CODE"
+        },
+        {
+          "position": 2,
+          "name": "MESSAGE CONTROL ID"
+        },
+        {
+          "position": 3,
+          "name": "TEXT MESSAGE"
+        },
+        {
+          "position": 4,
+          "name": "EXPECTED SEQUENCE NUMBER"
+        },
+        {
+          "position": 5,
+          "name": "DELAYED ACKNOWLEDGMENT TYPE",
+          "table": "0102 - DELAYED ACKNOWLEDGMENT TYPE"
+        }
+      ]
+    },
+    "MSH": {
+      "description": "MESSAGE HEADER",
+      "section": "2.5.8",
+      "fields": [
+        {
+          "position": 1,
+          "name": "FIELD SEPARATOR",
+          "section": "2-46"
+        },
+        {
+          "position": 2,
+          "name": "ENCODING CHARACTERS"
+        },
+        {
+          "position": 3,
+          "name": "SENDING APPLICATION"
+        },
+        {
+          "position": 4,
+          "name": "SENDING FACILITY"
+        },
+        {
+          "position": 5,
+          "name": "RECEIVING APPLICATION"
+        },
+        {
+          "position": 6,
+          "name": "RECEIVING FACILITY"
+        },
+        {
+          "position": 7,
+          "name": "DATE/TIME OF MESSAGE"
+        },
+        {
+          "position": 8,
+          "name": "Security"
+        },
+        {
+          "position": 9,
+          "name": "MESSAGE TYPE",
+          "table": "0076 - MESSAGE TYPE"
+        },
+        {
+          "position": 10,
+          "name": "MESSAGE CONTROL ID"
+        },
+        {
+          "position": 11,
+          "name": "PROCESSING ID",
+          "table": "0103 - PROCESSING ID"
+        },
+        {
+          "position": 12,
+          "name": "VERSION ID",
+          "table": "0104 - VERSION CONTROL TABLE"
+        },
+        {
+          "position": 13,
+          "name": "SEQUENCE NUMBER"
+        },
+        {
+          "position": 14,
+          "name": "CONTINUATION POINTER"
+        }
+      ]
+    },
+    "NCK": {
+      "description": "SYSTEM CLOCK",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SYSTEM DATE/TIME"
+        }
+      ]
+    },
+    "NK1": {
+      "description": "NEXT OF KIN",
+      "section": "6.3.6",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - NEXT OF KIN",
+          "section": "3-23, 6-15"
+        },
+        {
+          "position": 2,
+          "name": "NEXT OF KIN NAME"
+        },
+        {
+          "position": 3,
+          "name": "NEXT OF KIN RELATIONSHIP",
+          "table": "0063 - RELATIONSHIP"
+        },
+        {
+          "position": 4,
+          "name": "NEXT OF KIN - ADDRESS"
+        },
+        {
+          "position": 5,
+          "name": "NEXT OF KIN - PHONE NUMBER"
+        }
+      ]
+    },
+    "NPU": {
+      "description": "NON-PATIENT UPDATE",
+      "section": "3.3.5",
+      "fields": [
+        {
+          "position": 1,
+          "name": "BED LOCATION",
+          "section": "3-22",
+          "table": "0079 - LOCATION"
+        },
+        {
+          "position": 2,
+          "name": "BED STATUS",
+          "table": "0116 - BED STATUS"
+        }
+      ]
+    },
+    "NSC": {
+      "description": "STATUS CHANGE",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "NETWORK CHANGE TYPE"
+        },
+        {
+          "position": 2,
+          "name": "CURRENT CPU"
+        },
+        {
+          "position": 3,
+          "name": "CURRENT FILESERVER"
+        },
+        {
+          "position": 4,
+          "name": "CURRENT APPLICATION"
+        },
+        {
+          "position": 5,
+          "name": "CURRENT FACILITY"
+        },
+        {
+          "position": 6,
+          "name": "NEW CPU"
+        },
+        {
+          "position": 7,
+          "name": "NEW FILESERVER"
+        },
+        {
+          "position": 8,
+          "name": "NEW APPLICATION"
+        },
+        {
+          "position": 9,
+          "name": "NEW FACILITY"
+        }
+      ]
+    },
+    "NST": {
+      "description": "STATISTICS",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "STATISTICS AVAILABLE"
+        },
+        {
+          "position": 2,
+          "name": "SOURCE IDENTIFIER"
+        },
+        {
+          "position": 3,
+          "name": "SOURCE TYPE"
+        },
+        {
+          "position": 4,
+          "name": "STATISTICS START"
+        },
+        {
+          "position": 5,
+          "name": "STATISTICS END"
+        },
+        {
+          "position": 6,
+          "name": "RECEIVE CHARACTER COUNT"
+        },
+        {
+          "position": 7,
+          "name": "SEND CHARACTER COUNT"
+        },
+        {
+          "position": 8,
+          "name": "MESSAGES RECEIVED"
+        },
+        {
+          "position": 9,
+          "name": "MESSAGES SENT"
+        },
+        {
+          "position": 10,
+          "name": "CHECKSUM ERRORS RECEIVED"
+        },
+        {
+          "position": 11,
+          "name": "LENGTH ERRORS RECEIVED"
+        },
+        {
+          "position": 12,
+          "name": "OTHER ERRORS RECEIVED"
+        },
+        {
+          "position": 13,
+          "name": "CONNECT TIMEOUTS"
+        },
+        {
+          "position": 14,
+          "name": "RECEIVE TIMEOUTS"
+        },
+        {
+          "position": 15,
+          "name": "NETWORK ERRORS"
+        }
+      ]
+    },
+    "NTE": {
+      "description": "NOTES AND COMMENTS",
+      "section": "2.5.9",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - NOTES AND COMMENTS",
+          "section": "2-49"
+        },
+        {
+          "position": 2,
+          "name": "SOURCE OF COMMENT",
+          "table": "0105 - SOURCE OF COMMENT"
+        },
+        {
+          "position": 3,
+          "name": "COMMENT"
+        }
+      ]
+    },
+    "OBR": {
+      "description": "OBSERVATION REQUEST",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - OBSERVATION REQUEST",
+          "section": "7-4"
+        },
+        {
+          "position": 2,
+          "name": "PLACER ORDER #"
+        },
+        {
+          "position": 3,
+          "name": "FILLER ORDER #"
+        },
+        {
+          "position": 4,
+          "name": "UNIVERSAL SERVICE IDENT."
+        },
+        {
+          "position": 5,
+          "name": "PRIORITY"
+        },
+        {
+          "position": 6,
+          "name": "REQUESTED DATE-TIME"
+        },
+        {
+          "position": 7,
+          "name": "OBSERVATION DATE/TIME"
+        },
+        {
+          "position": 8,
+          "name": "OBSERVATION END DATE/TIME"
+        },
+        {
+          "position": 9,
+          "name": "COLLECTION VOLUME",
+          "table": "0036 - UNITS OF MEASURE - ISO528,1977"
+        },
+        {
+          "position": 10,
+          "name": "COLLECTOR IDENTIFIER"
+        },
+        {
+          "position": 11,
+          "name": "SPECIMEN ACTION CODE",
+          "table": "0065 - ACTION CODE"
+        },
+        {
+          "position": 12,
+          "name": "DANGER CODE",
+          "table": "0047 - DANGER CODE"
+        },
+        {
+          "position": 13,
+          "name": "RELEVANT CLINICAL INFO."
+        },
+        {
+          "position": 14,
+          "name": "SPECIMEN RECEIVED DATE/TIME"
+        },
+        {
+          "position": 15,
+          "name": "SPECIMEN SOURCE",
+          "table": "0070 - SOURCE OF SPECIMEN"
+        },
+        {
+          "position": 16,
+          "name": "ORDERING PROVIDER",
+          "table": "0010 - PHYSICIAN ID"
+        },
+        {
+          "position": 17,
+          "name": "ORDER CALL-BACK PHONE NUM"
+        },
+        {
+          "position": 18,
+          "name": "PLACERS FIELD #1"
+        },
+        {
+          "position": 19,
+          "name": "PLACERS FIELD #2"
+        },
+        {
+          "position": 20,
+          "name": "FILLERS FIELD #1"
+        },
+        {
+          "position": 21,
+          "name": "FILLERS FIELD #2"
+        },
+        {
+          "position": 22,
+          "name": "RESULTS RPT/STATUS CHNG - DATE/T"
+        },
+        {
+          "position": 23,
+          "name": "CHARGE TO PRACTICE"
+        },
+        {
+          "position": 24,
+          "name": "DIAGNOSTIC SERV SECT ID",
+          "table": "0074 - DIAGNOSTIC SERVICE SECTION ID"
+        },
+        {
+          "position": 25,
+          "name": "RESULT STATUS",
+          "table": "0123 - RESULT STATUS - OBR"
+        },
+        {
+          "position": 26,
+          "name": "LINKED RESULTS"
+        },
+        {
+          "position": 27,
+          "name": "QUANTITY/TIMING"
+        },
+        {
+          "position": 28,
+          "name": "RESULT COPIES TO"
+        },
+        {
+          "position": 29,
+          "name": "PARENT ACCESSION #"
+        },
+        {
+          "position": 30,
+          "name": "TRANSPORTATION MODE",
+          "table": "0124 - TRANSPORTATION MODE"
+        },
+        {
+          "position": 31,
+          "name": "REASON FOR STUDY"
+        },
+        {
+          "position": 32,
+          "name": "PRINCIPAL RESULT INTERPRETER"
+        },
+        {
+          "position": 33,
+          "name": "ASSISTANT RESULT INTERPRETER"
+        },
+        {
+          "position": 34,
+          "name": "TECHNICIAN"
+        },
+        {
+          "position": 35,
+          "name": "TRANSCRIPTIONIST"
+        },
+        {
+          "position": 36,
+          "name": "SCHEDULED - DATE/TIME"
+        }
+      ]
+    },
+    "OBX": {
+      "description": "RESULT",
+      "section": "7.3.1",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - OBSERVATION SIMPLE",
+          "section": "7-14"
+        },
+        {
+          "position": 2,
+          "name": "VALUE TYPE",
+          "table": "0125 - VALUE TYPE"
+        },
+        {
+          "position": 3,
+          "name": "OBSERVATION IDENTIFIER"
+        },
+        {
+          "position": 4,
+          "name": "OBSERVATION SUB-ID"
+        },
+        {
+          "position": 5,
+          "name": "OBSERVATION RESULTS"
+        },
+        {
+          "position": 6,
+          "name": "UNITS"
+        },
+        {
+          "position": 7,
+          "name": "REFERENCES RANGE"
+        },
+        {
+          "position": 8,
+          "name": "ABNORMAL FLAGS",
+          "table": "0078 - ABNORMAL FLAGS"
+        },
+        {
+          "position": 9,
+          "name": "PROBABILITY"
+        },
+        {
+          "position": 10,
+          "name": "NATURE OF ABNORMAL TEST",
+          "table": "0080 - NATURE OF ABNORMAL TESTING"
+        },
+        {
+          "position": 11,
+          "name": "OBSERV RESULT STATUS",
+          "table": "0085 - OBSERVATION RESULT STATUS"
+        },
+        {
+          "position": 12,
+          "name": "DATE LAST OBS NORMAL VALUES"
+        }
+      ]
+    },
+    "ORC": {
+      "description": "COMMON ORDER",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "ORDER CONTROL",
+          "section": "4-4",
+          "table": "0119 - ORDER CONTROL"
+        },
+        {
+          "position": 2,
+          "name": "PLACER ORDER #"
+        },
+        {
+          "position": 3,
+          "name": "FILLER ORDER #"
+        },
+        {
+          "position": 4,
+          "name": "PLACER GROUP #"
+        },
+        {
+          "position": 5,
+          "name": "ORDER STATUS",
+          "table": "0038 - ORDER STATUS"
+        },
+        {
+          "position": 6,
+          "name": "RESPONSE FLAG",
+          "table": "0121 - RESPONSE FLAG"
+        },
+        {
+          "position": 7,
+          "name": "TIMING/QUANTITY"
+        },
+        {
+          "position": 8,
+          "name": "PARENT"
+        },
+        {
+          "position": 9,
+          "name": "DATE/TIME OF TRANSACTION"
+        },
+        {
+          "position": 10,
+          "name": "ENTERED BY"
+        },
+        {
+          "position": 11,
+          "name": "VERIFIED BY"
+        },
+        {
+          "position": 12,
+          "name": "ORDERING PROVIDER"
+        },
+        {
+          "position": 13,
+          "name": "ENTERER'S LOCATION"
+        },
+        {
+          "position": 14,
+          "name": "CALL BACK PHONE NUMBER"
+        }
+      ]
+    },
+    "ORO": {
+      "description": "ORDER OTHER",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "ORDER ITEM ID",
+          "section": "4-18"
+        },
+        {
+          "position": 2,
+          "name": "SUBSTITUTE ALLOWED"
+        },
+        {
+          "position": 3,
+          "name": "RESULTS COPIES TO"
+        },
+        {
+          "position": 4,
+          "name": "STOCK LOCATION",
+          "table": "0012 - STOCK LOCATION"
+        }
+      ]
+    },
+    "PD1": {
+      "description": "PATIENT DEMOGRAPHICS",
+      "section": ""
+    },
+    "PID": {
+      "description": "PATIENT IDENTIFICATION",
+      "section": "3.3.3",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - PATIENT ID",
+          "section": "3-14"
+        },
+        {
+          "position": 2,
+          "name": "PATIENT ID EXTERNAL (EXTERNAL ID)",
+          "table": "0061 - CHECK DIGIT SCHEME"
+        },
+        {
+          "position": 3,
+          "name": "PATIENT ID INTERNAL (INTERNAL ID)",
+          "table": "0061 - CHECK DIGIT SCHEME"
+        },
+        {
+          "position": 4,
+          "name": "ALTERNATE PATIENT ID"
+        },
+        {
+          "position": 5,
+          "name": "PATIENT NAME"
+        },
+        {
+          "position": 6,
+          "name": "MOTHER'S MAIDEN NAME"
+        },
+        {
+          "position": 7,
+          "name": "DATE OF BIRTH"
+        },
+        {
+          "position": 8,
+          "name": "SEX",
+          "table": "0001 - SEX"
+        },
+        {
+          "position": 9,
+          "name": "PATIENT ALIAS"
+        },
+        {
+          "position": 10,
+          "name": "ETHNIC GROUP",
+          "table": "0005 - ETHNIC GROUP"
+        },
+        {
+          "position": 11,
+          "name": "PATIENT ADDRESS"
+        },
+        {
+          "position": 12,
+          "name": "COUNTY CODE"
+        },
+        {
+          "position": 13,
+          "name": "PHONE NUMBER - HOME"
+        },
+        {
+          "position": 14,
+          "name": "PHONE NUMBER - BUSINESS"
+        },
+        {
+          "position": 15,
+          "name": "LANGUAGE - PATIENT"
+        },
+        {
+          "position": 16,
+          "name": "MARITAL STATUS",
+          "table": "0002 - MARITAL STATUS"
+        },
+        {
+          "position": 17,
+          "name": "RELIGION",
+          "table": "0006 - RELIGION"
+        },
+        {
+          "position": 18,
+          "name": "PATIENT ACCOUNT NUMBER",
+          "table": "0061 - CHECK DIGIT SCHEME"
+        },
+        {
+          "position": 19,
+          "name": "SSN NUMBER - PATIENT"
+        },
+        {
+          "position": 20,
+          "name": "DRIVER'S LIC NUM - PATIENT"
+        }
+      ]
+    },
+    "PR1": {
+      "description": "PROCEDURES",
+      "section": "6.3.7",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - PROCEDURE",
+          "section": "6-15"
+        },
+        {
+          "position": 2,
+          "name": "PROCEDURE CODING METHOD.",
+          "table": "0089 - PROCEDURE CODING METHOD"
+        },
+        {
+          "position": 3,
+          "name": "PROCEDURE CODE",
+          "table": "0088 - PROCEDURE CODE"
+        },
+        {
+          "position": 4,
+          "name": "PROCEDURE DESCRIPTION"
+        },
+        {
+          "position": 5,
+          "name": "PROCEDURE DATE/TIME"
+        },
+        {
+          "position": 6,
+          "name": "PROCEDURE TYPE",
+          "table": "0090 - PROCEDURE TYPE"
+        },
+        {
+          "position": 7,
+          "name": "PROCEDURE MINUTES"
+        },
+        {
+          "position": 8,
+          "name": "ANESTHESIOLOGIST",
+          "table": "0010 - PHYSICIAN ID"
+        },
+        {
+          "position": 9,
+          "name": "ANESTHESIA CODE",
+          "table": "0019 - ANESTHESIA CODE"
+        },
+        {
+          "position": 10,
+          "name": "ANESTHESIA MINUTES"
+        },
+        {
+          "position": 11,
+          "name": "SURGEON",
+          "table": "0010 - PHYSICIAN ID"
+        },
+        {
+          "position": 12,
+          "name": "RESIDENT CODE",
+          "table": "0010 - PHYSICIAN ID"
+        },
+        {
+          "position": 13,
+          "name": "CONSENT CODE",
+          "table": "0059 - CONSENT CODE"
+        }
+      ]
+    },
+    "PV1": {
+      "description": "PATIENT VISIT",
+      "section": "3.3.4",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - PATIENT VISIT",
+          "section": "3-18"
+        },
+        {
+          "position": 2,
+          "name": "PATIENT CLASS",
+          "table": "0004 - PATIENT CLASS"
+        },
+        {
+          "position": 3,
+          "name": "ASSIGNED PATIENT LOCATION",
+          "table": "0079 - LOCATION"
+        },
+        {
+          "position": 4,
+          "name": "ADMISSION TYPE",
+          "table": "0007 - ADMISSION TYPE"
+        },
+        {
+          "position": 5,
+          "name": "PRE-ADMIT NUMBER"
+        },
+        {
+          "position": 6,
+          "name": "PRIOR PATIENT LOCATION",
+          "table": "0079 - LOCATION"
+        },
+        {
+          "position": 7,
+          "name": "ATTENDING DOCTOR",
+          "table": "0010 - PHYSICIAN ID"
+        },
+        {
+          "position": 8,
+          "name": "REFERRING DOCTOR",
+          "table": "0010 - PHYSICIAN ID"
+        },
+        {
+          "position": 9,
+          "name": "CONSULTING DOCTOR",
+          "table": "0010 - PHYSICIAN ID"
+        },
+        {
+          "position": 10,
+          "name": "HOSPITAL SERVICE",
+          "table": "0069 - HOSPITAL SERVICE"
+        },
+        {
+          "position": 11,
+          "name": "TEMPORARY LOCATION",
+          "table": "0079 - LOCATION"
+        },
+        {
+          "position": 12,
+          "name": "PRE-ADMIT TEST INDICATOR",
+          "table": "0087 - PRE-ADMIT TESTING"
+        },
+        {
+          "position": 13,
+          "name": "RE-ADMISSION INDICATOR",
+          "table": "0092 - RE-ADMISSION INDICATOR"
+        },
+        {
+          "position": 14,
+          "name": "ADMIT SOURCE",
+          "table": "0023 - ADMIT SOURCE"
+        },
+        {
+          "position": 15,
+          "name": "AMBULATORY STATUS",
+          "table": "0009 - AMBULATORY STATUS"
+        },
+        {
+          "position": 16,
+          "name": "VIP INDICATOR",
+          "table": "0099 - VIP INDICATOR"
+        },
+        {
+          "position": 17,
+          "name": "ADMITTING DOCTOR",
+          "table": "0010 - PHYSICIAN ID"
+        },
+        {
+          "position": 18,
+          "name": "PATIENT TYPE",
+          "table": "0018 - PATIENT TYPE"
+        },
+        {
+          "position": 19,
+          "name": "VISIT NUMBER"
+        },
+        {
+          "position": 20,
+          "name": "FINANCIAL CLASS",
+          "table": "0064 - FINANCIAL CLASS"
+        },
+        {
+          "position": 21,
+          "name": "CHARGE PRICE INDICATOR",
+          "table": "0032 - CHARGE/PRICE INDICATOR"
+        },
+        {
+          "position": 22,
+          "name": "COURTESY CODE",
+          "table": "0045 - COURTESY CODE"
+        },
+        {
+          "position": 23,
+          "name": "CREDIT RATING",
+          "table": "0046 - CREDIT RATING"
+        },
+        {
+          "position": 24,
+          "name": "CONTRACT CODE",
+          "table": "0044 - CONTRACT CODE"
+        },
+        {
+          "position": 25,
+          "name": "CONTRACT EFFECTIVE DATE"
+        },
+        {
+          "position": 26,
+          "name": "CONTRACT AMOUNT"
+        },
+        {
+          "position": 27,
+          "name": "CONTRACT PERIOD"
+        },
+        {
+          "position": 28,
+          "name": "INTEREST CODE",
+          "table": "0073 - INTEREST RATE CODE"
+        },
+        {
+          "position": 29,
+          "name": "TRANSFER TO BAD DEBT CODE",
+          "table": "0110 - TRANSFER TO BAD DEBT CODE"
+        },
+        {
+          "position": 30,
+          "name": "TRANSFER TO BAD DEBT DATE"
+        },
+        {
+          "position": 31,
+          "name": "BAD DEBT AGENCY CODE",
+          "table": "0021 - BAD DEBT AGENCY CODE"
+        },
+        {
+          "position": 32,
+          "name": "BAD DEBT TRANSFER AMOUNT"
+        },
+        {
+          "position": 33,
+          "name": "BAD DEBT RECOVERY AMOUNT"
+        },
+        {
+          "position": 34,
+          "name": "DELETE ACCOUNT INDICATOR",
+          "table": "0111 - DELETE ACCOUNT CODE"
+        },
+        {
+          "position": 35,
+          "name": "DELETE ACCOUNT DATE"
+        },
+        {
+          "position": 36,
+          "name": "DISCHARGE DISPOSITION",
+          "table": "0112 - DISCHARGED DISPOSITION"
+        },
+        {
+          "position": 37,
+          "name": "DISCHARGED TO LOCATION",
+          "table": "0113 - DISCHARGED TO LOCATION"
+        },
+        {
+          "position": 38,
+          "name": "DIET TYPE",
+          "table": "0114 - DIET TYPE"
+        },
+        {
+          "position": 39,
+          "name": "SERVICING FACILITY",
+          "table": "0115 - SERVICING FACILITY"
+        },
+        {
+          "position": 40,
+          "name": "BED STATUS",
+          "table": "0116 - BED STATUS"
+        },
+        {
+          "position": 41,
+          "name": "ACCOUNT STATUS",
+          "table": "0117 - ACCOUNT STATUS"
+        },
+        {
+          "position": 42,
+          "name": "PENDING LOCATION",
+          "table": "0079 - LOCATION"
+        },
+        {
+          "position": 43,
+          "name": "PRIOR TEMPORARY LOCATION",
+          "table": "0079 - LOCATION"
+        },
+        {
+          "position": 44,
+          "name": "ADMIT DATE/TIME"
+        },
+        {
+          "position": 45,
+          "name": "DISCHARGE DATE/TIME"
+        },
+        {
+          "position": 46,
+          "name": "CURRENT PATIENT BALANCE"
+        },
+        {
+          "position": 47,
+          "name": "TOTAL CHARGES"
+        },
+        {
+          "position": 48,
+          "name": "TOTAL ADJUSTMENTS"
+        },
+        {
+          "position": 49,
+          "name": "TOTAL PAYMENTS"
+        }
+      ]
+    },
+    "QRD": {
+      "description": "QUERY DEFINITION",
+      "section": "5.3.3",
+      "fields": [
+        {
+          "position": 1,
+          "name": "QUERY DATE/TIME",
+          "section": "5-6"
+        },
+        {
+          "position": 2,
+          "name": "QUERY FORMAT CODE",
+          "table": "0106 - QUERY FORMAT CODE"
+        },
+        {
+          "position": 3,
+          "name": "QUERY PRIORITY",
+          "table": "0091 - QUERY PRIORITY"
+        },
+        {
+          "position": 4,
+          "name": "QUERY ID"
+        },
+        {
+          "position": 5,
+          "name": "DEFERRED RESPONSE TYPE",
+          "table": "0107 - DEFERRED RESPONSE TYPE"
+        },
+        {
+          "position": 6,
+          "name": "DEFERRED RESPONSE DATE/TIME"
+        },
+        {
+          "position": 7,
+          "name": "QUANTITY LIMITED REQUEST",
+          "table": "0126 - QUANTITY LIMITED REQUEST"
+        },
+        {
+          "position": 8,
+          "name": "WHO SUBJECT FILTER"
+        },
+        {
+          "position": 9,
+          "name": "WHAT SUBJECT FILTER",
+          "table": "0048 - WHAT SUBJECT FILTER"
+        },
+        {
+          "position": 10,
+          "name": "WHAT DEPARTMENT DATA CODE"
+        },
+        {
+          "position": 11,
+          "name": "WHAT DATA CODE VALUE QUAL."
+        },
+        {
+          "position": 12,
+          "name": "QUERY RESULTS LEVEL",
+          "table": "0108 - QUERY RESULTS LEVEL"
+        }
+      ]
+    },
+    "QRF": {
+      "description": "QUERY FILTER",
+      "section": "5.3.4",
+      "fields": [
+        {
+          "position": 1,
+          "name": "WHERE SUBJECT FILTER"
+        },
+        {
+          "position": 2,
+          "name": "WHEN DATA START DATE/TIME"
+        },
+        {
+          "position": 3,
+          "name": "WHEN DATA END DATE/TIME"
+        },
+        {
+          "position": 4,
+          "name": "WHAT USER QUALIFIER"
+        },
+        {
+          "position": 5,
+          "name": "OTHER QRY SUBJECT FILTER"
+        }
+      ]
+    },
+    "RX1": {
+      "description": "PHARMACY ORDER",
+      "section": "",
+      "fields": [
+        {
+          "position": 1,
+          "name": "UNUSED",
+          "section": "4-14"
+        },
+        {
+          "position": 2,
+          "name": "UNUSED"
+        },
+        {
+          "position": 3,
+          "name": "ROUTE",
+          "table": "0033 - ROUTE"
+        },
+        {
+          "position": 4,
+          "name": "SITE ADMINISTERED",
+          "table": "0034 - SITE ADMINISTERED"
+        },
+        {
+          "position": 5,
+          "name": "IV SOLUTION RATE"
+        },
+        {
+          "position": 6,
+          "name": "DRUG STRENGTH"
+        },
+        {
+          "position": 7,
+          "name": "FINAL CONCENTRATION"
+        },
+        {
+          "position": 8,
+          "name": "FINAL VOLUME IN ML."
+        },
+        {
+          "position": 9,
+          "name": "DRUG DOSE"
+        },
+        {
+          "position": 10,
+          "name": "DRUG ROLE"
+        },
+        {
+          "position": 11,
+          "name": "PRESCRIPTION SEQUENCE #"
+        },
+        {
+          "position": 12,
+          "name": "QUANTITY DISPENSED"
+        },
+        {
+          "position": 13,
+          "name": "UNUSED"
+        },
+        {
+          "position": 14,
+          "name": "DRUG ID",
+          "table": "0057 - DRUG CODE"
+        },
+        {
+          "position": 15,
+          "name": "COMPONENT DRUG IDS"
+        },
+        {
+          "position": 16,
+          "name": "PRESCRIPTION TYPE"
+        },
+        {
+          "position": 17,
+          "name": "SUBSTITUTION STATUS"
+        },
+        {
+          "position": 18,
+          "name": "RX ORDER STATUS",
+          "table": "0038 - ORDER STATUS"
+        },
+        {
+          "position": 19,
+          "name": "NUMBER OF REFILLS"
+        },
+        {
+          "position": 20,
+          "name": "UNUSED"
+        },
+        {
+          "position": 21,
+          "name": "REFILLS REMAINING"
+        },
+        {
+          "position": 22,
+          "name": "DEA CLASS"
+        },
+        {
+          "position": 23,
+          "name": "ORDERING MD'S DEA NUMBER"
+        },
+        {
+          "position": 24,
+          "name": "UNUSED"
+        },
+        {
+          "position": 25,
+          "name": "LAST REFILL DATE/TIME"
+        },
+        {
+          "position": 26,
+          "name": "RX NUMBER"
+        },
+        {
+          "position": 27,
+          "name": "PRN STATUS"
+        },
+        {
+          "position": 28,
+          "name": "PHARMACY INSTRUCTIONS"
+        },
+        {
+          "position": 29,
+          "name": "PATIENT INSTRUCTIONS"
+        },
+        {
+          "position": 30,
+          "name": "INSTRUCTIONS (SIG)"
+        }
+      ]
+    },
+    "UB1": {
+      "description": "UB82 DATA",
+      "section": "6.3.8",
+      "fields": [
+        {
+          "position": 1,
+          "name": "SET ID - UB82",
+          "section": "6-17"
+        },
+        {
+          "position": 2,
+          "name": "BLOOD DEDUCTIBLE"
+        },
+        {
+          "position": 3,
+          "name": "BLOOD FURN.-PINTS OF (40)"
+        },
+        {
+          "position": 4,
+          "name": "BLOOD REPLACED-PINTS (41)"
+        },
+        {
+          "position": 5,
+          "name": "BLOOD NOT RPLCD-PINTS(42)"
+        },
+        {
+          "position": 6,
+          "name": "CO-INSURANCE DAYS (25)"
+        },
+        {
+          "position": 7,
+          "name": "CONDITION CODE",
+          "table": "0043 - CONDITION"
+        },
+        {
+          "position": 8,
+          "name": "COVERED DAYS - (23)"
+        },
+        {
+          "position": 9,
+          "name": "NON COVERED DAYS - (24)"
+        },
+        {
+          "position": 10,
+          "name": "VALUE AMOUNT & CODE"
+        },
+        {
+          "position": 11,
+          "name": "NUMBER OF GRACE DAYS (90)"
+        },
+        {
+          "position": 12,
+          "name": "SPEC. PROG. INDICATOR(44)"
+        },
+        {
+          "position": 13,
+          "name": "PSRO/UR APPROVAL IND. (87)"
+        },
+        {
+          "position": 14,
+          "name": "PSRO/UR APRVD STAY-FM(88)"
+        },
+        {
+          "position": 15,
+          "name": "PSRO/UR APRVD STAY-TO(89)"
+        },
+        {
+          "position": 16,
+          "name": "OCCURRENCE (28-32)"
+        },
+        {
+          "position": 17,
+          "name": "OCCURRENCE SPAN (33)"
+        },
+        {
+          "position": 18,
+          "name": "OCCURRENCE SPAN START DATE(33)"
+        },
+        {
+          "position": 19,
+          "name": "OCCUR. SPAN END DATE (33)"
+        },
+        {
+          "position": 20,
+          "name": "UB-82 LOCATOR 2"
+        },
+        {
+          "position": 21,
+          "name": "UB-82 LOCATOR 9"
+        },
+        {
+          "position": 22,
+          "name": "UB-82 LOCATOR 27"
+        },
+        {
+          "position": 23,
+          "name": "UB-82 LOCATOR 45"
+        }
+      ]
+    },
+    "URD": {
+      "description": "RESULTS/UPDATE DEFINITION",
+      "section": "5.3.5",
+      "fields": [
+        {
+          "position": 1,
+          "name": "R/U DATE/TIME"
+        },
+        {
+          "position": 2,
+          "name": "REPORT PRIORITY",
+          "table": "0109 - REPORT PRIORITY"
+        },
+        {
+          "position": 3,
+          "name": "R/U WHO SUBJECT DEFINITION"
+        },
+        {
+          "position": 4,
+          "name": "R/U WHAT SUBJECT DEFINITION",
+          "table": "0048 - WHAT SUBJECT FILTER"
+        },
+        {
+          "position": 5,
+          "name": "R/U WHAT DEPARTMENT CODE"
+        },
+        {
+          "position": 6,
+          "name": "R/U DISPLAY/PRINT LOCATIONS"
+        },
+        {
+          "position": 7,
+          "name": "R/U RESULTS LEVEL",
+          "table": "0108 - QUERY RESULTS LEVEL"
+        }
+      ]
+    },
+    "URS": {
+      "description": "UNSOLICITED SELECTION",
+      "section": "5.3.6",
+      "fields": [
+        {
+          "position": 1,
+          "name": "R/U WHERE SUBJECT DEFINITION"
+        },
+        {
+          "position": 2,
+          "name": "R/U WHEN DATA START DATE/TIME"
+        },
+        {
+          "position": 3,
+          "name": "R/U WHEN DATA END DATE/TIME"
+        },
+        {
+          "position": 4,
+          "name": "R/U WHAT USER QUALIFIER"
+        },
+        {
+          "position": 5,
+          "name": "R/U OTHER RESULTS SUBJECT DEFINI"
+        }
+      ]
+    }
+  },
+  "datatypes": {
+    "AD": {
+      "description": "address",
+      "section": "2.3.3.8"
+    },
+    "CE": {
+      "description": "coded element",
+      "section": ""
+    },
+    "CE_0057": {
+      "description": "",
+      "section": ""
+    },
+    "CK": {
+      "description": "composite ID with check digit",
+      "section": ""
+    },
+    "CM": {
+      "description": "",
+      "section": ""
+    },
+    "CM_UNDEFINED": {
+      "description": "undefined CM data type",
+      "section": ""
+    },
+    "CN": {
+      "description": "composite ID number and name",
+      "section": ""
+    },
+    "COMP_ID_DIGIT": {
+      "description": "COMPOSITE ID W/CHK DIGIT",
+      "section": ""
+    },
+    "COMP_ID_NAME": {
+      "description": "COMPOSITE ID AND NAME",
+      "section": ""
+    },
+    "COMP_QUANT": {
+      "description": "COMPOSITE QUANTITY/UNITS",
+      "section": ""
+    },
+    "CQ": {
+      "description": "composite quantity with units",
+      "section": ""
+    },
+    "DT": {
+      "description": "DATE",
+      "section": "2.3.3.3"
+    },
+    "FT": {
+      "description": "formatted text data",
+      "section": ""
+    },
+    "ID": {
+      "description": "CODED VALUE",
+      "section": "2.3.3.9"
+    },
+    "NM": {
+      "description": "numeric",
+      "section": "2.3.3.2"
+    },
+    "PN": {
+      "description": "person name",
+      "section": "2.3.3.6"
+    },
+    "SET_ID": {
+      "description": "SET ID",
+      "section": ""
+    },
+    "SI": {
+      "description": "SET ID",
+      "section": ""
+    },
+    "ST": {
+      "description": "string data",
+      "section": "2.3.3.1"
+    },
+    "TM": {
+      "description": "time",
+      "section": "2.3.3.4"
+    },
+    "TN": {
+      "description": "telephone number",
+      "section": "2.3.3.7"
+    },
+    "TS": {
+      "description": "time stamp",
+      "section": "2.3.3.5"
+    },
+    "TX": {
+      "description": "text data",
+      "section": ""
+    }
+  },
+  "messages": {
+    "ACK": {
+      "description": "General acknowledgment message",
+      "section": ""
+    }
+  }
+}
