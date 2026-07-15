@@ -13,6 +13,11 @@ class FieldInfo:
     name: str
     section: str = ""
     table: str = ""
+    item: str = ""
+    length: str = ""
+    usage: str = ""
+    rep: str = ""
+    datatype: str = ""
 
 
 @dataclass
@@ -62,6 +67,11 @@ def load_db(version: str) -> VersionDB:
                     name=f["name"],
                     section=f.get("section", ""),
                     table=f.get("table", ""),
+                    item=f.get("item", ""),
+                    length=f.get("length", ""),
+                    usage=f.get("usage", ""),
+                    rep=f.get("rep", ""),
+                    datatype=f.get("datatype", ""),
                 )
                 for f in s.get("fields", [])
             ],

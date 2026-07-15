@@ -8,16 +8,31 @@
         {
           "position": 1,
           "name": "ACCIDENT DATE/TIME",
-          "section": "6-3"
+          "section": "6-3",
+          "item": "00182",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 2,
           "name": "ACCIDENT CODE",
-          "table": "0050 - ACCIDENT CODE"
+          "table": "0050 - ACCIDENT CODE",
+          "item": "00184",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
-          "name": "ACCIDENT LOCATION"
+          "name": "ACCIDENT LOCATION",
+          "item": "00185",
+          "length": "25",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -28,7 +43,12 @@
         {
           "position": 1,
           "name": "ADDENDUM CONTINUATION POINTER",
-          "section": "2-39"
+          "section": "2-39",
+          "item": "00641",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -39,51 +59,111 @@
         {
           "position": 1,
           "name": "BATCH FIELD SEPARATOR",
-          "section": "2-40"
+          "section": "2-40",
+          "item": "00685",
+          "length": "1",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 2,
-          "name": "BATCH ENCODING CHARACTERS"
+          "name": "BATCH ENCODING CHARACTERS",
+          "item": "00686",
+          "length": "3",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
-          "name": "BATCH SENDING APPLICATION"
+          "name": "BATCH SENDING APPLICATION",
+          "item": "00687",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
-          "name": "BATCH SENDING FACILITY"
+          "name": "BATCH SENDING FACILITY",
+          "item": "00688",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "BATCH RECEIVING APPLICATION"
+          "name": "BATCH RECEIVING APPLICATION",
+          "item": "00689",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 6,
-          "name": "BATCH RECEIVING FACILITY"
+          "name": "BATCH RECEIVING FACILITY",
+          "item": "00690",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 7,
-          "name": "BATCH CREATION DATE/TIME"
+          "name": "BATCH CREATION DATE/TIME",
+          "item": "00655",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 8,
-          "name": "BATCH SECURITY"
+          "name": "BATCH SECURITY",
+          "item": "00691",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 9,
-          "name": "BATCH NAME/ID/TYPE"
+          "name": "BATCH NAME/ID/TYPE",
+          "item": "00656",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 10,
-          "name": "BATCH COMMENT"
+          "name": "BATCH COMMENT",
+          "item": "00657",
+          "length": "80",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 11,
-          "name": "BATCH CONTROL ID"
+          "name": "BATCH CONTROL ID",
+          "item": "00658",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 12,
-          "name": "REFERENCE BATCH CONTROL ID"
+          "name": "REFERENCE BATCH CONTROL ID",
+          "item": "00659",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -95,16 +175,31 @@
           "position": 1,
           "name": "WHEN TO CHARGE",
           "section": "4-12",
-          "table": "0100 - WHEN TO CHARGE"
+          "table": "0100 - WHEN TO CHARGE",
+          "item": "00066",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 2,
           "name": "CHARGE TYPE",
-          "table": "0122 - CHARGE TYPE"
+          "table": "0122 - CHARGE TYPE",
+          "item": "00729",
+          "length": "50",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
-          "name": "ACCOUNT ID"
+          "name": "ACCOUNT ID",
+          "item": "00730",
+          "length": "100",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         }
       ]
     },
@@ -115,15 +210,30 @@
         {
           "position": 1,
           "name": "BATCH MESSAGE COUNT",
-          "section": "2-41"
+          "section": "2-41",
+          "item": "00664",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 2,
-          "name": "BATCH COMMENT"
+          "name": "BATCH COMMENT",
+          "item": "00665",
+          "length": "80",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
-          "name": "BATCH TOTALS"
+          "name": "BATCH TOTALS",
+          "item": "00666",
+          "length": "100",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         }
       ]
     },
@@ -134,66 +244,136 @@
         {
           "position": 1,
           "name": "SET ID - DIAGNOSIS",
-          "section": "6-3"
+          "section": "6-3",
+          "item": "00506",
+          "length": "4",
+          "usage": "R",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
           "name": "DIAGNOSIS CODING METHOD",
-          "table": "0053 - DIAGNOSIS CODING METHOD"
+          "table": "0053 - DIAGNOSIS CODING METHOD",
+          "item": "00394",
+          "length": "2",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
           "name": "DIAGNOSIS CODE",
-          "table": "0051 - DIAGNOSIS CODE"
+          "table": "0051 - DIAGNOSIS CODE",
+          "item": "00293",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 4,
-          "name": "DIAGNOSIS DESCRIPTION"
+          "name": "DIAGNOSIS DESCRIPTION",
+          "item": "00294",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "DIAGNOSIS DATE/TIME"
+          "name": "DIAGNOSIS DATE/TIME",
+          "item": "00295",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 6,
           "name": "DIAGNOSIS/DRG TYPE",
-          "table": "0052 - DIAGNOSIS TYPE"
+          "table": "0052 - DIAGNOSIS TYPE",
+          "item": "00297",
+          "length": "2",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 7,
           "name": "MAJOR DIAGNOSTIC CATEGORY",
-          "table": "0118 - MAJOR DIAGNOSTIC CATEGORY"
+          "table": "0118 - MAJOR DIAGNOSTIC CATEGORY",
+          "item": "00298",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 8,
           "name": "DIAGNOSTIC RELATED GROUP",
-          "table": "0055 - DRG CODE"
+          "table": "0055 - DRG CODE",
+          "item": "00299",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 9,
-          "name": "DRG APPROVAL INDICATOR"
+          "name": "DRG APPROVAL INDICATOR",
+          "item": "00373",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 10,
           "name": "DRG GROUPER REVIEW CODE",
-          "table": "0056 - DRG GROUPER REVIEW CODE"
+          "table": "0056 - DRG GROUPER REVIEW CODE",
+          "item": "00374",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 11,
           "name": "OUTLIER TYPE",
-          "table": "0083 - OUTLIER TYPE"
+          "table": "0083 - OUTLIER TYPE",
+          "item": "00375",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 12,
-          "name": "OUTLIER DAYS"
+          "name": "OUTLIER DAYS",
+          "item": "00300",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 13,
-          "name": "OUTLIER COST"
+          "name": "OUTLIER COST",
+          "item": "00376",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 14,
-          "name": "GROUPER VERSION AND TYPE"
+          "name": "GROUPER VERSION AND TYPE",
+          "item": "00781",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -203,7 +383,12 @@
       "fields": [
         {
           "position": 1,
-          "name": "CONTINUATION POINTER"
+          "name": "CONTINUATION POINTER",
+          "item": "00167",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -213,23 +398,48 @@
       "fields": [
         {
           "position": 1,
-          "name": "SET ID - DISPLAY DATA"
+          "name": "SET ID - DISPLAY DATA",
+          "item": "00570",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
-          "name": "DISPLAY LEVEL"
+          "name": "DISPLAY LEVEL",
+          "item": "00571",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 3,
-          "name": "DATA LINE"
+          "name": "DATA LINE",
+          "item": "00153",
+          "length": "300",
+          "usage": "R",
+          "rep": "",
+          "datatype": "TX"
         },
         {
           "position": 4,
-          "name": "LOGICAL BREAK POINT"
+          "name": "LOGICAL BREAK POINT",
+          "item": "00154",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "RESULT ID"
+          "name": "RESULT ID",
+          "item": "00599",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TX"
         }
       ]
     },
@@ -241,7 +451,12 @@
           "position": 1,
           "name": "ERROR CODE AND LOCATION",
           "section": "2-42",
-          "table": "0060 - ERROR CODE"
+          "table": "0060 - ERROR CODE",
+          "item": "00080",
+          "length": "80",
+          "usage": "R",
+          "rep": "Y",
+          "datatype": "ID"
         }
       ]
     },
@@ -253,20 +468,40 @@
           "position": 1,
           "name": "EVENT TYPE CODE",
           "section": "3-11",
-          "table": "0003 - EVENT TYPE CODE"
+          "table": "0003 - EVENT TYPE CODE",
+          "item": "00029",
+          "length": "3",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 2,
-          "name": "DATE/TIME OF EVENT"
+          "name": "DATE/TIME OF EVENT",
+          "item": "00030",
+          "length": "19",
+          "usage": "R",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 3,
-          "name": "DATE/TIME PLANNED EVENT"
+          "name": "DATE/TIME PLANNED EVENT",
+          "item": "00032",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 4,
           "name": "EVENT REASON CODE",
-          "table": "0062 - EVENT REASON"
+          "table": "0062 - EVENT REASON",
+          "item": "00369",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         }
       ]
     },
@@ -277,51 +512,111 @@
         {
           "position": 1,
           "name": "FILE FIELD SEPARATOR",
-          "section": "2-43"
+          "section": "2-43",
+          "item": "00692",
+          "length": "1",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 2,
-          "name": "FILE ENCODING CHARACTERS"
+          "name": "FILE ENCODING CHARACTERS",
+          "item": "00693",
+          "length": "4",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
-          "name": "FILE SENDING APPLICATION"
+          "name": "FILE SENDING APPLICATION",
+          "item": "00694",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
-          "name": "FILE SENDING FACILITY"
+          "name": "FILE SENDING FACILITY",
+          "item": "00695",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "FILE RECEIVING APPLICATION"
+          "name": "FILE RECEIVING APPLICATION",
+          "item": "00696",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 6,
-          "name": "FILE RECEIVING FACILITY"
+          "name": "FILE RECEIVING FACILITY",
+          "item": "00697",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 7,
-          "name": "DATE/TIME OF FILE CREATION"
+          "name": "DATE/TIME OF FILE CREATION",
+          "item": "00660",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 8,
-          "name": "FILE SECURITY"
+          "name": "FILE SECURITY",
+          "item": "00698",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 9,
-          "name": "FILE NAME/ID"
+          "name": "FILE NAME/ID",
+          "item": "00661",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 10,
-          "name": "FILE HEADER COMMENT"
+          "name": "FILE HEADER COMMENT",
+          "item": "00662",
+          "length": "80",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 11,
-          "name": "FILE CONTROL ID"
+          "name": "FILE CONTROL ID",
+          "item": "00663",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 12,
-          "name": "REFERENCE FILE CONTROL ID"
+          "name": "REFERENCE FILE CONTROL ID",
+          "item": "00768",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -332,100 +627,210 @@
         {
           "position": 1,
           "name": "SET ID - FINANCIAL TRANSACTION",
-          "section": "6-5"
+          "section": "6-5",
+          "item": "00507",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
-          "name": "TRANSACTION ID"
+          "name": "TRANSACTION ID",
+          "item": "00366",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
-          "name": "TRANSACTION BATCH ID"
+          "name": "TRANSACTION BATCH ID",
+          "item": "00503",
+          "length": "5",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
-          "name": "TRANSACTION DATE"
+          "name": "TRANSACTION DATE",
+          "item": "00351",
+          "length": "8",
+          "usage": "R",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 5,
-          "name": "TRANSACTION POSTING DATE"
+          "name": "TRANSACTION POSTING DATE",
+          "item": "00352",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 6,
           "name": "TRANSACTION TYPE",
-          "table": "0017 - TRANSACTION TYPE"
+          "table": "0017 - TRANSACTION TYPE",
+          "item": "00353",
+          "length": "8",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 7,
           "name": "TRANSACTION CODE",
-          "table": "0096 - FINANCIAL TRANSACTION CODE"
+          "table": "0096 - FINANCIAL TRANSACTION CODE",
+          "item": "00354",
+          "length": "20",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 8,
-          "name": "TRANSACTION DESCRIPTION"
+          "name": "TRANSACTION DESCRIPTION",
+          "item": "00356",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 9,
-          "name": "TRANSACTION DESCRIPTION - ALT"
+          "name": "TRANSACTION DESCRIPTION - ALT",
+          "item": "00706",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 10,
-          "name": "TRANSACTION AMOUNT - EXTENDED"
+          "name": "TRANSACTION AMOUNT - EXTENDED",
+          "item": "00358",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 11,
-          "name": "TRANSACTION QUANTITY"
+          "name": "TRANSACTION QUANTITY",
+          "item": "00357",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 12,
-          "name": "TRANSACTION AMOUNT - UNIT"
+          "name": "TRANSACTION AMOUNT - UNIT",
+          "item": "00782",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 13,
           "name": "DEPARTMENT CODE",
-          "table": "0049 - DEPARTMENT CODE"
+          "table": "0049 - DEPARTMENT CODE",
+          "item": "00355",
+          "length": "16",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 14,
           "name": "INSURANCE PLAN ID",
-          "table": "0072 - INS. PLAN ID"
+          "table": "0072 - INS. PLAN ID",
+          "item": "00359",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 15,
-          "name": "INSURANCE AMOUNT"
+          "name": "INSURANCE AMOUNT",
+          "item": "00360",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 16,
           "name": "PATIENT LOCATION",
-          "table": "0079 - LOCATION"
+          "table": "0079 - LOCATION",
+          "item": "00361",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 17,
           "name": "FEE SCHEDULE",
-          "table": "0024 - FEE SCHEDULE"
+          "table": "0024 - FEE SCHEDULE",
+          "item": "00362",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 18,
           "name": "PATIENT TYPE",
-          "table": "0018 - PATIENT TYPE"
+          "table": "0018 - PATIENT TYPE",
+          "item": "00363",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 19,
           "name": "DIAGNOSIS CODE",
-          "table": "0051 - DIAGNOSIS CODE"
+          "table": "0051 - DIAGNOSIS CODE",
+          "item": "00364",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 20,
           "name": "PERFORMED BY CODE",
-          "table": "0084 - PERFORMED BY"
+          "table": "0084 - PERFORMED BY",
+          "item": "00377",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 21,
-          "name": "ORDERED BY CODE"
+          "name": "ORDERED BY CODE",
+          "item": "00783",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 22,
-          "name": "UNIT COST"
+          "name": "UNIT COST",
+          "item": "00784",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         }
       ]
     },
@@ -436,11 +841,21 @@
         {
           "position": 1,
           "name": "FILE BATCH COUNT",
-          "section": "2-44"
+          "section": "2-44",
+          "item": "00667",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 2,
-          "name": "FILE TRAILER COMMENT"
+          "name": "FILE TRAILER COMMENT",
+          "item": "00668",
+          "length": "80",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -451,87 +866,187 @@
         {
           "position": 1,
           "name": "SET ID - GUARANTOR",
-          "section": "6-8"
+          "section": "6-8",
+          "item": "00321",
+          "length": "4",
+          "usage": "R",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
-          "name": "GUARANTOR NUMBER"
+          "name": "GUARANTOR NUMBER",
+          "item": "00322",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
-          "name": "GUARANTOR NAME"
+          "name": "GUARANTOR NAME",
+          "item": "00323",
+          "length": "48",
+          "usage": "R",
+          "rep": "",
+          "datatype": "PN"
         },
         {
           "position": 4,
-          "name": "GUARANTOR SPOUSE NAME"
+          "name": "GUARANTOR SPOUSE NAME",
+          "item": "00707",
+          "length": "48",
+          "usage": "O",
+          "rep": "",
+          "datatype": "PN"
         },
         {
           "position": 5,
-          "name": "GUARANTOR ADDRESS"
+          "name": "GUARANTOR ADDRESS",
+          "item": "00324",
+          "length": "106",
+          "usage": "O",
+          "rep": "",
+          "datatype": "AD"
         },
         {
           "position": 6,
-          "name": "GUARANTOR PH. NUM.- HOME"
+          "name": "GUARANTOR PH. NUM.- HOME",
+          "item": "00329",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TN"
         },
         {
           "position": 7,
-          "name": "GUARANTOR PH. NUM-BUSINESS"
+          "name": "GUARANTOR PH. NUM-BUSINESS",
+          "item": "00330",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TN"
         },
         {
           "position": 8,
-          "name": "GUARANTOR DATE OF BIRTH"
+          "name": "GUARANTOR DATE OF BIRTH",
+          "item": "00331",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 9,
           "name": "GUARANTOR SEX",
-          "table": "0001 - SEX"
+          "table": "0001 - SEX",
+          "item": "00332",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 10,
           "name": "GUARANTOR TYPE",
-          "table": "0068 - GUARANTOR TYPE"
+          "table": "0068 - GUARANTOR TYPE",
+          "item": "00333",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 11,
           "name": "GUARANTOR RELATIONSHIP",
-          "table": "0063 - RELATIONSHIP"
+          "table": "0063 - RELATIONSHIP",
+          "item": "00334",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 12,
-          "name": "GUARANTOR SSN"
+          "name": "GUARANTOR SSN",
+          "item": "00335",
+          "length": "11",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 13,
-          "name": "GUARANTOR DATE - BEGIN"
+          "name": "GUARANTOR DATE - BEGIN",
+          "item": "00338",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 14,
-          "name": "GUARANTOR DATE - END"
+          "name": "GUARANTOR DATE - END",
+          "item": "00339",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 15,
-          "name": "GUARANTOR PRIORITY"
+          "name": "GUARANTOR PRIORITY",
+          "item": "00340",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 16,
-          "name": "GUARANTOR EMPLOYER NAME"
+          "name": "GUARANTOR EMPLOYER NAME",
+          "item": "00341",
+          "length": "45",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 17,
-          "name": "GUARANTOR EMPLOYER ADDRESS"
+          "name": "GUARANTOR EMPLOYER ADDRESS",
+          "item": "00342",
+          "length": "106",
+          "usage": "O",
+          "rep": "",
+          "datatype": "AD"
         },
         {
           "position": 18,
-          "name": "GUARANTOR EMPLOY PHONE #"
+          "name": "GUARANTOR EMPLOY PHONE #",
+          "item": "00347",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TN"
         },
         {
           "position": 19,
-          "name": "GUARANTOR EMPLOYEE ID NUM"
+          "name": "GUARANTOR EMPLOYEE ID NUM",
+          "item": "00391",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 20,
           "name": "GUARANTOR EMPLOYMENT STATUS",
-          "table": "0066 - EMPLOYMENT STATUS"
+          "table": "0066 - EMPLOYMENT STATUS",
+          "item": "00392",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         }
       ]
     },
@@ -542,190 +1057,410 @@
         {
           "position": 1,
           "name": "SET ID - INSURANCE",
-          "section": "6-10"
+          "section": "6-10",
+          "item": "00234",
+          "length": "4",
+          "usage": "R",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
           "name": "INSURANCE PLAN ID",
-          "table": "0072 - INS. PLAN ID"
+          "table": "0072 - INS. PLAN ID",
+          "item": "00378",
+          "length": "8",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
-          "name": "INSURANCE COMPANY ID"
+          "name": "INSURANCE COMPANY ID",
+          "item": "00235",
+          "length": "6",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
-          "name": "INSURANCE COMPANY NAME"
+          "name": "INSURANCE COMPANY NAME",
+          "item": "00236",
+          "length": "45",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "INSURANCE COMPANY ADDRESS"
+          "name": "INSURANCE COMPANY ADDRESS",
+          "item": "00237",
+          "length": "106",
+          "usage": "O",
+          "rep": "",
+          "datatype": "AD"
         },
         {
           "position": 6,
-          "name": "INSURANCE CO. CONTACT PERS"
+          "name": "INSURANCE CO. CONTACT PERS",
+          "item": "00242",
+          "length": "48",
+          "usage": "O",
+          "rep": "",
+          "datatype": "PN"
         },
         {
           "position": 7,
-          "name": "INSURANCE CO PHONE NUMBER"
+          "name": "INSURANCE CO PHONE NUMBER",
+          "item": "00243",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TN"
         },
         {
           "position": 8,
-          "name": "GROUP NUMBER"
+          "name": "GROUP NUMBER",
+          "item": "00248",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 9,
-          "name": "GROUP NAME"
+          "name": "GROUP NAME",
+          "item": "00249",
+          "length": "35",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 10,
-          "name": "INSURED'S GROUP EMP. ID"
+          "name": "INSURED'S GROUP EMP. ID",
+          "item": "00250",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 11,
-          "name": "INSURED'S GROUP EMP. NAME"
+          "name": "INSURED'S GROUP EMP. NAME",
+          "item": "00251",
+          "length": "45",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 12,
-          "name": "PLAN EFFECTIVE DATE"
+          "name": "PLAN EFFECTIVE DATE",
+          "item": "00252",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 13,
-          "name": "PLAN EXPIRATION DATE"
+          "name": "PLAN EXPIRATION DATE",
+          "item": "00253",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 14,
-          "name": "AUTHORIZATION INFORMATION"
+          "name": "AUTHORIZATION INFORMATION",
+          "item": "00254",
+          "length": "55",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 15,
           "name": "PLAN TYPE",
-          "table": "0086 - INS. PLAN TYPE"
+          "table": "0086 - INS. PLAN TYPE",
+          "item": "00260",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 16,
-          "name": "NAME OF INSURED"
+          "name": "NAME OF INSURED",
+          "item": "00261",
+          "length": "48",
+          "usage": "O",
+          "rep": "",
+          "datatype": "PN"
         },
         {
           "position": 17,
           "name": "INSURED'S RELATIONSHIP TO PATIENT",
-          "table": "0063 - RELATIONSHIP"
+          "table": "0063 - RELATIONSHIP",
+          "item": "00262",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 18,
-          "name": "INSURED'S DATE OF BIRTH"
+          "name": "INSURED'S DATE OF BIRTH",
+          "item": "00708",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 19,
-          "name": "INSURED'S ADDRESS"
+          "name": "INSURED'S ADDRESS",
+          "item": "00709",
+          "length": "106",
+          "usage": "O",
+          "rep": "",
+          "datatype": "AD"
         },
         {
           "position": 20,
-          "name": "ASSIGNMENT OF BENEFITS"
+          "name": "ASSIGNMENT OF BENEFITS",
+          "item": "00263",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 21,
-          "name": "COORDINATION OF BENEFITS"
+          "name": "COORDINATION OF BENEFITS",
+          "item": "00264",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 22,
-          "name": "COORD OF BEN. PRIORITY"
+          "name": "COORD OF BEN. PRIORITY",
+          "item": "00265",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 23,
           "name": "NOTICE OF ADMISSION CODE",
-          "table": "0081 - NOTICE OF ADMISSION"
+          "table": "0081 - NOTICE OF ADMISSION",
+          "item": "00266",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 24,
-          "name": "NOTICE OF ADMISSION DATE"
+          "name": "NOTICE OF ADMISSION DATE",
+          "item": "00267",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 25,
           "name": "RPT OF ELIGIBILITY CODE",
-          "table": "0094 - REPORT OF ELIGIBILITY"
+          "table": "0094 - REPORT OF ELIGIBILITY",
+          "item": "00268",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 26,
-          "name": "RPT OF ELIGIBILITY DATE"
+          "name": "RPT OF ELIGIBILITY DATE",
+          "item": "00269",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 27,
           "name": "RELEASE INFORMATION CODE",
-          "table": "0093 - RELEASE OF INFORMATION"
+          "table": "0093 - RELEASE OF INFORMATION",
+          "item": "00270",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 28,
-          "name": "PRE-ADMIT CERT. (PAC)"
+          "name": "PRE-ADMIT CERT. (PAC)",
+          "item": "00271",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 29,
-          "name": "VERIFICATION DATE"
+          "name": "VERIFICATION DATE",
+          "item": "00272",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 30,
-          "name": "VERIFICATION BY"
+          "name": "VERIFICATION BY",
+          "item": "00273",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 31,
           "name": "TYPE OF AGREEMENT CODE",
-          "table": "0098 - TYPE OF AGREEMENT CODE"
+          "table": "0098 - TYPE OF AGREEMENT CODE",
+          "item": "00277",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 32,
           "name": "BILLING STATUS",
-          "table": "0022 - BILLING STATUS"
+          "table": "0022 - BILLING STATUS",
+          "item": "00278",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 33,
-          "name": "LIFETIME RESERVE DAYS"
+          "name": "LIFETIME RESERVE DAYS",
+          "item": "00280",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 34,
-          "name": "DELAY BEFORE L. R. DAY"
+          "name": "DELAY BEFORE L. R. DAY",
+          "item": "00281",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 35,
           "name": "COMPANY PLAN CODE",
-          "table": "0042 - INS. COMPANY PLAN CODE"
+          "table": "0042 - INS. COMPANY PLAN CODE",
+          "item": "00282",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 36,
-          "name": "POLICY NUMBER"
+          "name": "POLICY NUMBER",
+          "item": "00283",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 37,
-          "name": "POLICY DEDUCTIBLE"
+          "name": "POLICY DEDUCTIBLE",
+          "item": "00284",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 38,
-          "name": "POLICY LIMIT - AMOUNT"
+          "name": "POLICY LIMIT - AMOUNT",
+          "item": "00285",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 39,
-          "name": "POLICY LIMIT - DAYS"
+          "name": "POLICY LIMIT - DAYS",
+          "item": "00286",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 40,
-          "name": "ROOM RATE - SEMI-PRIVATE"
+          "name": "ROOM RATE - SEMI-PRIVATE",
+          "item": "00287",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 41,
-          "name": "ROOM RATE - PRIVATE"
+          "name": "ROOM RATE - PRIVATE",
+          "item": "00288",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 42,
           "name": "INSURED'S EMPLOYMENT STATUS",
-          "table": "0066 - EMPLOYMENT STATUS"
+          "table": "0066 - EMPLOYMENT STATUS",
+          "item": "00710",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 43,
           "name": "INSURED'S SEX",
-          "table": "0001 - SEX"
+          "table": "0001 - SEX",
+          "item": "00711",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 44,
-          "name": "INSURED'S EMPLOYER ADDRESS"
+          "name": "INSURED'S EMPLOYER ADDRESS",
+          "item": "00713",
+          "length": "106",
+          "usage": "O",
+          "rep": "",
+          "datatype": "AD"
         }
       ]
     },
@@ -737,17 +1472,32 @@
           "position": 1,
           "name": "PRIOR PATIENT ID - INTERNAL",
           "section": "3-13",
-          "table": "0061 - CHECK DIGIT SCHEME"
+          "table": "0061 - CHECK DIGIT SCHEME",
+          "item": "00576",
+          "length": "16",
+          "usage": "R",
+          "rep": "",
+          "datatype": "CK"
         },
         {
           "position": 2,
           "name": "PRIOR ALTERNATE PATIENT ID",
-          "table": "0061 - CHECK DIGIT SCHEME"
+          "table": "0061 - CHECK DIGIT SCHEME",
+          "item": "00577",
+          "length": "16",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CK"
         },
         {
           "position": 3,
           "name": "PRIOR PATIENT ACCOUNT NUMBER",
-          "table": "0061 - CHECK DIGIT SCHEME"
+          "table": "0061 - CHECK DIGIT SCHEME",
+          "item": "00578",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CK"
         }
       ]
     },
@@ -759,24 +1509,49 @@
           "position": 1,
           "name": "ACKNOWLEDGMENT CODE",
           "section": "2-45",
-          "table": "0008 - ACKNOWLEDGMENT CODE"
+          "table": "0008 - ACKNOWLEDGMENT CODE",
+          "item": "00002",
+          "length": "2",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 2,
-          "name": "MESSAGE CONTROL ID"
+          "name": "MESSAGE CONTROL ID",
+          "item": "00003",
+          "length": "20",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
-          "name": "TEXT MESSAGE"
+          "name": "TEXT MESSAGE",
+          "item": "00004",
+          "length": "80",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
-          "name": "EXPECTED SEQUENCE NUMBER"
+          "name": "EXPECTED SEQUENCE NUMBER",
+          "item": "00598",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 5,
           "name": "DELAYED ACKNOWLEDGMENT TYPE",
-          "table": "0102 - DELAYED ACKNOWLEDGMENT TYPE"
+          "table": "0102 - DELAYED ACKNOWLEDGMENT TYPE",
+          "item": "00632",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         }
       ]
     },
@@ -787,62 +1562,132 @@
         {
           "position": 1,
           "name": "FIELD SEPARATOR",
-          "section": "2-46"
+          "section": "2-46",
+          "item": "00005",
+          "length": "1",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 2,
-          "name": "ENCODING CHARACTERS"
+          "name": "ENCODING CHARACTERS",
+          "item": "00509",
+          "length": "4",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
-          "name": "SENDING APPLICATION"
+          "name": "SENDING APPLICATION",
+          "item": "00006",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
-          "name": "SENDING FACILITY"
+          "name": "SENDING FACILITY",
+          "item": "00512",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "RECEIVING APPLICATION"
+          "name": "RECEIVING APPLICATION",
+          "item": "00009",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 6,
-          "name": "RECEIVING FACILITY"
+          "name": "RECEIVING FACILITY",
+          "item": "00513",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 7,
-          "name": "DATE/TIME OF MESSAGE"
+          "name": "DATE/TIME OF MESSAGE",
+          "item": "00010",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 8,
-          "name": "Security"
+          "name": "Security",
+          "item": "00008",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 9,
           "name": "MESSAGE TYPE",
-          "table": "0076 - MESSAGE TYPE"
+          "table": "0076 - MESSAGE TYPE",
+          "item": "00012",
+          "length": "7",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 10,
-          "name": "MESSAGE CONTROL ID"
+          "name": "MESSAGE CONTROL ID",
+          "item": "00013",
+          "length": "20",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 11,
           "name": "PROCESSING ID",
-          "table": "0103 - PROCESSING ID"
+          "table": "0103 - PROCESSING ID",
+          "item": "00014",
+          "length": "1",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 12,
           "name": "VERSION ID",
-          "table": "0104 - VERSION CONTROL TABLE"
+          "table": "0104 - VERSION CONTROL TABLE",
+          "item": "00015",
+          "length": "8",
+          "usage": "R",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 13,
-          "name": "SEQUENCE NUMBER"
+          "name": "SEQUENCE NUMBER",
+          "item": "00633",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 14,
-          "name": "CONTINUATION POINTER"
+          "name": "CONTINUATION POINTER",
+          "item": "00699",
+          "length": "180",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -852,7 +1697,12 @@
       "fields": [
         {
           "position": 1,
-          "name": "SYSTEM DATE/TIME"
+          "name": "SYSTEM DATE/TIME",
+          "item": "00742",
+          "length": "19",
+          "usage": "R",
+          "rep": "",
+          "datatype": "TS"
         }
       ]
     },
@@ -863,24 +1713,49 @@
         {
           "position": 1,
           "name": "SET ID - NEXT OF KIN",
-          "section": "3-23, 6-15"
+          "section": "3-23, 6-15",
+          "item": "00712",
+          "length": "4",
+          "usage": "R",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
-          "name": "NEXT OF KIN NAME"
+          "name": "NEXT OF KIN NAME",
+          "item": "00048",
+          "length": "48",
+          "usage": "O",
+          "rep": "",
+          "datatype": "PN"
         },
         {
           "position": 3,
           "name": "NEXT OF KIN RELATIONSHIP",
-          "table": "0063 - RELATIONSHIP"
+          "table": "0063 - RELATIONSHIP",
+          "item": "00047",
+          "length": "15",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
-          "name": "NEXT OF KIN - ADDRESS"
+          "name": "NEXT OF KIN - ADDRESS",
+          "item": "00225",
+          "length": "106",
+          "usage": "O",
+          "rep": "",
+          "datatype": "AD"
         },
         {
           "position": 5,
-          "name": "NEXT OF KIN - PHONE NUMBER"
+          "name": "NEXT OF KIN - PHONE NUMBER",
+          "item": "00230",
+          "length": "40",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "TN"
         }
       ]
     },
@@ -892,12 +1767,22 @@
           "position": 1,
           "name": "BED LOCATION",
           "section": "3-22",
-          "table": "0079 - LOCATION"
+          "table": "0079 - LOCATION",
+          "item": "00785",
+          "length": "12",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 2,
           "name": "BED STATUS",
-          "table": "0116 - BED STATUS"
+          "table": "0116 - BED STATUS",
+          "item": "00671",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         }
       ]
     },
@@ -907,39 +1792,84 @@
       "fields": [
         {
           "position": 1,
-          "name": "NETWORK CHANGE TYPE"
+          "name": "NETWORK CHANGE TYPE",
+          "item": "00758",
+          "length": "4",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 2,
-          "name": "CURRENT CPU"
+          "name": "CURRENT CPU",
+          "item": "00759",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
-          "name": "CURRENT FILESERVER"
+          "name": "CURRENT FILESERVER",
+          "item": "00760",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
-          "name": "CURRENT APPLICATION"
+          "name": "CURRENT APPLICATION",
+          "item": "00761",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "CURRENT FACILITY"
+          "name": "CURRENT FACILITY",
+          "item": "00762",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 6,
-          "name": "NEW CPU"
+          "name": "NEW CPU",
+          "item": "00763",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 7,
-          "name": "NEW FILESERVER"
+          "name": "NEW FILESERVER",
+          "item": "00764",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 8,
-          "name": "NEW APPLICATION"
+          "name": "NEW APPLICATION",
+          "item": "00765",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 9,
-          "name": "NEW FACILITY"
+          "name": "NEW FACILITY",
+          "item": "00766",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -949,63 +1879,138 @@
       "fields": [
         {
           "position": 1,
-          "name": "STATISTICS AVAILABLE"
+          "name": "STATISTICS AVAILABLE",
+          "item": "00743",
+          "length": "1",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 2,
-          "name": "SOURCE IDENTIFIER"
+          "name": "SOURCE IDENTIFIER",
+          "item": "00744",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
-          "name": "SOURCE TYPE"
+          "name": "SOURCE TYPE",
+          "item": "00745",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 4,
-          "name": "STATISTICS START"
+          "name": "STATISTICS START",
+          "item": "00746",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 5,
-          "name": "STATISTICS END"
+          "name": "STATISTICS END",
+          "item": "00747",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 6,
-          "name": "RECEIVE CHARACTER COUNT"
+          "name": "RECEIVE CHARACTER COUNT",
+          "item": "00748",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 7,
-          "name": "SEND CHARACTER COUNT"
+          "name": "SEND CHARACTER COUNT",
+          "item": "00749",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 8,
-          "name": "MESSAGES RECEIVED"
+          "name": "MESSAGES RECEIVED",
+          "item": "00750",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 9,
-          "name": "MESSAGES SENT"
+          "name": "MESSAGES SENT",
+          "item": "00751",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 10,
-          "name": "CHECKSUM ERRORS RECEIVED"
+          "name": "CHECKSUM ERRORS RECEIVED",
+          "item": "00752",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 11,
-          "name": "LENGTH ERRORS RECEIVED"
+          "name": "LENGTH ERRORS RECEIVED",
+          "item": "00753",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 12,
-          "name": "OTHER ERRORS RECEIVED"
+          "name": "OTHER ERRORS RECEIVED",
+          "item": "00754",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 13,
-          "name": "CONNECT TIMEOUTS"
+          "name": "CONNECT TIMEOUTS",
+          "item": "00755",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 14,
-          "name": "RECEIVE TIMEOUTS"
+          "name": "RECEIVE TIMEOUTS",
+          "item": "00756",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 15,
-          "name": "NETWORK ERRORS"
+          "name": "NETWORK ERRORS",
+          "item": "00757",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         }
       ]
     },
@@ -1016,16 +2021,31 @@
         {
           "position": 1,
           "name": "SET ID - NOTES AND COMMENTS",
-          "section": "2-49"
+          "section": "2-49",
+          "item": "00573",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
           "name": "SOURCE OF COMMENT",
-          "table": "0105 - SOURCE OF COMMENT"
+          "table": "0105 - SOURCE OF COMMENT",
+          "item": "00574",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
-          "name": "COMMENT"
+          "name": "COMMENT",
+          "item": "00575",
+          "length": "120",
+          "usage": "R",
+          "rep": "Y",
+          "datatype": "TX"
         }
       ]
     },
@@ -1036,155 +2056,335 @@
         {
           "position": 1,
           "name": "SET ID - OBSERVATION REQUEST",
-          "section": "7-4"
+          "section": "7-4",
+          "item": "00520",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
-          "name": "PLACER ORDER #"
+          "name": "PLACER ORDER #",
+          "item": "00732",
+          "length": "75",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 3,
-          "name": "FILLER ORDER #"
+          "name": "FILLER ORDER #",
+          "item": "00733",
+          "length": "75",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 4,
-          "name": "UNIVERSAL SERVICE IDENT."
+          "name": "UNIVERSAL SERVICE IDENT.",
+          "item": "00523",
+          "length": "200",
+          "usage": "R",
+          "rep": "",
+          "datatype": "CE"
         },
         {
           "position": 5,
-          "name": "PRIORITY"
+          "name": "PRIORITY",
+          "item": "00524",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 6,
-          "name": "REQUESTED DATE-TIME"
+          "name": "REQUESTED DATE-TIME",
+          "item": "00529",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 7,
-          "name": "OBSERVATION DATE/TIME"
+          "name": "OBSERVATION DATE/TIME",
+          "item": "00530",
+          "length": "19",
+          "usage": "R",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 8,
-          "name": "OBSERVATION END DATE/TIME"
+          "name": "OBSERVATION END DATE/TIME",
+          "item": "00531",
+          "length": "19",
+          "usage": "R",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 9,
           "name": "COLLECTION VOLUME",
-          "table": "0036 - UNITS OF MEASURE - ISO528,1977"
+          "table": "0036 - UNITS OF MEASURE - ISO528,1977",
+          "item": "00532",
+          "length": "20",
+          "usage": "R",
+          "rep": "",
+          "datatype": "CQ"
         },
         {
           "position": 10,
-          "name": "COLLECTOR IDENTIFIER"
+          "name": "COLLECTOR IDENTIFIER",
+          "item": "00533",
+          "length": "60",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "CN"
         },
         {
           "position": 11,
           "name": "SPECIMEN ACTION CODE",
-          "table": "0065 - ACTION CODE"
+          "table": "0065 - ACTION CODE",
+          "item": "00534",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 12,
           "name": "DANGER CODE",
-          "table": "0047 - DANGER CODE"
+          "table": "0047 - DANGER CODE",
+          "item": "00535",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 13,
-          "name": "RELEVANT CLINICAL INFO."
+          "name": "RELEVANT CLINICAL INFO.",
+          "item": "00536",
+          "length": "300",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 14,
-          "name": "SPECIMEN RECEIVED DATE/TIME"
+          "name": "SPECIMEN RECEIVED DATE/TIME",
+          "item": "00537",
+          "length": "19",
+          "usage": "R",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 15,
           "name": "SPECIMEN SOURCE",
-          "table": "0070 - SOURCE OF SPECIMEN"
+          "table": "0070 - SOURCE OF SPECIMEN",
+          "item": "00538",
+          "length": "300",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 16,
           "name": "ORDERING PROVIDER",
-          "table": "0010 - PHYSICIAN ID"
+          "table": "0010 - PHYSICIAN ID",
+          "item": "00539",
+          "length": "60",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "CN"
         },
         {
           "position": 17,
-          "name": "ORDER CALL-BACK PHONE NUM"
+          "name": "ORDER CALL-BACK PHONE NUM",
+          "item": "00540",
+          "length": "40",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "TN"
         },
         {
           "position": 18,
-          "name": "PLACERS FIELD #1"
+          "name": "PLACERS FIELD #1",
+          "item": "00541",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 19,
-          "name": "PLACERS FIELD #2"
+          "name": "PLACERS FIELD #2",
+          "item": "00542",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 20,
-          "name": "FILLERS FIELD #1"
+          "name": "FILLERS FIELD #1",
+          "item": "00543",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 21,
-          "name": "FILLERS FIELD #2"
+          "name": "FILLERS FIELD #2",
+          "item": "00544",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 22,
-          "name": "RESULTS RPT/STATUS CHNG - DATE/T"
+          "name": "RESULTS RPT/STATUS CHNG - DATE/T",
+          "item": "00546",
+          "length": "19",
+          "usage": "R",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 23,
-          "name": "CHARGE TO PRACTICE"
+          "name": "CHARGE TO PRACTICE",
+          "item": "00547",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 24,
           "name": "DIAGNOSTIC SERV SECT ID",
-          "table": "0074 - DIAGNOSTIC SERVICE SECTION ID"
+          "table": "0074 - DIAGNOSTIC SERVICE SECTION ID",
+          "item": "00548",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 25,
           "name": "RESULT STATUS",
-          "table": "0123 - RESULT STATUS - OBR"
+          "table": "0123 - RESULT STATUS - OBR",
+          "item": "00734",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 26,
-          "name": "LINKED RESULTS"
+          "name": "LINKED RESULTS",
+          "item": "00550",
+          "length": "200",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CE"
         },
         {
           "position": 27,
-          "name": "QUANTITY/TIMING"
+          "name": "QUANTITY/TIMING",
+          "item": "00735",
+          "length": "200",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "CM"
         },
         {
           "position": 28,
-          "name": "RESULT COPIES TO"
+          "name": "RESULT COPIES TO",
+          "item": "00551",
+          "length": "80",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "CN"
         },
         {
           "position": 29,
-          "name": "PARENT ACCESSION #"
+          "name": "PARENT ACCESSION #",
+          "item": "00737",
+          "length": "150",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 30,
           "name": "TRANSPORTATION MODE",
-          "table": "0124 - TRANSPORTATION MODE"
+          "table": "0124 - TRANSPORTATION MODE",
+          "item": "00625",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 31,
-          "name": "REASON FOR STUDY"
+          "name": "REASON FOR STUDY",
+          "item": "00626",
+          "length": "300",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "CE"
         },
         {
           "position": 32,
-          "name": "PRINCIPAL RESULT INTERPRETER"
+          "name": "PRINCIPAL RESULT INTERPRETER",
+          "item": "00627",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 33,
-          "name": "ASSISTANT RESULT INTERPRETER"
+          "name": "ASSISTANT RESULT INTERPRETER",
+          "item": "00628",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 34,
-          "name": "TECHNICIAN"
+          "name": "TECHNICIAN",
+          "item": "00630",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 35,
-          "name": "TRANSCRIPTIONIST"
+          "name": "TRANSCRIPTIONIST",
+          "item": "00629",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 36,
-          "name": "SCHEDULED - DATE/TIME"
+          "name": "SCHEDULED - DATE/TIME",
+          "item": "00736",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         }
       ]
     },
@@ -1195,55 +2395,115 @@
         {
           "position": 1,
           "name": "SET ID - OBSERVATION SIMPLE",
-          "section": "7-14"
+          "section": "7-14",
+          "item": "00559",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
           "name": "VALUE TYPE",
-          "table": "0125 - VALUE TYPE"
+          "table": "0125 - VALUE TYPE",
+          "item": "00676",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
-          "name": "OBSERVATION IDENTIFIER"
+          "name": "OBSERVATION IDENTIFIER",
+          "item": "00560",
+          "length": "80",
+          "usage": "R",
+          "rep": "",
+          "datatype": "CE"
         },
         {
           "position": 4,
-          "name": "OBSERVATION SUB-ID"
+          "name": "OBSERVATION SUB-ID",
+          "item": "00769",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 5,
-          "name": "OBSERVATION RESULTS"
+          "name": "OBSERVATION RESULTS",
+          "item": "00561",
+          "length": "65",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 6,
-          "name": "UNITS"
+          "name": "UNITS",
+          "item": "00562",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 7,
-          "name": "REFERENCES RANGE"
+          "name": "REFERENCES RANGE",
+          "item": "00563",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 8,
           "name": "ABNORMAL FLAGS",
-          "table": "0078 - ABNORMAL FLAGS"
+          "table": "0078 - ABNORMAL FLAGS",
+          "item": "00564",
+          "length": "10",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 9,
-          "name": "PROBABILITY"
+          "name": "PROBABILITY",
+          "item": "00639",
+          "length": "5",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 10,
           "name": "NATURE OF ABNORMAL TEST",
-          "table": "0080 - NATURE OF ABNORMAL TESTING"
+          "table": "0080 - NATURE OF ABNORMAL TESTING",
+          "item": "00565",
+          "length": "5",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 11,
           "name": "OBSERV RESULT STATUS",
-          "table": "0085 - OBSERVATION RESULT STATUS"
+          "table": "0085 - OBSERVATION RESULT STATUS",
+          "item": "00566",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 12,
-          "name": "DATE LAST OBS NORMAL VALUES"
+          "name": "DATE LAST OBS NORMAL VALUES",
+          "item": "00567",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         }
       ]
     },
@@ -1255,61 +2515,131 @@
           "position": 1,
           "name": "ORDER CONTROL",
           "section": "4-4",
-          "table": "0119 - ORDER CONTROL"
+          "table": "0119 - ORDER CONTROL",
+          "item": "00714",
+          "length": "2",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 2,
-          "name": "PLACER ORDER #"
+          "name": "PLACER ORDER #",
+          "item": "00715",
+          "length": "75",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 3,
-          "name": "FILLER ORDER #"
+          "name": "FILLER ORDER #",
+          "item": "00716",
+          "length": "75",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 4,
-          "name": "PLACER GROUP #"
+          "name": "PLACER GROUP #",
+          "item": "00717",
+          "length": "75",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 5,
           "name": "ORDER STATUS",
-          "table": "0038 - ORDER STATUS"
+          "table": "0038 - ORDER STATUS",
+          "item": "00718",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 6,
           "name": "RESPONSE FLAG",
-          "table": "0121 - RESPONSE FLAG"
+          "table": "0121 - RESPONSE FLAG",
+          "item": "00719",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 7,
-          "name": "TIMING/QUANTITY"
+          "name": "TIMING/QUANTITY",
+          "item": "00720",
+          "length": "200",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 8,
-          "name": "PARENT"
+          "name": "PARENT",
+          "item": "00721",
+          "length": "200",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 9,
-          "name": "DATE/TIME OF TRANSACTION"
+          "name": "DATE/TIME OF TRANSACTION",
+          "item": "00722",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 10,
-          "name": "ENTERED BY"
+          "name": "ENTERED BY",
+          "item": "00723",
+          "length": "80",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 11,
-          "name": "VERIFIED BY"
+          "name": "VERIFIED BY",
+          "item": "00724",
+          "length": "80",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 12,
-          "name": "ORDERING PROVIDER"
+          "name": "ORDERING PROVIDER",
+          "item": "00725",
+          "length": "80",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 13,
-          "name": "ENTERER'S LOCATION"
+          "name": "ENTERER'S LOCATION",
+          "item": "00726",
+          "length": "80",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 14,
-          "name": "CALL BACK PHONE NUMBER"
+          "name": "CALL BACK PHONE NUMBER",
+          "item": "00727",
+          "length": "40",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "TN"
         }
       ]
     },
@@ -1320,20 +2650,40 @@
         {
           "position": 1,
           "name": "ORDER ITEM ID",
-          "section": "4-18"
+          "section": "4-18",
+          "item": "00731",
+          "length": "200",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CE"
         },
         {
           "position": 2,
-          "name": "SUBSTITUTE ALLOWED"
+          "name": "SUBSTITUTE ALLOWED",
+          "item": "00120",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
-          "name": "RESULTS COPIES TO"
+          "name": "RESULTS COPIES TO",
+          "item": "00586",
+          "length": "80",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "CN"
         },
         {
           "position": 4,
           "name": "STOCK LOCATION",
-          "table": "0012 - STOCK LOCATION"
+          "table": "0012 - STOCK LOCATION",
+          "item": "00068",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         }
       ]
     },
@@ -1348,90 +2698,190 @@
         {
           "position": 1,
           "name": "SET ID - PATIENT ID",
-          "section": "3-14"
+          "section": "3-14",
+          "item": "00572",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
           "name": "PATIENT ID EXTERNAL (EXTERNAL ID)",
-          "table": "0061 - CHECK DIGIT SCHEME"
+          "table": "0061 - CHECK DIGIT SCHEME",
+          "item": "00581",
+          "length": "16",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CK"
         },
         {
           "position": 3,
           "name": "PATIENT ID INTERNAL (INTERNAL ID)",
-          "table": "0061 - CHECK DIGIT SCHEME"
+          "table": "0061 - CHECK DIGIT SCHEME",
+          "item": "00034",
+          "length": "16",
+          "usage": "R",
+          "rep": "",
+          "datatype": "CK"
         },
         {
           "position": 4,
-          "name": "ALTERNATE PATIENT ID"
+          "name": "ALTERNATE PATIENT ID",
+          "item": "00038",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "PATIENT NAME"
+          "name": "PATIENT NAME",
+          "item": "00041",
+          "length": "48",
+          "usage": "R",
+          "rep": "",
+          "datatype": "PN"
         },
         {
           "position": 6,
-          "name": "MOTHER'S MAIDEN NAME"
+          "name": "MOTHER'S MAIDEN NAME",
+          "item": "00582",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 7,
-          "name": "DATE OF BIRTH"
+          "name": "DATE OF BIRTH",
+          "item": "00043",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 8,
           "name": "SEX",
-          "table": "0001 - SEX"
+          "table": "0001 - SEX",
+          "item": "00042",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 9,
-          "name": "PATIENT ALIAS"
+          "name": "PATIENT ALIAS",
+          "item": "00597",
+          "length": "48",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "PN"
         },
         {
           "position": 10,
           "name": "ETHNIC GROUP",
-          "table": "0005 - ETHNIC GROUP"
+          "table": "0005 - ETHNIC GROUP",
+          "item": "00044",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 11,
-          "name": "PATIENT ADDRESS"
+          "name": "PATIENT ADDRESS",
+          "item": "00020",
+          "length": "106",
+          "usage": "O",
+          "rep": "",
+          "datatype": "AD"
         },
         {
           "position": 12,
-          "name": "COUNTY CODE"
+          "name": "COUNTY CODE",
+          "item": "00026",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 13,
-          "name": "PHONE NUMBER - HOME"
+          "name": "PHONE NUMBER - HOME",
+          "item": "00049",
+          "length": "40",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "TN"
         },
         {
           "position": 14,
-          "name": "PHONE NUMBER - BUSINESS"
+          "name": "PHONE NUMBER - BUSINESS",
+          "item": "00050",
+          "length": "40",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "TN"
         },
         {
           "position": 15,
-          "name": "LANGUAGE - PATIENT"
+          "name": "LANGUAGE - PATIENT",
+          "item": "00464",
+          "length": "25",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 16,
           "name": "MARITAL STATUS",
-          "table": "0002 - MARITAL STATUS"
+          "table": "0002 - MARITAL STATUS",
+          "item": "00046",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 17,
           "name": "RELIGION",
-          "table": "0006 - RELIGION"
+          "table": "0006 - RELIGION",
+          "item": "00045",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 18,
           "name": "PATIENT ACCOUNT NUMBER",
-          "table": "0061 - CHECK DIGIT SCHEME"
+          "table": "0061 - CHECK DIGIT SCHEME",
+          "item": "00035",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CK"
         },
         {
           "position": 19,
-          "name": "SSN NUMBER - PATIENT"
+          "name": "SSN NUMBER - PATIENT",
+          "item": "00457",
+          "length": "16",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 20,
-          "name": "DRIVER'S LIC NUM - PATIENT"
+          "name": "DRIVER'S LIC NUM - PATIENT",
+          "item": "00453",
+          "length": "25",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         }
       ]
     },
@@ -1442,63 +2892,128 @@
         {
           "position": 1,
           "name": "SET ID - PROCEDURE",
-          "section": "6-15"
+          "section": "6-15",
+          "item": "00304",
+          "length": "4",
+          "usage": "R",
+          "rep": "Y",
+          "datatype": "SI"
         },
         {
           "position": 2,
           "name": "PROCEDURE CODING METHOD.",
-          "table": "0089 - PROCEDURE CODING METHOD"
+          "table": "0089 - PROCEDURE CODING METHOD",
+          "item": "00393",
+          "length": "2",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
           "name": "PROCEDURE CODE",
-          "table": "0088 - PROCEDURE CODE"
+          "table": "0088 - PROCEDURE CODE",
+          "item": "00305",
+          "length": "10",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 4,
-          "name": "PROCEDURE DESCRIPTION"
+          "name": "PROCEDURE DESCRIPTION",
+          "item": "00306",
+          "length": "40",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "PROCEDURE DATE/TIME"
+          "name": "PROCEDURE DATE/TIME",
+          "item": "00307",
+          "length": "19",
+          "usage": "R",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 6,
           "name": "PROCEDURE TYPE",
-          "table": "0090 - PROCEDURE TYPE"
+          "table": "0090 - PROCEDURE TYPE",
+          "item": "00309",
+          "length": "2",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 7,
-          "name": "PROCEDURE MINUTES"
+          "name": "PROCEDURE MINUTES",
+          "item": "00310",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 8,
           "name": "ANESTHESIOLOGIST",
-          "table": "0010 - PHYSICIAN ID"
+          "table": "0010 - PHYSICIAN ID",
+          "item": "00311",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 9,
           "name": "ANESTHESIA CODE",
-          "table": "0019 - ANESTHESIA CODE"
+          "table": "0019 - ANESTHESIA CODE",
+          "item": "00313",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 10,
-          "name": "ANESTHESIA MINUTES"
+          "name": "ANESTHESIA MINUTES",
+          "item": "00314",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 11,
           "name": "SURGEON",
-          "table": "0010 - PHYSICIAN ID"
+          "table": "0010 - PHYSICIAN ID",
+          "item": "00315",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 12,
           "name": "RESIDENT CODE",
-          "table": "0010 - PHYSICIAN ID"
+          "table": "0010 - PHYSICIAN ID",
+          "item": "00318",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 13,
           "name": "CONSENT CODE",
-          "table": "0059 - CONSENT CODE"
+          "table": "0059 - CONSENT CODE",
+          "item": "00317",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         }
       ]
     },
@@ -1509,232 +3024,477 @@
         {
           "position": 1,
           "name": "SET ID - PATIENT VISIT",
-          "section": "3-18"
+          "section": "3-18",
+          "item": "00458",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
           "name": "PATIENT CLASS",
-          "table": "0004 - PATIENT CLASS"
+          "table": "0004 - PATIENT CLASS",
+          "item": "00052",
+          "length": "1",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
           "name": "ASSIGNED PATIENT LOCATION",
-          "table": "0079 - LOCATION"
+          "table": "0079 - LOCATION",
+          "item": "00053",
+          "length": "12",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 4,
           "name": "ADMISSION TYPE",
-          "table": "0007 - ADMISSION TYPE"
+          "table": "0007 - ADMISSION TYPE",
+          "item": "00218",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 5,
-          "name": "PRE-ADMIT NUMBER"
+          "name": "PRE-ADMIT NUMBER",
+          "item": "00219",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 6,
           "name": "PRIOR PATIENT LOCATION",
-          "table": "0079 - LOCATION"
+          "table": "0079 - LOCATION",
+          "item": "00056",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 7,
           "name": "ATTENDING DOCTOR",
-          "table": "0010 - PHYSICIAN ID"
+          "table": "0010 - PHYSICIAN ID",
+          "item": "00057",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 8,
           "name": "REFERRING DOCTOR",
-          "table": "0010 - PHYSICIAN ID"
+          "table": "0010 - PHYSICIAN ID",
+          "item": "00579",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 9,
           "name": "CONSULTING DOCTOR",
-          "table": "0010 - PHYSICIAN ID"
+          "table": "0010 - PHYSICIAN ID",
+          "item": "00580",
+          "length": "60",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "CN"
         },
         {
           "position": 10,
           "name": "HOSPITAL SERVICE",
-          "table": "0069 - HOSPITAL SERVICE"
+          "table": "0069 - HOSPITAL SERVICE",
+          "item": "00059",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 11,
           "name": "TEMPORARY LOCATION",
-          "table": "0079 - LOCATION"
+          "table": "0079 - LOCATION",
+          "item": "00060",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 12,
           "name": "PRE-ADMIT TEST INDICATOR",
-          "table": "0087 - PRE-ADMIT TESTING"
+          "table": "0087 - PRE-ADMIT TESTING",
+          "item": "00220",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 13,
           "name": "RE-ADMISSION INDICATOR",
-          "table": "0092 - RE-ADMISSION INDICATOR"
+          "table": "0092 - RE-ADMISSION INDICATOR",
+          "item": "00221",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 14,
           "name": "ADMIT SOURCE",
-          "table": "0023 - ADMIT SOURCE"
+          "table": "0023 - ADMIT SOURCE",
+          "item": "00063",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 15,
           "name": "AMBULATORY STATUS",
-          "table": "0009 - AMBULATORY STATUS"
+          "table": "0009 - AMBULATORY STATUS",
+          "item": "00064",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 16,
           "name": "VIP INDICATOR",
-          "table": "0099 - VIP INDICATOR"
+          "table": "0099 - VIP INDICATOR",
+          "item": "00193",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 17,
           "name": "ADMITTING DOCTOR",
-          "table": "0010 - PHYSICIAN ID"
+          "table": "0010 - PHYSICIAN ID",
+          "item": "00189",
+          "length": "60",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CN"
         },
         {
           "position": 18,
           "name": "PATIENT TYPE",
-          "table": "0018 - PATIENT TYPE"
+          "table": "0018 - PATIENT TYPE",
+          "item": "00191",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 19,
-          "name": "VISIT NUMBER"
+          "name": "VISIT NUMBER",
+          "item": "00194",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 20,
           "name": "FINANCIAL CLASS",
-          "table": "0064 - FINANCIAL CLASS"
+          "table": "0064 - FINANCIAL CLASS",
+          "item": "00195",
+          "length": "11",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ID"
         },
         {
           "position": 21,
           "name": "CHARGE PRICE INDICATOR",
-          "table": "0032 - CHARGE/PRICE INDICATOR"
+          "table": "0032 - CHARGE/PRICE INDICATOR",
+          "item": "00199",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 22,
           "name": "COURTESY CODE",
-          "table": "0045 - COURTESY CODE"
+          "table": "0045 - COURTESY CODE",
+          "item": "00386",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 23,
           "name": "CREDIT RATING",
-          "table": "0046 - CREDIT RATING"
+          "table": "0046 - CREDIT RATING",
+          "item": "00200",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 24,
           "name": "CONTRACT CODE",
-          "table": "0044 - CONTRACT CODE"
+          "table": "0044 - CONTRACT CODE",
+          "item": "00201",
+          "length": "2",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ID"
         },
         {
           "position": 25,
-          "name": "CONTRACT EFFECTIVE DATE"
+          "name": "CONTRACT EFFECTIVE DATE",
+          "item": "00202",
+          "length": "8",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "DT"
         },
         {
           "position": 26,
-          "name": "CONTRACT AMOUNT"
+          "name": "CONTRACT AMOUNT",
+          "item": "00203",
+          "length": "12",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "NM"
         },
         {
           "position": 27,
-          "name": "CONTRACT PERIOD"
+          "name": "CONTRACT PERIOD",
+          "item": "00204",
+          "length": "3",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "NM"
         },
         {
           "position": 28,
           "name": "INTEREST CODE",
-          "table": "0073 - INTEREST RATE CODE"
+          "table": "0073 - INTEREST RATE CODE",
+          "item": "00387",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 29,
           "name": "TRANSFER TO BAD DEBT CODE",
-          "table": "0110 - TRANSFER TO BAD DEBT CODE"
+          "table": "0110 - TRANSFER TO BAD DEBT CODE",
+          "item": "00205",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 30,
-          "name": "TRANSFER TO BAD DEBT DATE"
+          "name": "TRANSFER TO BAD DEBT DATE",
+          "item": "00388",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 31,
           "name": "BAD DEBT AGENCY CODE",
-          "table": "0021 - BAD DEBT AGENCY CODE"
+          "table": "0021 - BAD DEBT AGENCY CODE",
+          "item": "00206",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 32,
-          "name": "BAD DEBT TRANSFER AMOUNT"
+          "name": "BAD DEBT TRANSFER AMOUNT",
+          "item": "00389",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 33,
-          "name": "BAD DEBT RECOVERY AMOUNT"
+          "name": "BAD DEBT RECOVERY AMOUNT",
+          "item": "00390",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 34,
           "name": "DELETE ACCOUNT INDICATOR",
-          "table": "0111 - DELETE ACCOUNT CODE"
+          "table": "0111 - DELETE ACCOUNT CODE",
+          "item": "00207",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 35,
-          "name": "DELETE ACCOUNT DATE"
+          "name": "DELETE ACCOUNT DATE",
+          "item": "00208",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 36,
           "name": "DISCHARGE DISPOSITION",
-          "table": "0112 - DISCHARGED DISPOSITION"
+          "table": "0112 - DISCHARGED DISPOSITION",
+          "item": "00613",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 37,
           "name": "DISCHARGED TO LOCATION",
-          "table": "0113 - DISCHARGED TO LOCATION"
+          "table": "0113 - DISCHARGED TO LOCATION",
+          "item": "00614",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 38,
           "name": "DIET TYPE",
-          "table": "0114 - DIET TYPE"
+          "table": "0114 - DIET TYPE",
+          "item": "00615",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 39,
           "name": "SERVICING FACILITY",
-          "table": "0115 - SERVICING FACILITY"
+          "table": "0115 - SERVICING FACILITY",
+          "item": "00616",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 40,
           "name": "BED STATUS",
-          "table": "0116 - BED STATUS"
+          "table": "0116 - BED STATUS",
+          "item": "00617",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 41,
           "name": "ACCOUNT STATUS",
-          "table": "0117 - ACCOUNT STATUS"
+          "table": "0117 - ACCOUNT STATUS",
+          "item": "00703",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 42,
           "name": "PENDING LOCATION",
-          "table": "0079 - LOCATION"
+          "table": "0079 - LOCATION",
+          "item": "00704",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 43,
           "name": "PRIOR TEMPORARY LOCATION",
-          "table": "0079 - LOCATION"
+          "table": "0079 - LOCATION",
+          "item": "00705",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 44,
-          "name": "ADMIT DATE/TIME"
+          "name": "ADMIT DATE/TIME",
+          "item": "00775",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 45,
-          "name": "DISCHARGE DATE/TIME"
+          "name": "DISCHARGE DATE/TIME",
+          "item": "00776",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 46,
-          "name": "CURRENT PATIENT BALANCE"
+          "name": "CURRENT PATIENT BALANCE",
+          "item": "00777",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 47,
-          "name": "TOTAL CHARGES"
+          "name": "TOTAL CHARGES",
+          "item": "00778",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 48,
-          "name": "TOTAL ADJUSTMENTS"
+          "name": "TOTAL ADJUSTMENTS",
+          "item": "00779",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 49,
-          "name": "TOTAL PAYMENTS"
+          "name": "TOTAL PAYMENTS",
+          "item": "00780",
+          "length": "12",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         }
       ]
     },
@@ -1745,57 +3505,117 @@
         {
           "position": 1,
           "name": "QUERY DATE/TIME",
-          "section": "5-6"
+          "section": "5-6",
+          "item": "00156",
+          "length": "19",
+          "usage": "R",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 2,
           "name": "QUERY FORMAT CODE",
-          "table": "0106 - QUERY FORMAT CODE"
+          "table": "0106 - QUERY FORMAT CODE",
+          "item": "00158",
+          "length": "1",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
           "name": "QUERY PRIORITY",
-          "table": "0091 - QUERY PRIORITY"
+          "table": "0091 - QUERY PRIORITY",
+          "item": "00159",
+          "length": "1",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 4,
-          "name": "QUERY ID"
+          "name": "QUERY ID",
+          "item": "00160",
+          "length": "10",
+          "usage": "R",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
           "name": "DEFERRED RESPONSE TYPE",
-          "table": "0107 - DEFERRED RESPONSE TYPE"
+          "table": "0107 - DEFERRED RESPONSE TYPE",
+          "item": "00161",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 6,
-          "name": "DEFERRED RESPONSE DATE/TIME"
+          "name": "DEFERRED RESPONSE DATE/TIME",
+          "item": "00162",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 7,
           "name": "QUANTITY LIMITED REQUEST",
-          "table": "0126 - QUANTITY LIMITED REQUEST"
+          "table": "0126 - QUANTITY LIMITED REQUEST",
+          "item": "00164",
+          "length": "5",
+          "usage": "R",
+          "rep": "",
+          "datatype": "CQ"
         },
         {
           "position": 8,
-          "name": "WHO SUBJECT FILTER"
+          "name": "WHO SUBJECT FILTER",
+          "item": "00168",
+          "length": "20",
+          "usage": "R",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 9,
           "name": "WHAT SUBJECT FILTER",
-          "table": "0048 - WHAT SUBJECT FILTER"
+          "table": "0048 - WHAT SUBJECT FILTER",
+          "item": "00169",
+          "length": "3",
+          "usage": "R",
+          "rep": "Y",
+          "datatype": "ID"
         },
         {
           "position": 10,
-          "name": "WHAT DEPARTMENT DATA CODE"
+          "name": "WHAT DEPARTMENT DATA CODE",
+          "item": "00170",
+          "length": "20",
+          "usage": "R",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 11,
-          "name": "WHAT DATA CODE VALUE QUAL."
+          "name": "WHAT DATA CODE VALUE QUAL.",
+          "item": "00171",
+          "length": "20",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 12,
           "name": "QUERY RESULTS LEVEL",
-          "table": "0108 - QUERY RESULTS LEVEL"
+          "table": "0108 - QUERY RESULTS LEVEL",
+          "item": "00701",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         }
       ]
     },
@@ -1805,23 +3625,48 @@
       "fields": [
         {
           "position": 1,
-          "name": "WHERE SUBJECT FILTER"
+          "name": "WHERE SUBJECT FILTER",
+          "item": "00173",
+          "length": "20",
+          "usage": "R",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 2,
-          "name": "WHEN DATA START DATE/TIME"
+          "name": "WHEN DATA START DATE/TIME",
+          "item": "00174",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 3,
-          "name": "WHEN DATA END DATE/TIME"
+          "name": "WHEN DATA END DATE/TIME",
+          "item": "00176",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 4,
-          "name": "WHAT USER QUALIFIER"
+          "name": "WHAT USER QUALIFIER",
+          "item": "00178",
+          "length": "20",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "OTHER QRY SUBJECT FILTER"
+          "name": "OTHER QRY SUBJECT FILTER",
+          "item": "00179",
+          "length": "20",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ST"
         }
       ]
     },
@@ -1832,127 +3677,277 @@
         {
           "position": 1,
           "name": "UNUSED",
-          "section": "4-14"
+          "section": "4-14",
+          "item": "00770",
+          "length": "",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 2,
-          "name": "UNUSED"
+          "name": "UNUSED",
+          "item": "00771",
+          "length": "",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
           "name": "ROUTE",
-          "table": "0033 - ROUTE"
+          "table": "0033 - ROUTE",
+          "item": "00129",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
           "name": "SITE ADMINISTERED",
-          "table": "0034 - SITE ADMINISTERED"
+          "table": "0034 - SITE ADMINISTERED",
+          "item": "00130",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "IV SOLUTION RATE"
+          "name": "IV SOLUTION RATE",
+          "item": "00131",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CQ"
         },
         {
           "position": 6,
-          "name": "DRUG STRENGTH"
+          "name": "DRUG STRENGTH",
+          "item": "00133",
+          "length": "14",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CQ"
         },
         {
           "position": 7,
-          "name": "FINAL CONCENTRATION"
+          "name": "FINAL CONCENTRATION",
+          "item": "00137",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 8,
-          "name": "FINAL VOLUME IN ML."
+          "name": "FINAL VOLUME IN ML.",
+          "item": "00138",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 9,
-          "name": "DRUG DOSE"
+          "name": "DRUG DOSE",
+          "item": "00135",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CM"
         },
         {
           "position": 10,
-          "name": "DRUG ROLE"
+          "name": "DRUG ROLE",
+          "item": "00139",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 11,
-          "name": "PRESCRIPTION SEQUENCE #"
+          "name": "PRESCRIPTION SEQUENCE #",
+          "item": "00469",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 12,
-          "name": "QUANTITY DISPENSED"
+          "name": "QUANTITY DISPENSED",
+          "item": "00470",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CQ"
         },
         {
           "position": 13,
-          "name": "UNUSED"
+          "name": "UNUSED",
+          "item": "00772",
+          "length": "",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 14,
           "name": "DRUG ID",
-          "table": "0057 - DRUG CODE"
+          "table": "0057 - DRUG CODE",
+          "item": "00473",
+          "length": "5",
+          "usage": "O",
+          "rep": "",
+          "datatype": "CE_0057"
         },
         {
           "position": 15,
-          "name": "COMPONENT DRUG IDS"
+          "name": "COMPONENT DRUG IDS",
+          "item": "00474",
+          "length": "5",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ID"
         },
         {
           "position": 16,
-          "name": "PRESCRIPTION TYPE"
+          "name": "PRESCRIPTION TYPE",
+          "item": "00479",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 17,
-          "name": "SUBSTITUTION STATUS"
+          "name": "SUBSTITUTION STATUS",
+          "item": "00480",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 18,
           "name": "RX ORDER STATUS",
-          "table": "0038 - ORDER STATUS"
+          "table": "0038 - ORDER STATUS",
+          "item": "00588",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 19,
-          "name": "NUMBER OF REFILLS"
+          "name": "NUMBER OF REFILLS",
+          "item": "00481",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 20,
-          "name": "UNUSED"
+          "name": "UNUSED",
+          "item": "00773",
+          "length": "",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 21,
-          "name": "REFILLS REMAINING"
+          "name": "REFILLS REMAINING",
+          "item": "00482",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 22,
-          "name": "DEA CLASS"
+          "name": "DEA CLASS",
+          "item": "00619",
+          "length": "5",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 23,
-          "name": "ORDERING MD'S DEA NUMBER"
+          "name": "ORDERING MD'S DEA NUMBER",
+          "item": "00620",
+          "length": "10",
+          "usage": "O",
+          "rep": "",
+          "datatype": "NM"
         },
         {
           "position": 24,
-          "name": "UNUSED"
+          "name": "UNUSED",
+          "item": "00774",
+          "length": "",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 25,
-          "name": "LAST REFILL DATE/TIME"
+          "name": "LAST REFILL DATE/TIME",
+          "item": "00483",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 26,
-          "name": "RX NUMBER"
+          "name": "RX NUMBER",
+          "item": "00596",
+          "length": "20",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 27,
-          "name": "PRN STATUS"
+          "name": "PRN STATUS",
+          "item": "00621",
+          "length": "5",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 28,
-          "name": "PHARMACY INSTRUCTIONS"
+          "name": "PHARMACY INSTRUCTIONS",
+          "item": "00484",
+          "length": "80",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "TX"
         },
         {
           "position": 29,
-          "name": "PATIENT INSTRUCTIONS"
+          "name": "PATIENT INSTRUCTIONS",
+          "item": "00489",
+          "length": "80",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "TX"
         },
         {
           "position": 30,
-          "name": "INSTRUCTIONS (SIG)"
+          "name": "INSTRUCTIONS (SIG)",
+          "item": "00618",
+          "length": "500",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "TX"
         }
       ]
     },
@@ -1963,96 +3958,211 @@
         {
           "position": 1,
           "name": "SET ID - UB82",
-          "section": "6-17"
+          "section": "6-17",
+          "item": "00459",
+          "length": "4",
+          "usage": "O",
+          "rep": "",
+          "datatype": "SI"
         },
         {
           "position": 2,
-          "name": "BLOOD DEDUCTIBLE"
+          "name": "BLOOD DEDUCTIBLE",
+          "item": "00279",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 3,
-          "name": "BLOOD FURN.-PINTS OF (40)"
+          "name": "BLOOD FURN.-PINTS OF (40)",
+          "item": "00396",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 4,
-          "name": "BLOOD REPLACED-PINTS (41)"
+          "name": "BLOOD REPLACED-PINTS (41)",
+          "item": "00397",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "BLOOD NOT RPLCD-PINTS(42)"
+          "name": "BLOOD NOT RPLCD-PINTS(42)",
+          "item": "00398",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 6,
-          "name": "CO-INSURANCE DAYS (25)"
+          "name": "CO-INSURANCE DAYS (25)",
+          "item": "00399",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 7,
           "name": "CONDITION CODE",
-          "table": "0043 - CONDITION"
+          "table": "0043 - CONDITION",
+          "item": "00400",
+          "length": "2",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ID"
         },
         {
           "position": 8,
-          "name": "COVERED DAYS - (23)"
+          "name": "COVERED DAYS - (23)",
+          "item": "00405",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 9,
-          "name": "NON COVERED DAYS - (24)"
+          "name": "NON COVERED DAYS - (24)",
+          "item": "00406",
+          "length": "3",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 10,
-          "name": "VALUE AMOUNT & CODE"
+          "name": "VALUE AMOUNT & CODE",
+          "item": "00407",
+          "length": "12",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "CM"
         },
         {
           "position": 11,
-          "name": "NUMBER OF GRACE DAYS (90)"
+          "name": "NUMBER OF GRACE DAYS (90)",
+          "item": "00424",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 12,
-          "name": "SPEC. PROG. INDICATOR(44)"
+          "name": "SPEC. PROG. INDICATOR(44)",
+          "item": "00425",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 13,
-          "name": "PSRO/UR APPROVAL IND. (87)"
+          "name": "PSRO/UR APPROVAL IND. (87)",
+          "item": "00426",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 14,
-          "name": "PSRO/UR APRVD STAY-FM(88)"
+          "name": "PSRO/UR APRVD STAY-FM(88)",
+          "item": "00427",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 15,
-          "name": "PSRO/UR APRVD STAY-TO(89)"
+          "name": "PSRO/UR APRVD STAY-TO(89)",
+          "item": "00428",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 16,
-          "name": "OCCURRENCE (28-32)"
+          "name": "OCCURRENCE (28-32)",
+          "item": "00429",
+          "length": "20",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ID"
         },
         {
           "position": 17,
-          "name": "OCCURRENCE SPAN (33)"
+          "name": "OCCURRENCE SPAN (33)",
+          "item": "00435",
+          "length": "2",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 18,
-          "name": "OCCURRENCE SPAN START DATE(33)"
+          "name": "OCCURRENCE SPAN START DATE(33)",
+          "item": "00446",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 19,
-          "name": "OCCUR. SPAN END DATE (33)"
+          "name": "OCCUR. SPAN END DATE (33)",
+          "item": "00447",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "DT"
         },
         {
           "position": 20,
-          "name": "UB-82 LOCATOR 2"
+          "name": "UB-82 LOCATOR 2",
+          "item": "00448",
+          "length": "30",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 21,
-          "name": "UB-82 LOCATOR 9"
+          "name": "UB-82 LOCATOR 9",
+          "item": "00449",
+          "length": "7",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 22,
-          "name": "UB-82 LOCATOR 27"
+          "name": "UB-82 LOCATOR 27",
+          "item": "00450",
+          "length": "8",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         },
         {
           "position": 23,
-          "name": "UB-82 LOCATOR 45"
+          "name": "UB-82 LOCATOR 45",
+          "item": "00451",
+          "length": "17",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ST"
         }
       ]
     },
@@ -2062,34 +4172,69 @@
       "fields": [
         {
           "position": 1,
-          "name": "R/U DATE/TIME"
+          "name": "R/U DATE/TIME",
+          "item": "00600",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 2,
           "name": "REPORT PRIORITY",
-          "table": "0109 - REPORT PRIORITY"
+          "table": "0109 - REPORT PRIORITY",
+          "item": "00601",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         },
         {
           "position": 3,
-          "name": "R/U WHO SUBJECT DEFINITION"
+          "name": "R/U WHO SUBJECT DEFINITION",
+          "item": "00602",
+          "length": "20",
+          "usage": "R",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 4,
           "name": "R/U WHAT SUBJECT DEFINITION",
-          "table": "0048 - WHAT SUBJECT FILTER"
+          "table": "0048 - WHAT SUBJECT FILTER",
+          "item": "00603",
+          "length": "3",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ID"
         },
         {
           "position": 5,
-          "name": "R/U WHAT DEPARTMENT CODE"
+          "name": "R/U WHAT DEPARTMENT CODE",
+          "item": "00605",
+          "length": "20",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 6,
-          "name": "R/U DISPLAY/PRINT LOCATIONS"
+          "name": "R/U DISPLAY/PRINT LOCATIONS",
+          "item": "00607",
+          "length": "20",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 7,
           "name": "R/U RESULTS LEVEL",
-          "table": "0108 - QUERY RESULTS LEVEL"
+          "table": "0108 - QUERY RESULTS LEVEL",
+          "item": "00702",
+          "length": "1",
+          "usage": "O",
+          "rep": "",
+          "datatype": "ID"
         }
       ]
     },
@@ -2099,23 +4244,48 @@
       "fields": [
         {
           "position": 1,
-          "name": "R/U WHERE SUBJECT DEFINITION"
+          "name": "R/U WHERE SUBJECT DEFINITION",
+          "item": "00608",
+          "length": "20",
+          "usage": "R",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 2,
-          "name": "R/U WHEN DATA START DATE/TIME"
+          "name": "R/U WHEN DATA START DATE/TIME",
+          "item": "00609",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 3,
-          "name": "R/U WHEN DATA END DATE/TIME"
+          "name": "R/U WHEN DATA END DATE/TIME",
+          "item": "00610",
+          "length": "19",
+          "usage": "O",
+          "rep": "",
+          "datatype": "TS"
         },
         {
           "position": 4,
-          "name": "R/U WHAT USER QUALIFIER"
+          "name": "R/U WHAT USER QUALIFIER",
+          "item": "00611",
+          "length": "20",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ST"
         },
         {
           "position": 5,
-          "name": "R/U OTHER RESULTS SUBJECT DEFINI"
+          "name": "R/U OTHER RESULTS SUBJECT DEFINI",
+          "item": "00612",
+          "length": "20",
+          "usage": "O",
+          "rep": "Y",
+          "datatype": "ST"
         }
       ]
     }

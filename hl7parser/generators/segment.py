@@ -66,17 +66,20 @@ def generate_segment(
         else:
             seen_field_names[fname] = 1
 
-        flags = ["opt" if field.min_occurs == 0 else "req"]
-        if field.max_occurs is None or field.max_occurs > 1:
-            flags.append("rep")
-        desc = f"{field.xml_name} ({', '.join(flags)}) - {field.long_name} ({field.field_type})"
-        if effective_min != field.min_occurs:
-            desc += f" [optional: {field.field_type} has no required components]"
         try:
             pos = int(field.xml_name.rsplit(".", 1)[-1])
             db_field = db_fields_by_pos.get(pos)
         except (ValueError, IndexError):
             db_field = None
+
+        usage = (db_field.usage if db_field and db_field.usage else
+                 ("R" if field.min_occurs > 0 else "O"))
+        rep_flag = "Y" if (field.max_occurs is None or field.max_occurs > 1) else ""
+        desc = f"{field.xml_name} - {field.long_name} ({field.field_type}) {usage}"
+        if rep_flag:
+            desc += " rep"
+        if effective_min != field.min_occurs:
+            desc += f" [optional: {field.field_type} has no required components]"
         if db_field:
             if db_field.section:
                 desc += f" S{db_field.section}"
@@ -88,11 +91,16 @@ def generate_segment(
         if seg.name in DELIM_DEF_SEGMENTS and pos_suffix in DELIM_DEFAULTS:
             default = DELIM_DEFAULTS[pos_suffix]
 
-        meta_parts: list[str] = []
-        if field.item_num:
-            meta_parts.append(f"Item #{field.item_num}")
-        if field.table:
-            meta_parts.append(f"Table {field.table}")
+        item = (db_field.item if db_field and db_field.item else field.item_num or "")
+        db_length = int(db_field.length) if db_field and db_field.length and db_field.length.isdigit() and int(db_field.length) > 0 else None
+        max_length = db_length if field.is_primitive else None
+
+        table = (db_field.table if db_field and db_field.table else (f"{field.table}" if field.table else ""))
+        meta_parts: list[str] = [usage]
+        if item:
+            meta_parts.append(f"Item #{item}")
+        if table:
+            meta_parts.append(f"Table {table}")
 
         fields.append(
             make_field(
@@ -104,7 +112,7 @@ def generate_segment(
                 field.xml_name,
                 title=field.long_name,
                 description=" | ".join(meta_parts),
-                max_length=field.max_length if field.is_primitive else None,
+                max_length=max_length,
                 min_occurs=effective_min,
             )
         )
