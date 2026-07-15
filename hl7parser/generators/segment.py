@@ -93,7 +93,7 @@ def generate_segment(
 
         item = (db_field.item if db_field and db_field.item else field.item_num or "")
         db_length = int(db_field.length) if db_field and db_field.length and db_field.length.isdigit() and int(db_field.length) > 0 else None
-        max_length = db_length if field.is_primitive else None
+        doc_length = db_length if field.is_primitive else None
 
         table = (db_field.table if db_field and db_field.table else (f"{field.table}" if field.table else ""))
         meta_parts: list[str] = [usage]
@@ -101,6 +101,8 @@ def generate_segment(
             meta_parts.append(f"Item #{item}")
         if table:
             meta_parts.append(f"Table {table}")
+        if doc_length:
+            meta_parts.append(f"LEN:{doc_length}")
 
         fields.append(
             make_field(
@@ -112,7 +114,6 @@ def generate_segment(
                 field.xml_name,
                 title=field.long_name,
                 description=" | ".join(meta_parts),
-                max_length=max_length,
                 min_occurs=effective_min,
             )
         )
