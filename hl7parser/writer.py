@@ -80,9 +80,7 @@ def _write_alias(
     source = (
         "from __future__ import annotations\n\n"
         f"from .{canonical} import {canonical}\n\n\n"
-        f"class {alias}({canonical}):\n"
-        + "\n".join(doc_lines)
-        + "\n\n    pass\n"
+        f"class {alias}({canonical}):\n" + "\n".join(doc_lines) + "\n\n    pass\n"
     )
     path.write_text(_file_header(alias, class_type, version) + source)
 
@@ -161,7 +159,9 @@ def write_version(ir: VersionIR, output_dir: Path, *, for_hl7types: bool = False
             msg.name,
             "Message",
             ir.version,
-            generate_message(msg, all_seg_names, all_group_names, for_hl7types=for_hl7types, version=ir.version),
+            generate_message(
+                msg, all_seg_names, all_group_names, for_hl7types=for_hl7types, version=ir.version
+            ),
         )
 
     aliases = {

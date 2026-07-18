@@ -7,7 +7,12 @@ from hl7parser.ir import MessageDef
 
 
 def generate_message(
-    msg: MessageDef, known_segments: set[str], known_groups: set[str], *, for_hl7types: bool = False, version: str = "2.5"
+    msg: MessageDef,
+    known_segments: set[str],
+    known_groups: set[str],
+    *,
+    for_hl7types: bool = False,
+    version: str = "2.5",
 ) -> str:
     segment_imports: set[str] = set()
     group_imports: set[str] = set()
@@ -69,7 +74,9 @@ def generate_message(
             alias = type_aliases[py_type]
             aliased_ann = ann.replace(py_type, alias)
             lines.extend(
-                make_member_field(fname, aliased_ann, default, member.min_occurs, member.max_occurs, member_desc)
+                make_member_field(
+                    fname, aliased_ann, default, member.min_occurs, member.max_occurs, member_desc
+                )
             )
         lines.append("")
 

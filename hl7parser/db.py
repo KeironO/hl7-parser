@@ -1,8 +1,9 @@
 """Access for docstring generation."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from functools import lru_cache
+from functools import cache
 
 from hl7parser.aliases import _load
 
@@ -53,7 +54,7 @@ class VersionDB:
     events: dict[str, EventInfo]
 
 
-@lru_cache(maxsize=None)
+@cache
 def load_db(version: str) -> VersionDB:
     raw = _load(version)
 

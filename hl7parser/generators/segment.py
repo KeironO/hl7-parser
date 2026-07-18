@@ -43,7 +43,11 @@ def generate_segment(
 
     for field in seg.fields:
         vkey = None
-        if field.is_primitive or field.field_type not in all_datatype_names or field.field_type in STRING_PRIMITIVE_DATATYPES:
+        if (
+            field.is_primitive
+            or field.field_type not in all_datatype_names
+            or field.field_type in STRING_PRIMITIVE_DATATYPES
+        ):
             py_type = PRIMITIVE_PYTHON_TYPE
             if field.is_primitive:
                 if pre_v25 and field.xml_name == TS_PRE25_XML_NAME and field.field_type == "ST":
@@ -74,8 +78,11 @@ def generate_segment(
         except (ValueError, IndexError):
             db_field = None
 
-        usage = (db_field.usage if db_field and db_field.usage else
-                 ("R" if field.min_occurs > 0 else "O"))
+        usage = (
+            db_field.usage
+            if db_field and db_field.usage
+            else ("R" if field.min_occurs > 0 else "O")
+        )
         rep_flag = "Y" if (field.max_occurs is None or field.max_occurs > 1) else ""
         desc = f"{field.xml_name} - {field.long_name} ({field.field_type}) {usage}"
         if rep_flag:
@@ -91,11 +98,22 @@ def generate_segment(
         if seg.name in DELIM_DEF_SEGMENTS and pos_suffix in DELIM_DEFAULTS:
             default = DELIM_DEFAULTS[pos_suffix]
 
-        item = (db_field.item if db_field and db_field.item else field.item_num or "")
-        db_length = int(db_field.length) if db_field and db_field.length and db_field.length.isdigit() and int(db_field.length) > 0 else None
+        item = db_field.item if db_field and db_field.item else field.item_num or ""
+        db_length = (
+            int(db_field.length)
+            if db_field
+            and db_field.length
+            and db_field.length.isdigit()
+            and int(db_field.length) > 0
+            else None
+        )
         doc_length = db_length if field.is_primitive else None
 
-        table = (db_field.table if db_field and db_field.table else (f"{field.table}" if field.table else ""))
+        table = (
+            db_field.table
+            if db_field and db_field.table
+            else (f"{field.table}" if field.table else "")
+        )
         meta_parts: list[str] = [usage]
         if item:
             meta_parts.append(f"Item #{item}")

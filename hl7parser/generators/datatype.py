@@ -33,7 +33,11 @@ def generate_datatype(
 
     for comp in dt.components:
         vkey = None
-        if comp.is_primitive or comp.base_type not in all_datatype_names or comp.base_type in STRING_PRIMITIVE_DATATYPES:
+        if (
+            comp.is_primitive
+            or comp.base_type not in all_datatype_names
+            or comp.base_type in STRING_PRIMITIVE_DATATYPES
+        ):
             py_type = PRIMITIVE_PYTHON_TYPE
             if comp.is_primitive:
                 if pre_v25 and comp.xml_name == TS_PRE25_XML_NAME and comp.base_type == "ST":

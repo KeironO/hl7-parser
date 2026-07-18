@@ -6,7 +6,9 @@ from hl7parser.helpers.string import docstring
 from hl7parser.ir import GroupDef
 
 
-def generate_group(grp: GroupDef, known_segments: set[str], *, for_hl7types: bool = False, version: str = "2.5") -> str:
+def generate_group(
+    grp: GroupDef, known_segments: set[str], *, for_hl7types: bool = False, version: str = "2.5"
+) -> str:
     segment_imports: set[str] = set()
     group_imports: set[str] = set()
     lines: list[str] = []
@@ -63,7 +65,9 @@ def generate_group(grp: GroupDef, known_segments: set[str], *, for_hl7types: boo
             alias = type_aliases[py_type]
             aliased_ann = ann.replace(py_type, alias)
             lines.extend(
-                make_member_field(fname, aliased_ann, default, member.min_occurs, member.max_occurs, member_desc)
+                make_member_field(
+                    fname, aliased_ann, default, member.min_occurs, member.max_occurs, member_desc
+                )
             )
         lines.append("")
 

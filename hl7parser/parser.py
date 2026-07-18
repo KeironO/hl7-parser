@@ -328,10 +328,19 @@ class HL7XSDParser:
                             min_o = 0
                         is_group = "." in ref
                         if ref in seen:
-                            members[seen[ref]] = self._merge_member(members[seen[ref]], min_o, max_o)
+                            members[seen[ref]] = self._merge_member(
+                                members[seen[ref]], min_o, max_o
+                            )
                         else:
                             seen[ref] = len(members)
-                            members.append(MemberRef(xml_name=ref, is_group=is_group, min_occurs=min_o, max_occurs=max_o))
+                            members.append(
+                                MemberRef(
+                                    xml_name=ref,
+                                    is_group=is_group,
+                                    min_occurs=min_o,
+                                    max_occurs=max_o,
+                                )
+                            )
                     elif child.tag in (_tag("sequence"), _tag("choice")):
                         _walk(child, force_optional or child.tag == _tag("choice"))
 

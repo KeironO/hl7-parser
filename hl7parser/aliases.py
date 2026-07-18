@@ -1,14 +1,15 @@
 """Derive trigger-event to canonical-structure aliases."""
+
 from __future__ import annotations
 
 import json
-from functools import lru_cache
+from functools import cache
 from pathlib import Path
 
 _DATA_DIR = Path(__file__).parent / "data" / "hl7db"
 
 
-@lru_cache(maxsize=None)
+@cache
 def _load(version: str) -> dict:
     path = _DATA_DIR / f"{version}.json"
     if not path.exists():

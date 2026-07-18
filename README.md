@@ -32,7 +32,7 @@ Or for a single version:
 uv run python -m hl7parser --xsd-dir /path/to/hl7v2xsd --output-dir /tmp/ --version 2.5.1
 ```
 
-Replace `/path/to/hl7v2xsd` with the directory containing your HL7 v2 XSD files.
+The XSD files are not included in this repository. You must obtain them from HL7 International; they are subject to HL7 International's own licensing terms. Replace `/path/to/hl7v2xsd` with the directory containing your HL7 v2 XSD files.
 
 ### `--for-hl7types`
 
@@ -46,12 +46,12 @@ Without this flag every generated class inherits from `pydantic.BaseModel` direc
 
 ```python
 # default
-from pydantic import AliasChoices, BaseModel, Field
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field
 
 class MSH(BaseModel): ...
 
 # --for-hl7types
-from pydantic import AliasChoices, Field
+from pydantic import AliasChoices, ConfigDict, Field
 from hl7types.hl7 import HL7Model
 
 class MSH(HL7Model): ...
@@ -61,7 +61,7 @@ class MSH(HL7Model): ...
 
 ## How It Works
 
-The parser reads HL7 v2 XSD files (datatypes, fields, segments, and message definitions) and converts them into an intermediate representation. This is then used to generate Pydantic model classes for:
+The parser reads HL7 v2 XSD files (datatypes, fields, segments, and message definitions) and converts them into an intermediate representation. Metadata such as descriptions, item numbers, reference tables, usage flags, and trigger-event aliases comes from `hl7parser/data/hl7db/<version>.json`. This is then used to generate Pydantic model classes for:
 
 - **Datatypes** - Composite data types like XCN (extended person name), AD (address), etc.
 - **Segments** - Individual segments like MSH (message header), PID (patient identification), etc.
@@ -77,21 +77,19 @@ Each generated class includes:
 
 Note: The parser handles most HL7 v2 patterns, but there may be edge cases that aren't fully covered. The generated output should be validated for your use case.
 
+Primitive types SI, NM, DT, TM, and DTM get regex-based validators matching the HAPI reference implementation. When using `--for-hl7types`, DTM and pre-v2.5 TS values can fall back to a custom parser supplied via Pydantic validation context.
+
 ## Output
 
-Generated classes are organised by version under the output directory:
+Generated classes are organised by version under the output directory. Each version gets its own package (for example `v2_5_1/`) with four subpackages — `datatypes`, `segments`, `groups`, and `messages` — plus a top-level `__init__.py` that lazy-loads each module on demand.
 
-```
-hl7types/
-├── v2_5_1/
-│   ├── datatypes/     # Composite data types
-│   ├── segments/      # Individual segments
-│   ├── groups/        # Message groups
-│   ├── messages/      # Complete message structures
-│   └── __init__.py
-└── v2_4/
-    └── ...
-```
+## Supported versions
+
+Metadata is provided for HL7 v2 versions 2.1, 2.2, 2.3, 2.3.1, 2.4, 2.5, 2.5.1, 2.6, 2.7, 2.7.1, 2.8, 2.8.1, and 2.8.2. A version will only generate if both its JSON metadata file and its XSD directory are present.
+
+## Development
+
+Run the test suite with `uv run pytest`. Lint and format with `uv run ruff check` and `uv run ruff format`.
 
 ## License
 
