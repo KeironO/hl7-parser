@@ -81,7 +81,7 @@ Primitive types SI, NM, DT, TM, and DTM get regex-based validators matching the 
 
 ## Output
 
-Generated classes are organised by version under the output directory. Each version gets its own package (for example `v2_5_1/`) with four subpackages — `datatypes`, `segments`, `groups`, and `messages` — plus a top-level `__init__.py` that lazy-loads each module on demand.
+The tool writes one package per HL7 version. Inside `v2_5_1/` you will find `datatypes/`, `segments/`, `groups/`, and `messages/` subpackages, plus a top-level `__init__.py` that lazy-loads modules on first access.
 
 ## Supported versions
 

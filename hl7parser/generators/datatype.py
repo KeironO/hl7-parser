@@ -27,6 +27,7 @@ def generate_datatype(
     fields: list[list[str]] = []
     doc_entries: list[tuple[str, str, str]] = []
     need_list = False
+    seen_field_names: dict[str, int] = {}
     # {validator_key: [field_name, ...]} — groups fields that share a validator
     validator_fields: dict[str, list[str]] = {}
     pre_v25 = not _is_v25_or_later(version)
@@ -56,6 +57,11 @@ def generate_datatype(
 
         fname = xml_to_field_name(comp.xml_name)
         long_alias = field_name(comp.long_name, comp.xml_name)
+        if fname in seen_field_names:
+            seen_field_names[fname] += 1
+            fname = f"{fname}_{seen_field_names[fname]}"
+        else:
+            seen_field_names[fname] = 1
         flags = ["opt" if comp.min_occurs == 0 else "req"]
         if comp.max_occurs is None or comp.max_occurs > 1:
             flags.append("rep")

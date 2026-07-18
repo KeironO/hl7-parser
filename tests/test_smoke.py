@@ -87,6 +87,38 @@ class TestGenerateDatatype:
         assert "_RE_DTM.fullmatch(v or '')" in source
         assert source.count("import re") == 1
 
+    def test_duplicate_field_names_are_deduplicated(self) -> None:
+        dt = DataTypeDef(
+            name="DUP",
+            components=[
+                ComponentDef(
+                    xml_name="DUP.1",
+                    long_name="Value",
+                    base_type="ST",
+                    is_primitive=True,
+                    min_occurs=0,
+                    max_occurs=1,
+                ),
+                ComponentDef(
+                    xml_name="DUP.1",
+                    long_name="Value Again",
+                    base_type="ST",
+                    is_primitive=True,
+                    min_occurs=0,
+                    max_occurs=1,
+                ),
+            ],
+        )
+        source = generate_datatype(dt, set(), version="2.5.1")
+
+        assert "dup_1: Optional[str]" in source
+        assert "dup_1_2: Optional[str]" in source
+
+        namespace = _exec_source(source, "DUP")
+        cls = namespace["DUP"]
+        assert "dup_1" in cls.model_fields
+        assert "dup_1_2" in cls.model_fields
+
 
 class TestGenerateSegment:
     def test_basic_output(self) -> None:
