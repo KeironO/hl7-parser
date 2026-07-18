@@ -11,6 +11,7 @@ from hl7parser.primitive_validators import (
     _is_v25_or_later,
     fallback_validator_imports,
     make_field_validators,
+    make_regex_constants,
     needs_validation_info,
 )
 
@@ -79,6 +80,9 @@ def generate_datatype(
     need_field = bool(fields)
 
     out: list[str] = ["from __future__ import annotations", ""]
+    if validator_fields:
+        out.append("import re")
+        out.append("")
     typing_parts = []
     if need_optional:
         typing_parts.append("Optional")
@@ -95,18 +99,21 @@ def generate_datatype(
         pydantic_parts.append("field_validator")
         if for_hl7types and needs_validation_info(validator_fields):
             pydantic_parts.append("ValidationInfo")
+    pydantic_parts.append("ConfigDict")
     if for_hl7types:
-        if pydantic_parts:
-            out.append(f"from pydantic import {', '.join(pydantic_parts)}")
+        out.append(f"from pydantic import {', '.join(sorted(pydantic_parts))}")
         out.append("from hl7types.hl7 import HL7Model")
         out.extend(fallback_validator_imports(validator_fields))
     else:
         pydantic_parts_with_base = ["BaseModel"] + pydantic_parts
-        out.append(f"from pydantic import {', '.join(pydantic_parts_with_base)}")
+        out.append(f"from pydantic import {', '.join(sorted(pydantic_parts_with_base))}")
     if unique_imports:
         out.append("")
         out.extend(unique_imports)
     out.append("")
+    if validator_fields:
+        out.extend(make_regex_constants(validator_fields))
+        out.append("")
     out.append("")
     base = "HL7Model" if for_hl7types else "BaseModel"
     out.append(f"class {dt.name}({base}):")
@@ -128,6 +135,6 @@ def generate_datatype(
     out.append("")
     if validator_fields:
         out.extend(make_field_validators(validator_fields))
-    out.append(f'{FIELD_INDENT}model_config = {{"populate_by_name": True}}')
+    out.append(f"{FIELD_INDENT}model_config = ConfigDict(populate_by_name=True)")
     out.append("")
     return "\n".join(out)

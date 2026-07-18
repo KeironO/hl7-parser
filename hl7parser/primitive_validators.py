@@ -76,16 +76,34 @@ def fallback_validator_imports(validator_fields: dict[str, list[str]]) -> list[s
     return []
 
 
+def _regex_const_name(key: str) -> str:
+    return f"_RE_{key.lstrip('_')}"
+
+
+def make_regex_constants(validator_fields: dict[str, list[str]]) -> list[str]:
+    """Return module-level compiled regex constants needed by a class."""
+    out: list[str] = []
+    for key in validator_fields:
+        if not validator_fields[key] or key == "NULLDT":
+            continue
+        _, pattern, _ = FIELD_VALIDATORS[key]
+        out.append(f"{_regex_const_name(key)} = re.compile(r'{pattern}')")
+    return out
+
+
 def make_field_validators(validator_fields: dict[str, list[str]]) -> list[str]:
     """
     Return source lines for all @field_validator methods needed by a class.
 
+    Regex patterns are expected to be compiled once at module level (see
+    ``make_regex_constants``) so they are not re-parsed on every validation call.
     """
     out: list[str] = []
     for key, fnames in validator_fields.items():
         if not fnames:
             continue
         fn_name, pattern, description = FIELD_VALIDATORS[key]
+        const_name = _regex_const_name(key)
         field_args = ", ".join(f'"{f}"' for f in fnames)
         out.append(f"{FIELD_INDENT}@field_validator({field_args}, mode='before')")
         out.append(f"{FIELD_INDENT}@classmethod")
@@ -94,8 +112,7 @@ def make_field_validators(validator_fields: dict[str, list[str]]) -> list[str]:
             ctx_key = _FALLBACK_VALIDATORS[key]
             datatype = "DTM" if key == "DTM" else "DT"
             out.append(f"{FIELD_INDENT}def {fn_name}(cls, v: str, info: ValidationInfo) -> str:")
-            out.append(f"{INNER_INDENT}import re")
-            out.append(f"{INNER_INDENT}if re.fullmatch(r'{pattern}', v or ''):")
+            out.append(f"{INNER_INDENT}if {const_name}.fullmatch(v or ''):")
             out.append(f"{INNER_INDENT}    return v")
             out.append(f"{INNER_INDENT}ctx: dict[str, object] = info.context or {{}}")
             out.append(f"{INNER_INDENT}from typing import cast, Callable")
@@ -111,8 +128,7 @@ def make_field_validators(validator_fields: dict[str, list[str]]) -> list[str]:
             out.append(f"{INNER_INDENT}return v")
         else:
             out.append(f"{FIELD_INDENT}def {fn_name}(cls, v: str) -> str:")
-            out.append(f"{INNER_INDENT}import re")
-            out.append(f"{INNER_INDENT}if not re.fullmatch(r'{pattern}', v or ''):")
+            out.append(f"{INNER_INDENT}if not {const_name}.fullmatch(v or ''):")
             out.append(f'{INNER_INDENT}    raise ValueError(f"{{v!r}} is not {description}")')
             out.append(f"{INNER_INDENT}return v")
 

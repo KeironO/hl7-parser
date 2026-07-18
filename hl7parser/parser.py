@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 from pathlib import Path
 
 from lxml import etree
@@ -30,7 +29,7 @@ class HL7XSDParser:
         """
         TODO:
         """
-        self.path: str = path
+        self.path: Path = path
 
     def _parse_occurs(self, elem) -> tuple[int, int | None]:
         min_o = int(elem.get("minOccurs", "1"))
@@ -66,13 +65,13 @@ class HL7XSDParser:
             result[base] = attrs
         return result
 
-    def _parse_content_type(self, elem) -> tuple[str | None, bool]:
-        """Return (base_type_name, is_primitive) from a X.N.CONTENT complexType element."""
+    def _parse_content_type(self, elem) -> str | None:
+        """Return base_type_name from a X.N.CONTENT complexType element."""
         for child in elem:
             if child.tag == _tag("simpleContent"):
                 for sc in child:
                     if sc.tag == _tag("extension"):
-                        return sc.get("base"), True
+                        return sc.get("base")
             elif child.tag == _tag("complexContent"):
                 for cc in child:
                     if cc.tag == _tag("extension"):
@@ -80,17 +79,17 @@ class HL7XSDParser:
                         # Strip namespace prefix if present (e.g. "hl7:XCN" to "XCN")
                         if base and ":" in base:
                             base = base.split(":")[-1]
-                        return base, False
-        return None, False
+                        return base
+        return None
 
     def _parse_datatypes(
         self, path: Path
-    ) -> tuple[set[str], dict[str, tuple[str, bool]], list[DataTypeDef]]:
+    ) -> tuple[set[str], dict[str, str | None], list[DataTypeDef]]:
         """Parse datatypes.xsd.
 
         Returns:
             primitives: set of primitive simpleType names
-            component_info: base_name to (base_type, is_primitive) for X.N sub-component types
+            component_info: base_name to base_type for X.N sub-component types
             composite_types: list of DataTypeDef
         """
         tree = etree.parse(str(path))
@@ -98,9 +97,7 @@ class HL7XSDParser:
 
         primitives: set[str] = set()
         attribute_groups = self._parse_attribute_groups(root)
-        content_type_info: dict[
-            str, tuple[str | None, bool]
-        ] = {}  # "AD.1.CONTENT" to (base, is_prim)
+        content_type_info: dict[str, str | None] = {}  # "AD.1.CONTENT" to base
         element_type_map: dict[str, str] = {}  # "AD.1" to "AD.1.CONTENT"
 
         for elem in root:
@@ -146,9 +143,8 @@ class HL7XSDParser:
                         base_type = type_from_attrs
                         is_prim = type_from_attrs in primitives
                     elif content_name and content_name in content_type_info:
-                        base_raw, is_prim = content_type_info[content_name]
-                        base_type = base_raw or "ST"
-                        is_prim = is_prim or (base_type in primitives)
+                        base_type = content_type_info[content_name] or "ST"
+                        is_prim = base_type in primitives
                     else:
                         base_type = "ST"
                         is_prim = True
@@ -166,7 +162,7 @@ class HL7XSDParser:
                     )
             composite_types.append(DataTypeDef(name=name, components=components))
 
-        return primitives, {k: v for k, (v, ip) in content_type_info.items()}, composite_types
+        return primitives, content_type_info, composite_types
 
     def _parse_fields(self, path: Path, primitives: set[str]) -> dict[str, FieldRef]:
         """Parse fields.xsd {xml_name: FieldRef}."""
@@ -174,7 +170,7 @@ class HL7XSDParser:
         root = tree.getroot()
 
         attribute_groups = self._parse_attribute_groups(root)
-        content_type_info: dict[str, tuple[str | None, bool]] = {}
+        content_type_info: dict[str, str | None] = {}
         element_type_map: dict[str, str] = {}
 
         for elem in root:
@@ -201,9 +197,8 @@ class HL7XSDParser:
                 field_type = type_from_attrs
                 is_prim = field_type in primitives
             else:
-                base_raw, is_prim = content_type_info[content_name]
-                field_type = base_raw or "ST"
-                is_prim = is_prim or (field_type in primitives)
+                field_type = content_type_info[content_name] or "ST"
+                is_prim = field_type in primitives
 
             field_map[xml_name] = FieldRef(
                 xml_name=xml_name,
@@ -386,7 +381,7 @@ class HL7XSDParser:
             if stem in ("datatypes", "fields", "segments", "messages", "batch"):
                 continue
             # Message XSDs: uppercase stems like ADT_A01, ACK, etc - this _should_ work.
-            if not re.match(r"^[A-Z]", stem):
+            if not stem or not stem[0].isupper():
                 continue
             groups, msg = self._parse_message_xsd(xsd_file, known_segments)
             all_groups.extend(groups)

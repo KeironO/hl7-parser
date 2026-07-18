@@ -88,13 +88,15 @@ def generate_message(
         out.append(f"from typing import {', '.join(typing_parts)}")
     if for_hl7types:
         if need_field:
-            out.append("from pydantic import Field")
+            out.append("from pydantic import ConfigDict, Field")
+        else:
+            out.append("from pydantic import ConfigDict")
         out.append("from hl7types.hl7 import HL7Model")
     else:
         if need_field:
-            out.append("from pydantic import BaseModel, Field")
+            out.append("from pydantic import BaseModel, ConfigDict, Field")
         else:
-            out.append("from pydantic import BaseModel")
+            out.append("from pydantic import BaseModel, ConfigDict")
     if segment_imports:
         out.append("")
         out.extend(sorted(segment_imports))
@@ -122,6 +124,6 @@ def generate_message(
     else:
         out.append(f"{FIELD_INDENT}pass")
         out.append("")
-    out.append(f'{FIELD_INDENT}model_config = {{"populate_by_name": True}}')
+    out.append(f"{FIELD_INDENT}model_config = ConfigDict(populate_by_name=True)")
     out.append("")
     return "\n".join(out)

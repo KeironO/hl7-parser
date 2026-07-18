@@ -3,8 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 
 from hl7parser.aliases import derive_aliases
-from hl7parser.db import load_db
 from hl7parser.consts import HL7_NS, STRING_PRIMITIVE_DATATYPES
+from hl7parser.db import load_db
 from hl7parser.generators import (
     generate_datatype,
     generate_group,
@@ -49,12 +49,11 @@ def _write_alias(
     class_type: str,
     version: str,
 ) -> None:
+    db = load_db(version)
     event_id = alias.split("_", 1)[-1]
-    ev = load_db(version).events.get(event_id)
+    ev = db.events.get(event_id)
     sec = f" (S{ev.section})" if ev and ev.section else ""
     headline = f"{ev.description}{sec}." if ev else f"Alias for {canonical}."
-
-    db = load_db(version)
     doc_entries: list[str] = []
     seen: dict[str, int] = {}
     for member in canonical_msg.members:
